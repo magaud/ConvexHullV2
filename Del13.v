@@ -2951,7 +2951,7 @@ rewrite IHl in |- *.
     elim (expf_dec m y y').
     tauto.
   intro.
-     omega.
+     lia.
   tauto.
   tauto.
  unfold ring in H1.

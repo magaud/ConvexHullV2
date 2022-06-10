@@ -9,7 +9,7 @@ COQC=coqc
 all:	Del13.vo CH07_CH.vo # 5_m1m6.vo CH06_CHID.vo
 
 %.vo:	%.v
-	$(COQC) $*
+	$(COQC) $<
 
 %.cmo:	%.ml
 	$(OCAMLC) -c $< 

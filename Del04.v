@@ -308,7 +308,7 @@ rewrite MA0Tr_cA0_Iter in |- *.
 unfold ModcA0.Prec_Tr in |- *.
    tauto.
 fold (degreee m y) in |- *.
-   omega.
+   lia.
 Qed.
 
 (*=================================================
@@ -2495,7 +2495,7 @@ Proof.
 intros.
 induction n.
  assert (ndN m - 0 = ndN m).
-   omega.
+   lia.
  rewrite H2 in |- *.
    rewrite MA1Tr.MfM.degree_aux_equation in |- *.
    rewrite
@@ -2522,7 +2522,7 @@ induction n.
 rewrite MA1Tr.MfM.degree_aux_equation in |- *.
   rewrite ndN_Split in |- *.
   assert (ndN m - S n + 1 = ndN m - n).
-  omega.
+  lia.
 rewrite H2 in |- *.
   rewrite <- Iter_cA1_MA1TrSplit1_f in |- *.
   rewrite Iter_cA1_Split0_ter in |- *.
@@ -2546,7 +2546,7 @@ rewrite H2 in |- *.
     tauto.
   intros.
     apply IHn.
-     omega.
+     lia.
   tauto.
  tauto.
 Qed.
@@ -2565,13 +2565,13 @@ assert (0 < ndN m).
  apply MA0.MfcA.ndN_pos with Z.
     tauto.
 assert (1 = ndN m - (ndN m - 1)).
-  omega.
+  lia.
 rewrite H2 in |- *.
   apply 
  (degreev_Split0_summary_aux m X X' Z (ndN m - 1)).
   tauto.
  tauto.
-omega.
+lia.
 Qed.
 
 (* OK: *)
@@ -3052,7 +3052,7 @@ Proof.
 intros.
 induction n.
  assert (ndN m - 0 = ndN m).
-   omega.
+   lia.
  rewrite H2 in |- *.
    rewrite MA0Tr.MfM.degree_aux_equation in |- *.
    rewrite
@@ -3079,7 +3079,7 @@ induction n.
 rewrite MA0Tr.MfM.degree_aux_equation in |- *.
   rewrite ndN_Split in |- *.
   assert (ndN m - S n + 1 = ndN m - n).
-  omega.
+  lia.
 rewrite H2 in |- *.
   rewrite <- Iter_cA0_MA0TrSplit0_f in |- *.
   rewrite Iter_cA0_Split1_ter in |- *.
@@ -3103,7 +3103,7 @@ rewrite H2 in |- *.
     tauto.
   intros.
     apply IHn.
-     omega.
+     lia.
   tauto.
  tauto.
 Qed.
@@ -3122,13 +3122,13 @@ assert (0 < ndN m).
  apply MA1.MfcA.ndN_pos with Z.
     tauto.
 assert (1 = ndN m - (ndN m - 1)).
-  omega.
+  lia.
 rewrite H2 in |- *.
   apply 
  (degreee_Split1_summary_aux m X X' Z (ndN m - 1)).
   tauto.
  tauto.
-omega.
+lia.
 Qed.
 
 (* OK: *)

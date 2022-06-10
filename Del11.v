@@ -264,7 +264,7 @@ assert (inv_hmap (B m zero x)).
        (nv m + 0 + (ne m + 1) + (nf m + 1) - nd m =
                nv m + ne m + nf m - nd m + 1 * 2).
            clear H4.
-            omega.
+            lia.
             rewrite H6.
               rewrite H6 in H5.
               clear H6.
@@ -275,16 +275,16 @@ assert (inv_hmap (B m zero x)).
                 split.
                intro.
                  absurd (nc m + 0 - (z / 2 + 1) >= 0). clear H4 a0. 
-                omega.
+                lia.
                 tauto.
                tauto. clear H4 a0. 
-              omega. clear H4 a0. 
-             omega.
+              lia. clear H4 a0. 
+             lia.
            intros.
              assert
          (nv m + 0 + (ne m + 1) + (nf m + 1) - nd m =
                nv m + ne m + nf m - nd m + 1 * 2). clear H4 a. 
-            omega.
+            lia.
             rewrite H6 in H5.
               rewrite H6.
               clear H6.
@@ -293,23 +293,23 @@ assert (inv_hmap (B m zero x)).
          set (z := nv m + ne m + nf m - nd m) in |- *.
                 fold z in H5.
       assert (nc m - z / 2 = nc m + 1 - (z / 2 + 1)). clear H4 a. 
-               omega.
+               lia.
                rewrite H6.
                  tauto. clear H4 a. 
-              omega. clear H4 a. 
-             omega.
+              lia. clear H4 a. 
+             lia.
           elim (eqc_dec m0 x y).
            intros.
              assert
       (nv m + 0 + (ne m + 1) + (nf m + -1) - nd m =
                nv m + ne m + nf m - nd m). clear H4.
-            omega.
+            lia.
             rewrite H6.
               clear H6.
               assert
           (nc m - (nv m + ne m + nf m - nd m) / 2 =
         nc m + 0 - (nv m + ne m + nf m - nd m) / 2). clear H4.
-             omega.
+             lia.
              rewrite H6.
                clear H6.
                tauto.
@@ -400,7 +400,7 @@ generalize H2.
          assert
           (nv m + 1 + (ne m + 0) + (nf m + 1) - nd m =
            nv m + ne m + nf m - nd m + 1 * 2). clear H4 a0. 
-         omega.
+         lia.
        rewrite H6 in |- *.
          rewrite H6 in H5.
          clear H6.
@@ -412,10 +412,10 @@ generalize H2.
           intro.
             split.
             absurd (nc m + 0 - (z / 2 + 1) >= 0). clear H4 a0. 
-             omega.
+             lia.
             tauto.
            absurd (nc m + 0 - (z / 2 + 1) >= 0). clear H4 a0. 
-            omega.
+            lia.
            tauto.
          intro.
            elim H6.
@@ -423,15 +423,15 @@ generalize H2.
            intro.
            intro.
             tauto. clear H4 a0. 
-         omega. clear H4 a0. 
-        omega.
+         lia. clear H4 a0. 
+        lia.
       intros.
         generalize H5.
         clear H5.
         assert
          (nv m + 1 + (ne m + 0) + (nf m + 1) - nd m =
           nv m + ne m + nf m - nd m + 1 * 2). clear H4 a. 
-        omega.
+        lia.
       rewrite H5 in |- *.
         clear H5.
         set (z := nv m + ne m + nf m - nd m) in |- *.
@@ -440,11 +440,11 @@ generalize H2.
          split.
         intro.
           split. clear H4 a. 
-          omega.
+          lia.
          tauto.
        intros. clear H4 a. 
-          omega. clear H4 a. 
-       omega.
+          lia. clear H4 a. 
+       lia.
      intro.
        assert (expf m1 x tx1).
        tauto.
@@ -540,7 +540,7 @@ generalize H2.
         assert
          (nv m + 1 + (ne m + 0) + (nf m + -1) - nd m =
           nv m + ne m + nf m - nd m). clear H4 H8.
-        omega.
+        lia.
       rewrite H13 in |- *.
         clear H13.
         set (z := nv m + ne m + nf m - nd m) in |- *.
@@ -548,15 +548,15 @@ generalize H2.
         split.
        intro.
          split. clear H4 H8.
-         omega.
+         lia.
         tauto.
       intros. clear H4 H8.
-         omega.
+         lia.
      intro.
        assert
         (nv m + 1 + (ne m + 0) + (nf m + -1) - nd m =
          nv m + ne m + nf m - nd m). clear H4 H8.
-       omega.
+       lia.
      rewrite H13 in |- *.
        clear H13.
        set (z := nv m + ne m + nf m - nd m) in |- *.
@@ -991,14 +991,14 @@ elim (succ_dec m k x).
    rewrite nc_B.
   elim (eqc_dec (B m k x) x (A m k x)).
    intro.
-     omega.
+     lia.
    intro.
-     omega.
+     lia.
   tauto.
   tauto.
  intro.
    rewrite not_succ_B.
-  omega.
+  lia.
   tauto.
   tauto.
 Qed.
@@ -1673,7 +1673,7 @@ induction k.
    intro.
    elim H.
    intros.
-    omega.
+    lia.
 elim IHk.
  clear IHk.
    intro.
@@ -1683,7 +1683,7 @@ elim IHk.
    left.
    split with i.
    split.
-   omega.
+   lia.
   tauto.
 clear IHk.
   intro.
@@ -1692,7 +1692,7 @@ clear IHk.
    left.
    split with k.
    split.
-   omega.
+   lia.
   tauto.
 intro.
   right.
@@ -1707,7 +1707,7 @@ intro.
     tauto.
 intro.
   split.
-  omega.
+  lia.
  tauto.
 Qed.
 
@@ -2913,7 +2913,7 @@ rewrite nc_B in |- *.
    elim (eqc_dec (B m k x) x (A m k x)).
   elim (eqc_dec (B m k x) (top m k x) (bottom m k x)).
    intros.
-      omega.
+      lia.
   intros.
     elim b.
     apply eqc_trans with (A m k x).
@@ -2934,7 +2934,7 @@ rewrite nc_B in |- *.
   apply eqc_symm.
      tauto.
  intros.
-    omega.
+    lia.
  tauto.
  tauto.
 Qed.
@@ -3034,7 +3034,7 @@ Qed.
 Lemma diff_dim_opp:forall(k j:dim), 
    k <> j -> j = dim_opp k.
 Proof.
-double induction k j.
+induction k; induction j.
   tauto.
 simpl in |- *.
    tauto.
@@ -3233,10 +3233,10 @@ unfold Shift in |- *.
          tauto.
       tauto.
     intros. clear H3 H10 H11 a.
-       omega.
+       lia.
    elim (expf_dec m0 (cA_1 m one txk) bxk).
     intros. clear H3 H10 H11 a.
-       omega.
+       lia.
    intros.
      elim b.
      clear b.
@@ -3324,10 +3324,10 @@ simpl in |- *.
       tauto.
      tauto.
    intros. clear H3 H5 a.
-      omega.
+      lia.
   elim (expf_dec m1 txk (cA m zero bxk)).
    intros. clear H3 H5 a.
-      omega.
+      lia.
   intros.
     elim b.
     clear b.
@@ -6474,7 +6474,7 @@ unfold Shift in |- *.
   rewrite ne_B in |- *.
  elim (eq_dim_dec zero zero).
 intro.
-     omega.
+     lia.
   tauto.
  tauto.
  tauto.
@@ -6495,7 +6495,7 @@ rewrite ne_B in |- *.
   intro.
     inversion a.
  intro.
-    omega.
+    lia.
  tauto.
  tauto.
 Qed.
@@ -6517,7 +6517,7 @@ unfold Shift in |- *.
   rewrite nv_B in |- *.
  elim (eq_dim_dec one one).
 intro.
-     omega.
+     lia.
   tauto.
  tauto.
  tauto.
@@ -6538,7 +6538,7 @@ rewrite nv_B in |- *.
   intro.
     inversion a.
  intro.
-    omega.
+    lia.
  tauto.
  tauto.
 Qed.
@@ -6627,7 +6627,7 @@ elim (succ_dec m one x).
      intro.
        inversion a1.
     intro.
-       omega.
+       lia.
     tauto.
     tauto.
   fold (Shift m one x) in |- *.
@@ -6659,7 +6659,7 @@ elim (succ_dec m one x).
      intros.
      inversion a0.
   intro.
-     omega.
+     lia.
   tauto.
   tauto.
 intro.
@@ -6672,7 +6672,7 @@ rewrite ne_B in |- *.
   intro.
     inversion a.
  intro.
-    omega.
+    lia.
  tauto.
  tauto.
 Qed.
@@ -6762,7 +6762,7 @@ elim (succ_dec m zero x).
      intro.
        inversion a1.
     intro.
-       omega.
+       lia.
     tauto.
     tauto.
   fold (Shift m zero x) in |- *.
@@ -6794,7 +6794,7 @@ elim (succ_dec m zero x).
      intros.
      inversion a0.
   intro.
-     omega.
+     lia.
   tauto.
   tauto.
 intro.
@@ -6807,7 +6807,7 @@ rewrite nv_B in |- *.
   intro.
     inversion a.
  intro.
-    omega.
+    lia.
  tauto.
  tauto.
 Qed.

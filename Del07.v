@@ -563,7 +563,7 @@ assert (inv_hmap (L m zero x y)).
       unfold x_1 in |- *.
         generalize (exd_cA_1 m one x).
         tauto.
-      omega.
+      lia.
      assert (i = (p - 1)%nat).
       apply MF.unicity_mod_p with m x_1.
        tauto.
@@ -571,9 +571,9 @@ assert (inv_hmap (L m zero x y)).
          generalize (exd_cA_1 m one x).
          tauto.
        fold p in |- *.
-         omega.
+         lia.
        fold p in |- *.
-         omega.
+         lia.
        rewrite H6.
          symmetry  in |- *.
          tauto.
@@ -587,7 +587,7 @@ assert (inv_hmap (L m zero x y)).
          unfold x0 in H14.
            tauto.
         intro.
-          omega.
+          lia.
        tauto.
     tauto.
     unfold x_1 in |- *.
@@ -656,7 +656,7 @@ assert (inv_hmap (L m zero x y)).
          unfold y_0_1 in |- *.
            generalize (exd_cF m y).
            tauto.
-         omega.
+         lia.
         assert (i = (p - 1)%nat).
          apply MF.unicity_mod_p with m y_0_1.
           tauto.
@@ -664,9 +664,9 @@ assert (inv_hmap (L m zero x y)).
             generalize (exd_cF m y).
             tauto.
           fold p in |- *.
-            omega.
+            lia.
           fold p in |- *.
-            omega.
+            lia.
           rewrite H13.
             tauto.
          elim (eq_nat_dec i j).
@@ -677,7 +677,7 @@ assert (inv_hmap (L m zero x y)).
             tauto.
           intro.
             elim b.
-            omega.
+            lia.
        tauto.
        generalize (exd_cF m y).
          tauto.

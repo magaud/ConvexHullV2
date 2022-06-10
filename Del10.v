@@ -3737,7 +3737,7 @@ set (y'0b := cA mx zero y') in |- *.
   elim (expf_dec (L m zero x y) x' y'0b).
    elim (expf_dec (L m one x' y') x_1b y).
     intros.
-       omega.
+       lia.
    intros.
      elim (nf_L0L1_I m x y x' y' H a1 a0 a b).
   elim (expf_dec (L m one x' y')).
@@ -3753,7 +3753,7 @@ set (y'0b := cA mx zero y') in |- *.
     elim (nf_L0L1_IV m x y x' y' H a0 b0 b a).
  elim (expf_dec (L m one x' y') x_1b y).
   intros.
-     omega.
+     lia.
  intros.
    elim (nf_L0L1_V m x y x' y' H a b1 b b0).
 elim (expf_dec m x' y'0).
@@ -3765,20 +3765,20 @@ elim (expf_dec m x' y'0).
     elim (nf_L0L1_VII m x y x' y' H b0 a0 b a).
  elim (expf_dec (L m zero x y) x' y'0b).
   intros.
-     omega.
+     lia.
  intros.
    elim (nf_L0L1_VIII m x y x' y' H b1 a b b0).
 elim (expf_dec (L m zero x y) x' y'0b).
  elim (expf_dec (L m one x' y') x_1b y).
   intros.
-     omega.
+     lia.
  intros.
    elim (nf_L0L1_IX m x y x' y' H b1 b0 a b).
 elim (expf_dec (L m one x' y') x_1b y).
  intros.
    elim (nf_L0L1_X m x y x' y' H b1 b0 b a).
 intros.
-   omega.
+   lia.
 Qed.
 
 (*=====================================================
@@ -3979,7 +3979,7 @@ rename t into u.
              (expf_dec (B m zero x) 
           (cA_1 (B m zero x) one x) (A m zero x)).
            intros. clear H8 a a0.
-             omega.
+             lia.
            intro.
              absurd
               (expf (B m zero x) 
@@ -3995,7 +3995,7 @@ rename t into u.
             tauto.
             tauto.
            intros. clear H8.
-             omega.
+             lia.
 (* CASE L : *)
  unfold succ in H0.
    assert (inv_hmap (L m d d0 d1)).
@@ -4071,7 +4071,7 @@ rename t into u.
             elim (expf_dec m (cA_1 m one d0) d1).
              tauto.
              intros. clear H10. 
-               omega.
+               lia.
          tauto.
          unfold succ in |- *.
            rewrite <- H.
@@ -4419,12 +4419,12 @@ rename t into u.
                elim (expf_dec m' d0 (cA m zero d1)).
               elim (expf_dec m d0 (cA m zero d1)).
                intros. clear a a0 H15.
-                 omega.
+                 lia.
                tauto.
               elim (expf_dec m d0 (cA m zero d1)).
                tauto.
                intros. clear H15.
-                 omega. 
+                 lia. 
            tauto.
        intro.
          inversion H10.
@@ -4471,10 +4471,10 @@ assert (nf (L (B m zero x) zero x (A m zero x)) = nf m).
      intros.
        tauto.
      intros. clear a H3.
-       omega.
+       lia.
     elim (expf_dec m (cA m zero x) (bottom m zero x)).
      intros. clear a H3.
-       omega.
+       lia.
      tauto.
 Qed.
 
@@ -4712,14 +4712,14 @@ generalize (IHm H7 H0).
      clear H8.
      elim (expf_dec m1 x (cF_1 m x)).
     intros. clear a a0 H9. 
-       omega.
+       lia.
     tauto.
   intro.
     generalize H8.
     elim (expf_dec m1 x (cF_1 m x)).
     tauto.
   intros. clear H9. 
-     omega.
+     lia.
   tauto.
  intro.
    inversion H9.
@@ -5308,11 +5308,11 @@ fold (cF_1 m x) in |- *.
       tauto.
    tauto.
  intros. clear a H3.
-    omega.
+    lia.
 intros.
   elim (expf_dec m x (top m one x)).
  intros. clear a H5 H3.
-    omega.
+    lia.
 intro.
   assert (expf (B m one x) x (top m one x)).
   tauto.

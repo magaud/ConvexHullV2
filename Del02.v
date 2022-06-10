@@ -17,7 +17,7 @@ Require Export Del01.
 Require Import Euclid.
 Require Export Compare.
 Require Import Recdef.
-Require Import Arith.
+Require Export Arith Lia.
 (*===================================================
                      SETS OF DARTS 
 
@@ -232,7 +232,7 @@ Proof.
 induction s.
  simpl in |- *.
    intro.
-   omega.
+   lia.
  simpl in |- *.
    intro.
    elim (eq_dart_dec d z).
@@ -243,7 +243,7 @@ induction s.
    intro.
      generalize (IHs z).
      intro.
-     omega.
+     lia.
   simpl in |- *.
     elim (exds_dec s d).
    elim (exds_dec (Ds s z) d).
@@ -260,11 +260,11 @@ induction s.
     intros.
       generalize (IHs z).
       intro.
-      omega.
+      lia.
     intros.
       generalize (IHs z).
       intro.
-      omega.
+      lia.
 Qed.
 
 Lemma not_exds_card_Ds:forall (s:set)(z:dart),
@@ -291,7 +291,7 @@ induction s.
   intro.
     apply (IHs d a); tauto.
   intro.
-    omega.
+    lia.
 Qed.
 
 Lemma exds_card_Ds:forall (s:set)(z:dart),
@@ -312,7 +312,7 @@ induction s.
    intro.
      rewrite a in b.
      rewrite not_exds_card_Ds.
-    omega.
+    lia.
     tauto.
   simpl in |- *.
     elim (exds_dec (Ds s z) d).
@@ -341,7 +341,7 @@ induction s.
  assert (0 < card s)%nat.
       apply exds_card_pos with z.
         tauto.
-      omega.
+      lia.
      tauto.
 Qed.
 
@@ -352,7 +352,7 @@ intros.
 generalize (exds_card_pos s z H).
 generalize (exds_card_Ds s z H).
 intros.
-omega.
+lia.
 Qed.
 
 (* ==========================================================
@@ -617,7 +617,7 @@ induction s1.
       rewrite <- H1.
      generalize (exds_card_pos s2 d a).
        intro.
-       omega.
+       lia.
      tauto.
   intro.
     simpl in |- *.
@@ -641,7 +641,7 @@ induction s1.
       apply (exds_set_minus s1 s2 d a b).
     intros.
       rewrite <- IHs1 with s2.
-     omega.
+     lia.
      constructor.
        intros.
        elim (H0 z).
@@ -704,11 +704,11 @@ induction s.
    intros.
      apply H.
      unfold Rs in |- *.
-     omega.
+     lia.
    intros.
       apply H.
      unfold Rs in |- *.
-     omega.
+     lia.
 Qed.
 
 Lemma Rs_wf : well_founded Rs.
@@ -1036,7 +1036,7 @@ elim (exds_dec x (Iter (f m) (ndN m - card x) z)).
  tauto.
 Qed.
 
-(* OK!! BUT omega IS LONG... *)
+(* OK!! BUT lia IS LONG... *)
 
 Definition R1
  (m:fmap)(z:dart)(i:nat)(s:set):Prop:=
@@ -1078,11 +1078,11 @@ elim (eq_nat_dec i (ndN m - card x)%nat).
       elim H0.
       intros.
       clear H a H1 H2 H0 H4.
-      omega.
+      lia.
     tauto.
   intros.
     clear H H0 b0.
-    omega.
+    lia.
 Qed.
 
 (* VERY IMPORTANT: COROLLARIES: *)
@@ -1104,7 +1104,7 @@ rewrite H0.
 simpl in |- *.
 unfold Iter_upb in |- *.
 unfold Iter_upb_aux in |- *.
-omega.
+lia.
 Qed.
 
 Lemma exds_Iter_f_i :
@@ -1159,7 +1159,7 @@ elim (exds_dec x (Iter (f m) (ndN m - card x) z)).
      < card x)%nat.
    apply exds_card_Ds_inf.
      tauto.
-   omega.
+   lia.
   tauto.
 Qed.
 
@@ -1188,7 +1188,7 @@ elim (exds_dec x (Iter (f m) (ndN m - card x) z)).
           < card x)%nat.
    apply exds_card_Ds_inf.
      tauto.
-   omega.
+   lia.
   tauto.
 Qed.
 
@@ -1213,12 +1213,12 @@ elim (exds_dec (fmap_to_set m) (Iter (f m) (ndN m - card (fmap_to_set m)) z)).
     tauto.
   generalize (nd_card m).
     intro.
-    omega.
+    lia.
  intro.
    generalize (nd_card m).
    intro.
    assert (ndN m - card (fmap_to_set m) = 0)%nat.
-  omega.
+  lia.
   rewrite H1 in b.
     simpl in b.
     generalize (exd_exds m z).
@@ -1238,7 +1238,7 @@ generalize (upb_pos_aux m z).
 intros.
 generalize (H0 H).
 intro.
-omega.
+lia.
 Qed.
 
 Definition Q1(m:fmap)(z:dart)(s:set):Prop:=
@@ -1266,9 +1266,9 @@ elim (exds_dec x (Iter (f m) (ndN m - card x) z)).
    apply H.
      unfold Rs in |- *.
      tauto.
-   omega.
+   lia.
  intro.
-   omega.
+   lia.
 Qed.
 
 Definition Q2(m:fmap)(z:dart)(s:set):Prop:=
@@ -1296,7 +1296,7 @@ elim (exds_dec x (Iter (f m) (ndN m - card x) z)).
       (ndN m - card x) z))) <=
     card (Ds x (Iter (f m) (ndN m - card x) z)))%nat.
    apply LQ1.
-   omega.
+   lia.
  tauto.
 Qed.
 
@@ -1411,7 +1411,7 @@ elim (exds_dec x (Iter (f m) (ndN m - card x)%nat z)).
       intros.
       generalize (H6 a).
       intro.
-      omega.
+      lia.
    tauto.
   intro.
     apply H.
@@ -1427,7 +1427,7 @@ elim (exds_dec x (Iter (f m) (ndN m - card x)%nat z)).
      < card x)%nat.
     apply exds_card_Ds_inf.
       tauto.
-    omega.
+    lia.
    apply L2.
     tauto.
     tauto.
@@ -1468,7 +1468,7 @@ apply H3.
  generalize (exd_exds m t).
    tauto.
  rewrite nd_card.
-   omega.
+   lia.
  tauto.
 Qed.
 
@@ -1506,12 +1506,12 @@ Proof.
 induction i.
  simpl in |- *.
    assert (p + 0 = p)%nat.
-  omega.
+  lia.
   rewrite H.
     tauto.
  simpl in |- *.
    assert (p + S i = S (p + i))%nat.
-  omega.
+  lia.
   rewrite H.
     simpl in |- *.
     clear H.
@@ -1545,12 +1545,12 @@ Proof.
 induction i.
  simpl in |- *.
    assert (p + 0 = p)%nat.
-  omega.
+  lia.
   rewrite H.
     tauto.
  simpl in |- *.
    assert (p + S i = S (p + i))%nat.
-  omega.
+  lia.
   rewrite H.
     simpl in |- *.
     clear H.
@@ -1592,12 +1592,12 @@ intros.
 induction n.
  simpl in |- *.
    assert (i + 0 = i)%nat.
-  omega.
+  lia.
   rewrite H2.
     tauto.
  simpl in |- *.
    assert (i + (p + n * p) = p + (i + n * p))%nat.
-  omega.
+  lia.
   rewrite H2.
     rewrite Iter_plus_inv.
    tauto.
@@ -1650,7 +1650,7 @@ Proof.
  induction i.
  intros.
    assert (j = 0)%nat.
-  omega.
+  lia.
   rewrite H2.
     simpl in |- *.
     trivial.
@@ -1665,14 +1665,14 @@ Proof.
    rewrite H2.
      rewrite IHj.
     assert (S i - j = S (i - j))%nat.
-     omega.
+     lia.
      rewrite H3.
        apply f_1_Iter_f.
       trivial.
       trivial.
     trivial.
     trivial.
-    omega.
+    lia.
 Qed.
 
 Lemma Iter_f_f_1_i:forall(m:fmap)(i:nat)(z:dart),
@@ -1682,13 +1682,13 @@ Proof.
 intros.
 rewrite Iter_f_f_1.
  assert (i - i = 0)%nat.
-  omega.
+  lia.
   rewrite H1.
     simpl in |- *.
     trivial.
  trivial.
  trivial.
- omega.
+ lia.
 Qed.
 
 (* IMMEDIATE: USEFUL *)
@@ -1748,24 +1748,24 @@ elim (le_gt_dec b a).
      intro.
      generalize a2.
      apply H.
-     omega.
+     lia.
    intro.
      left.
      unfold diff_int_aux in |- *.
      intros.
      assert (i = a).
-    omega.
+    lia.
     rewrite H0.
       tauto.
   intro.
     left.
     unfold diff_int_aux in |- *.
     intros.
-    omega.
+    lia.
  induction b.
   intro.
     absurd (0 > a)%nat.
-   omega.
+   lia.
    tauto.
   intro.
     elim (eq_nat_dec a b).
@@ -1778,7 +1778,7 @@ elim (le_gt_dec b a).
       intro.
       generalize a1.
       apply H.
-      omega.
+      lia.
     intro.
       elim (eq_dart_dec (Iter (f m) (S b) z) t).
      intro.
@@ -1787,13 +1787,13 @@ elim (le_gt_dec b a).
        intro.
        generalize a1.
        apply H.
-       omega.
+       lia.
      intro.
        left.
        unfold diff_int_aux in |- *.
        intros.
        assert (i = b \/ i = S b).
-      omega.
+      lia.
       elim H0.
        intro.
          rewrite H1.
@@ -1803,7 +1803,7 @@ elim (le_gt_dec b a).
          tauto.
    intro.
      assert (b > a)%nat.
-    omega.
+    lia.
     elim (IHb H).
      intro.
        elim (eq_dart_dec (Iter (f m) (S b) z) t).
@@ -1813,7 +1813,7 @@ elim (le_gt_dec b a).
         intro.
         generalize a1.
         apply H0.
-        omega.
+        lia.
       intro.
         left.
         unfold diff_int_aux in |- *.
@@ -1825,7 +1825,7 @@ elim (le_gt_dec b a).
          tauto.
        intro.
          assert (a <= i <= b)%nat.
-        omega.
+        lia.
         apply (a0 i H1).
      intro.
        right.
@@ -1835,7 +1835,7 @@ elim (le_gt_dec b a).
        apply b2.
        intros.
        apply H0.
-       omega.
+       lia.
 Qed.
 
 (* DIFFERENCE IN AN INTERVAL *)
@@ -1852,7 +1852,7 @@ Proof.
 intros.
 unfold diff_int in |- *.
 intros.
-omega.
+lia.
 Qed.
 
 Lemma diff_int_dec:forall(m:fmap)(z:dart)(a b:nat),
@@ -1863,7 +1863,7 @@ induction b.
  left.
    unfold diff_int in |- *.
    intros.
-   omega.
+   lia.
  elim IHb.
   intro.
     generalize (diff_int_aux_dec m z a b 
@@ -1881,10 +1881,10 @@ induction b.
     intro.
       rewrite a2.
       apply a1.
-      omega.
+      lia.
     intro.
       apply a0.
-      omega.
+      lia.
    intro.
      clear IHb H.
      unfold diff_int_aux in b0.
@@ -1894,7 +1894,7 @@ induction b.
      apply b0.
      intros.
      apply H.
-     omega.
+     lia.
   intro.
     unfold diff_int in b0.
     right.
@@ -1903,7 +1903,7 @@ induction b.
     apply b0.
     intros.
     apply H.
-    omega.
+    lia.
 Qed.
 
 (* EXISTENCY Of THE z^i IN AN INTERVAL *)
@@ -1919,7 +1919,7 @@ intros.
 unfold exds_int in |- *.
 intros.
 absurd (b < a)%nat.
- omega.
+ lia.
  tauto.
 Qed.
 
@@ -1936,7 +1936,7 @@ elim (le_gt_dec a b).
      unfold exds_int in |- *.
      intros.
      assert (i = 0)%nat.
-    omega.
+    lia.
     rewrite H0.
       simpl in |- *.
       tauto.
@@ -1947,7 +1947,7 @@ elim (le_gt_dec a b).
      apply b.
      assert (exds s (Iter (f m) 0%nat z)).
     apply H.
-      omega.
+      lia.
     simpl in H0.
       tauto.
   elim (eq_nat_dec a (S b)).
@@ -1959,7 +1959,7 @@ elim (le_gt_dec a b).
       unfold exds_int in |- *.
       intros.
       assert (i = a).
-     omega.
+     lia.
      rewrite H0.
        tauto.
     intro.
@@ -1968,10 +1968,10 @@ elim (le_gt_dec a b).
       intro.
       apply b0.
       apply H.
-      omega.
+      lia.
    intro.
      assert (a <= b)%nat.
-    omega.
+    lia.
     elim (IHb H).
      intro.
        elim (exds_dec s (Iter (f m) (S b) z)).
@@ -1986,14 +1986,14 @@ elim (le_gt_dec a b).
        intro.
          unfold exds_int in a1.
          apply a1.
-         omega.
+         lia.
       intro.
         right.
         unfold exds_int in |- *.
         intro.
         apply b1.
         apply H0.
-        omega.
+        lia.
      intro.
        right.
        unfold exds_int in |- *.
@@ -2002,11 +2002,11 @@ elim (le_gt_dec a b).
        unfold exds_int in |- *.
        intros.
        apply H0.
-       omega.
+       lia.
  intro.
    left.
    apply exds_int_gt.
-   omega.
+   lia.
 Qed. 
 
 (* OK: *)
@@ -2031,12 +2031,12 @@ split.
   intros.
     rewrite H2 in H1.
     absurd (card s + 1 <= card s)%nat.
-   omega.
+   lia.
    tauto.
  intro.
    generalize (LQ2 m z s H1).
    intro.
- omega.
+ lia.
 Qed.
 
 (* OK: *)
@@ -2058,7 +2058,7 @@ simpl in |- *.
 intros.
 assert (card (Iter_rem_aux m z s) + 1 <= card s)%nat.
  unfold sr in H0. clear H1 H2.
-   omega.
+   lia.
  assert (exds s (Iter (f m) (ndN m - card s)%nat z)).
   tauto.
   generalize (Iter_rem_aux_equation m z s).
@@ -2071,24 +2071,24 @@ assert (card (Iter_rem_aux m z s) + 1 <= card s)%nat.
         = card s)%nat.
     rewrite exds_card_Ds.
      clear H1 H2 H3 H4 a H5.
-       omega.
+       lia.
      tauto.
     assert 
  (card (Ds s (Iter (f m) (ndN m - card s) z)) 
         = card s - 1)%nat.
      clear H1 H2 H3 H4 a H5.
-       omega.
+       lia.
      unfold sr in H0.
        rewrite H7 in H2.
        rewrite <- H5 in H2.
        assert (card (Iter_rem_aux m z s) + 1 
          <= card s - 1)%nat.
       clear H1 H2 H3 H4 a H5 H6 H7.
-        omega.
+        lia.
       assert (ndN m + 1 - card s = 
          ndN m - (card s - 1))%nat.
        clear H1 H2 H3 H4 a H5 H6 H7 H8.
-         omega.
+         lia.
        rewrite <- H9 in H2.
          tauto.
    tauto.
@@ -2151,27 +2151,27 @@ elim (exds_dec x (Iter (f m) (ndN m - card x) z)).
      assert (ndN m - card (Iter_rem_aux m z x) - 1 
       = ndN m - card x)%nat.
     clear H3 H4 H8.
-      omega.
+      lia.
     rewrite H7.
       unfold exds_int in |- *.
       intros.
       assert (i = ndN m - card x)%nat.
      clear H1 H3 H4 H8 a0 H7.
-       omega.
+       lia.
      rewrite H10.
        tauto.
    intro.
      assert 
   (card (Iter_rem_aux m z x) + 2 <= card x)%nat.
     clear H1 H3 H4.
-      omega.
+      lia.
     generalize (rem_2_steps m z x H0 H7).
       intro.
       rewrite H4 in H6.
       assert 
     (ndN m - (card x - 1) = ndN m + 1 - card x)%nat.
      clear H3 H4 H5 H8 b.
-       omega.
+       lia.
      rewrite H10 in H6.
        rewrite <- H5.
        rewrite <- H5 in H6.
@@ -2189,10 +2189,10 @@ elim (exds_dec x (Iter (f m) (ndN m - card x) z)).
        apply H6.
         unfold Rs in |- *.
           clear H1 H3 H5 H8 b H10 H11 b0.
-          omega.
+          lia.
         tauto.
         clear H3 H5 H4 H8 H7 H10 H11 b0.
-          omega.
+          lia.
         tauto.
        unfold exds_int in H12.
          assert (exds (Ds x (Iter (f m) 
@@ -2200,14 +2200,14 @@ elim (exds_dec x (Iter (f m) (ndN m - card x) z)).
         apply H12.
           clear H10.
           clear H1 H3 H5 H4 H8 H7 H8 b.
-          omega.
+          lia.
         eapply exds_Ds_exds.
           apply H13.
  tauto.
 Qed.
 
 (* OK: FOR ALL n0 < j <= nr-1, z^n0 <> z^j: 
-LENGHT: SYMPLIFY: TOO MUCH omegas... *)
+LENGHT: SYMPLIFY: TOO MUCH lias... *)
 
 Definition P7(m:fmap)(z:dart)(s:set):Prop:= 
  inv_hmap m ->
@@ -2246,11 +2246,11 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
         (card x))%nat.
   intro.
     clear H5.
-    omega.
+    lia.
   intro.
     assert (card (Iter_rem_aux m z x) + 2 
          <= card x)%nat.
-   omega.
+   lia.
    generalize (rem_2_steps m z x H0 H4).
      intro.
      clear b H5.
@@ -2268,7 +2268,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
      assert
  (card (Ds x (Iter (f m) (ndN m - card x) z)) 
            <= ndN m)%nat.
-      omega.
+      lia.
       generalize (LP6 m z 
   (Ds x (Iter (f m) (ndN m - card x) z)) H0 H7)%nat.
         simpl in |- *.
@@ -2285,7 +2285,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
          assert (ndN m - (card x - 1) = 
              ndN m + 1 - card x)%nat.
         clear H3 a H5 H7 H9.
-          omega.
+          lia.
         rewrite H10 in H8.
           generalize (H8 H6).
           intro.
@@ -2298,7 +2298,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
          apply H11.
            split.
           clear H3 a H H7 H9 H10.
-            omega.
+            lia.
           apply le_refl.
          rewrite <- a in H8.
            absurd
@@ -2330,7 +2330,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
        unfold Rs in |- *.
          rewrite exds_card_Ds.
         clear H1 H3 b b0.
-          omega.
+          lia.
         tauto.
        tauto.
        generalize (exds_card_Ds x 
@@ -2338,7 +2338,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
          intro.
          rewrite H7.
          clear H3 H4 b b0 H7.
-         omega.
+         lia.
        generalize (exds_card_Ds x 
           (Iter (f m) (ndN m - card x) z) H2)%nat.
          intro.
@@ -2346,7 +2346,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
          assert (ndN m - (card x - 1) = 
            ndN m + 1 - card x)%nat.
         clear H3 b b0 H7.
-          omega.
+          lia.
         rewrite H8.
           tauto.
       clear H5.
@@ -2364,7 +2364,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
          assert (ndN m - (card x - 1) = 
     ndN m + 1 - card x)%nat.
         clear H3 b b0 H5 H8.
-          omega.
+          lia.
         rewrite H9 in H7.
           intro.
           assert (Iter (f m) (S (ndN m - card x)) z 
@@ -2378,7 +2378,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
           clear H9.
             clear H5.
             clear H3 b b0 H8 H10 H11.
-            omega.
+            lia.
           rewrite H12.
             apply H7.
             split.
@@ -2394,12 +2394,12 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
              intros.
              clear H1.
              clear H3.
-             omega.
+             lia.
        tauto.
 Qed.
 
 (* OK: FOR ALL n0 <= i < j <= nr-1, z^i <> z^j: 
-LENGHT: SYMPLIFY: TOO MUCH omegas... *)
+LENGHT: SYMPLIFY: TOO MUCH lias... *)
 
 Definition P8(m:fmap)(z:dart)(s:set):Prop:= 
  inv_hmap m ->
@@ -2434,14 +2434,14 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
     clear H4.
     assert (ndN m - card (Iter_rem_aux m z x) - 1 
          = ndN m - card x)%nat.
-   omega.
+   lia.
    rewrite H3.
      apply diff_int_le.
      apply le_refl.
   intro.
     assert 
  (card (Iter_rem_aux m z x) + 2 <= card x)%nat.
-   omega.
+   lia.
    clear b H4.
      generalize (rem_2_steps m z x H0 H3).
      intro.
@@ -2488,14 +2488,14 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
           tauto.
         tauto.
         rewrite H7.
-          omega.
+          lia.
         rewrite H7.
           assert (ndN m - (card x - 1) = 
              ndN m + 1 - card x)%nat.
          clear H5.
            clear H.
            clear H8.
-           omega.
+           lia.
          rewrite H9.
            tauto.
        clear H5 H.
@@ -2507,7 +2507,7 @@ assert (card (Iter_rem_aux m z x) + 1 <= card x)%nat.
         clear H8 H9.
           clear H1 H3 H4.
           clear H0.
-          omega.
+          lia.
         tauto.
       tauto.
 Qed.
@@ -2527,7 +2527,7 @@ generalize (nd_card m).
 intro.
 assert (ndN m - card (fmap_to_set m) = 0)%nat.
  rewrite H1.
-   omega.
+   lia.
  cut
   (diff_int m z (ndN m - card (fmap_to_set m))
      (Iter_upb_aux m z (fmap_to_set m) - 1))%nat.
@@ -2577,10 +2577,10 @@ elim (eq_nat_dec i 0%nat).
     set (nr1 := (Iter_upb m z - 1)%nat) in |- *.
     assert (i = S i1).
    unfold i1 in |- *.
-     omega.
+     lia.
    assert (Iter_upb m z = S nr1).
     unfold nr1 in |- *.
-      omega.
+      lia.
     rewrite H5 in H3.
       rewrite H4 in H3.
       simpl in H3.
@@ -2606,7 +2606,7 @@ elim (eq_nat_dec i 0%nat).
    assert (ndN m - card (fmap_to_set m) = 0)%nat.
           rewrite nd_card.
             simpl in |- *.
-            omega.
+            lia.
           rewrite H7.
             simpl in |- *.
             generalize (exd_exds m z).
@@ -2617,11 +2617,11 @@ elim (eq_nat_dec i 0%nat).
            clear H7.
            clear H2.
            rewrite nd_card.
-           omega.
+           lia.
          clear H7 H6.
            clear H2.
            split.
-          omega.
+          lia.
           unfold Iter_upb in |- *.
             unfold Iter_upb_aux in |- *.
             unfold Iter_rem in |- *.
@@ -2680,7 +2680,7 @@ assert (p > 0)%nat.
  unfold p in |- *.
    generalize (upb_pos m z H0).
    intro.
-   omega.
+   lia.
  generalize (modulo p H1 i).
    intro.
    elim H2.
@@ -2699,7 +2699,7 @@ assert (p > 0)%nat.
    trivial.
    tauto.
    tauto.
-  omega.
+  lia.
 Qed.
 
 
@@ -2742,7 +2742,7 @@ assert (exd m zi).
       rewrite <- Iter_comp.
       rewrite plus_comm.
       assert (i + p = i + 1 * p)%nat.
-     omega.
+     lia.
      rewrite H6.
        unfold p in |- *.
        rewrite Iter_period.
@@ -2771,12 +2771,12 @@ assert (exd m zi).
           clear H7.
           apply H4.
           split.
-         omega.
+         lia.
          split.
           unfold p in |- *.
             apply upb_pos.
             tauto.
-          omega.
+          lia.
         simpl in |- *.
           trivial.
        tauto.
@@ -2795,12 +2795,12 @@ assert (exd m zi).
       replace z with (Iter (f m) 0%nat z).
        apply H4.
          split.
-        omega.
+        lia.
         split.
          unfold q in |- *.
            apply upb_pos.
            tauto.
-         omega.
+         lia.
        simpl in |- *.
          trivial.
       tauto.
@@ -2830,13 +2830,13 @@ elim (le_gt_dec j k).
   intros.
     absurd (Iter (f m) j z = Iter (f m) k z).
    apply (H4 j k).
-     omega.
+     lia.
    tauto.
  intro.
    symmetry in H3.
    absurd (Iter (f m) k z = Iter (f m) j z).
   apply (H4 k j).
-    omega.
+    lia.
   tauto. 
 Qed.
 
@@ -2998,7 +2998,7 @@ assert (exd m t).
    rewrite H1.
    rewrite <- Iter_comp.
    assert (Iter_upb m z - r + r = Iter_upb m z)%nat.
-  omega.
+  lia.
   rewrite H3.
     apply Iter_upb_period.
    tauto.
@@ -3021,7 +3021,7 @@ Proof.
       split with (p-1). rewrite <- Iter_f_f_1. simpl. 
      unfold p. rewrite Iter_upb_period. tauto.
 tauto. tauto. tauto. tauto. 
-   generalize (upb_pos m z H0). fold p. intro. omega. 
+   generalize (upb_pos m z H0). fold p. intro. lia. 
 Qed.
 
 (* THERE EXISTS j <= n S.T. zj = t: INDUCTIVE DEF. *)
@@ -3057,7 +3057,7 @@ induction n.
   intro.
     split with 0%nat.
     split.
-   omega.
+   lia.
    simpl in |- *.
      tauto.
   intro.
@@ -3076,7 +3076,7 @@ induction n.
    intro.
      split with (S n).
      split. clear IHn.
-    omega.
+    lia.
     simpl in |- *.
       tauto.
    intro.
@@ -3087,7 +3087,7 @@ induction n.
       intros j Hj.
       split with j.
       split. clear H0 IHn.
-     omega.
+     lia.
      tauto.
   intros.
     elim H.
@@ -3102,7 +3102,7 @@ induction n.
         /\ Iter (f m) j z = t).
     split with j.
       split. clear IHn.
-     omega.
+     lia.
      tauto.
     tauto.
 Qed.
@@ -3137,7 +3137,7 @@ split.
    tauto.
    split with j.
      split. clear H H0.
-    omega.
+    lia.
     tauto.
  intro.
    elim H0.
@@ -3149,7 +3149,7 @@ split.
         /\ Iter (f m) j z = t).
   split with i.
     split. clear H. 
-   omega.
+   lia.
    tauto.
   tauto.
 Qed.
@@ -3259,8 +3259,8 @@ clear H2.
   symmetry  in H4.
   apply H2.
  split.
-   omega.
-  omega.
+   lia.
+  lia.
 assumption.
 Qed.
 
@@ -3287,7 +3287,7 @@ simpl in |- *.
    apply IHm with d.
     tauto.
 intro.
-   omega.
+   lia.
 simpl in |- *.
    tauto.
 Qed.
@@ -3303,7 +3303,7 @@ Function degree_aux(m:fmap)(z:dart)(n:nat)
   else (ndN m) + 1.
 Proof.
 intros.
-omega.
+lia.
 Defined.
 
 Definition degree(m:fmap)(z:dart):= 
@@ -3324,17 +3324,17 @@ apply degree_aux_ind.
 intros.
   unfold P_degree_pos in |- *.
   intros.
-   omega.
+   lia.
 intros.
   unfold P_degree_pos in |- *.
   unfold P_degree_pos in H.
   assert (0 < n + 1).
-  omega.
+  lia.
  tauto.
 intros.
   unfold P_degree_pos in |- *.
   intros.
-   omega.
+   lia.
 Qed.
 
 Theorem degree_pos:forall(m:fmap)(z:dart),
@@ -3347,7 +3347,7 @@ unfold P_degree_pos in |- *.
 unfold degree in |- *.
 intros.
 assert (0 < 1).
-  omega.
+  lia.
  tauto.
 Qed.
 
@@ -3364,14 +3364,14 @@ apply degree_aux_ind.
  intros.
    unfold P_degree_diff in |- *.
    intros.
-    omega.
+    lia.
 intros.
   unfold P_degree_diff in |- *.
   intros.
   rewrite _x1 in H2.
   assert (i = n).
  rewrite _x1 in |- *.
-    omega.
+    lia.
 rewrite H3 in |- *.
   intro.
   symmetry  in H4.
@@ -3394,14 +3394,14 @@ intro.
   apply H.
   tauto.
  tauto.
- omega.
+ lia.
 split.
-  omega.
+  lia.
  tauto.
 intros.
   unfold P_degree_diff in |- *.
   intros.
-   omega.
+   lia.
 Qed.
 
 Theorem degree_diff: forall (m:fmap)(z:dart),
@@ -3417,9 +3417,9 @@ assert (forall i : nat, 1 <= i < degree m z -> Iter (f m) i z <> z).
  apply H2.
    tauto.
   tauto.
-  omega.
+  lia.
 apply H3.
-   omega.
+   lia.
 Qed.
 
 Lemma degree_bound: forall (m:fmap)(z:dart),
@@ -3440,14 +3440,14 @@ intro.
 assert (nr <= ndN m).
  unfold nr in |- *.
    unfold Iter_upb in |- *.
-    omega.
+    lia.
  absurd (Iter (f m) nr z = z).
  apply H1.
    split.
   unfold nr in |- *.
     apply upb_pos.
      tauto.
-  omega.
+  lia.
  tauto.
 Qed.
 
@@ -3472,7 +3472,7 @@ intros.
   unfold P_degree_per in |- *.
   intros.
    absurd (ndN m + 1 <= ndN m).
-  omega.
+  lia.
  tauto.
 intros.
   unfold P_degree_per in |- *.
@@ -3481,13 +3481,13 @@ intros.
   apply H.
   tauto.
  tauto.
- omega.
+ lia.
  tauto.
 intros.
   unfold P_degree_per in |- *.
   intros.
    absurd (ndN m + 1 <= ndN m).
-  omega.
+  lia.
  tauto.
 Qed.
 
@@ -3499,7 +3499,7 @@ intros.
 apply degree_per_aux.
   tauto.
  tauto.
- omega.
+ lia.
 apply degree_bound.
   tauto.
  tauto.
@@ -3554,13 +3554,13 @@ elim (lt_eq_lt_dec nr p).
   intro.
      absurd (Iter (f m) nr z = z).
    apply H6.
-      omega.
+      lia.
    tauto.
   tauto.
 intro.
    absurd (Iter (f m) p z = z).
  apply H8.
-    omega.
+    lia.
  tauto.
 Qed.
 
@@ -3720,7 +3720,7 @@ rewrite nd_card in |- *.
 generalize (card_minus_set (fmap_to_set m) 
   (Iter_rem m x) H1).
 intro.
- omega.
+ lia.
 Qed.
 
 (* EACH dart OF AN orbit IS ITERATED: *)
@@ -3777,7 +3777,7 @@ intros.
   apply exds_Iter_f_i.
   tauto.
  tauto.
- omega.
+ lia.
 Qed.
 
 Open Scope nat_scope.
@@ -4137,7 +4137,7 @@ rewrite <- card_orbit in |- *.
     fold s in H7.
     rewrite H7 in |- *.
     clear H7.
-     omega.
+     lia.
   tauto.
   tauto.
  tauto.
@@ -4201,7 +4201,7 @@ split.
   tauto.
   split with i.
     split.
-   omega.
+   lia.
    tauto.
  split.
   tauto.
@@ -4259,7 +4259,7 @@ split.
   tauto.
   split.
    tauto.
-omega.
+lia.
 Qed.
 
 (* IDEM: *)
@@ -4297,7 +4297,7 @@ intros.
 split.
   tauto.
 split.
-  omega.
+  lia.
  tauto.
 Qed.
 
@@ -4338,8 +4338,8 @@ split.
          tauto.
        tauto.
        tauto.
-       omega.
-   omega.
+       lia.
+   lia.
  intros.
    split.
   tauto.
@@ -4351,7 +4351,7 @@ split.
     intros j Hj.
     split with i.
     split.
-   omega.
+   lia.
    tauto.
 Qed.
 
@@ -4379,7 +4379,7 @@ elim (le_lt_dec j i).
   tauto.
   split.
    tauto.
-   omega.
+   lia.
  intro.
    right.
    intros.
@@ -4405,7 +4405,7 @@ elim (le_lt_dec j i).
     rewrite H9.
       rewrite <- Iter_comp.
       assert (j - i - 1 + S i = j)%nat.
-     omega.
+     lia.
      rewrite H10.
        tauto.
    split.
@@ -4418,11 +4418,11 @@ elim (le_lt_dec j i).
        rewrite <- Iter_comp.
        assert (Iter_upb m x - (2 + i) + S i = 
                 Iter_upb m x - 1)%nat.
-      omega.
+      lia.
       rewrite H10.
         rewrite <- f_1_Iter_f.
    assert (S (Iter_upb m x - 1) = Iter_upb m x)%nat.
-        omega.
+        lia.
         rewrite H11.
           rewrite Iter_upb_period.
          tauto.
@@ -4431,7 +4431,7 @@ elim (le_lt_dec j i).
        tauto.
        tauto.
     rewrite H8.
-      omega.
+      lia.
 Qed.
 
 (* DECIDABILITY OF between *)
@@ -4445,7 +4445,7 @@ induction k.
    intro.
    elim H.
    intros.
-    omega.
+    lia.
 elim IHk.
  clear IHk.
    intro.
@@ -4455,7 +4455,7 @@ elim IHk.
    left.
    split with i.
    split.
-   omega.
+   lia.
   tauto.
 clear IHk.
   intro.
@@ -4464,7 +4464,7 @@ clear IHk.
    left.
    split with k.
    split.
-   omega.
+   lia.
   tauto.
 intro.
   right.
@@ -4479,7 +4479,7 @@ intro.
     tauto.
 intro.
   split.
-  omega.
+  lia.
  tauto.
 Qed.
 
@@ -4537,7 +4537,7 @@ elim H1.
     fold p in |- *.
        tauto.
     fold p in |- *.
-       omega.
+       lia.
     rewrite H5 in |- *.
        tauto.
    assert (j = j0).
@@ -4547,12 +4547,12 @@ elim H1.
     fold p in |- *.
        tauto.
     fold p in |- *.
-       omega.
+       lia.
     rewrite H7 in |- *.
        tauto.
    rewrite H8 in b.
      rewrite H10 in b.
-      omega.
+      lia.
    tauto.
    tauto.
  clear H2.
@@ -4571,7 +4571,7 @@ elim H1.
     apply H1.
     split with i.
     split.
-    omega.
+    lia.
    tauto.
   tauto.
   tauto.
@@ -5187,8 +5187,8 @@ assert (S i = 0).
  apply (MfcA.unicity_mod_p m z (S i) 0).
    tauto.
   tauto.
-  omega.
-  omega.
+  lia.
+  lia.
  simpl in |- *.
     tauto.
 inversion H12.
@@ -5215,7 +5215,7 @@ unfold zj in |- *.
 unfold p in H2.
 induction j.
   absurd (i < 0 < MfcA.Iter_upb m z).
-   omega.
+   lia.
   tauto.
 fold p in IHj.
   fold p in H2.
@@ -5275,7 +5275,7 @@ assert (succ m Md.kd zi).
   tauto.
   tauto.
  fold p in |- *.
-    omega.
+    lia.
 generalize (MfcA.exd_diff_orb m z H H0).
   unfold MfcA.diff_orb in |- *.
   unfold MfcA.Iter_upb in p.
@@ -5290,14 +5290,14 @@ generalize (MfcA.exd_diff_orb m z H H0).
  unfold zi in |- *.
    unfold zj in |- *.
    apply H11.
-    omega.
+    lia.
 assert (z <> zj).
  unfold zj in |- *.
    generalize (H11 0 (S j)).
    simpl in |- *.
    intro.
    apply H13.
-    omega.
+    lia.
 elim (eq_nat_dec (S (S j)) p).
  intro.
    assert (cA m Md.kd zj = z).
@@ -5308,7 +5308,7 @@ elim (eq_nat_dec (S (S j)) p).
    simpl in |- *.
       tauto.
   assert (S (S j) = 1 + S j).
-    omega.
+    lia.
   assert
    (cA m Md.kd (Iter (MfcA.f m) (S j) z)
        = MfcA.f m (Iter (MfcA.f m) (S j) z)).
@@ -5393,7 +5393,7 @@ elim (eq_nat_dec (S (S j)) p).
    tauto.
    tauto.
   fold p in |- *.
-     omega.
+     lia.
  assert (succ m Md.kd zj').
   unfold zj' in |- *.
     apply succ_zi.
@@ -5401,7 +5401,7 @@ elim (eq_nat_dec (S (S j)) p).
    tauto.
    tauto.
   fold p in |- *.
-     omega.
+     lia.
  assert (cA m Md.kd zj' = A m Md.kd zj').
   rewrite cA_eq in |- *.
    elim (succ_dec m Md.kd zj').
@@ -5447,7 +5447,7 @@ elim (eq_nat_dec (S (S j)) p).
   unfold zi in |- *.
     unfold zj' in |- *.
     apply H11.
-     omega.
+     lia.
  assert (succ m0 Md.kd zj').
   unfold m0 in |- *.
     unfold succ in |- *.
@@ -5479,7 +5479,7 @@ elim (eq_nat_dec (S (S j)) p).
    rewrite bottom_A in |- *.
   unfold zj' in |- *.
     apply IHj.
-     omega.
+     lia.
  unfold m0 in |- *.
    apply inv_hmap_B.
     tauto.
@@ -5495,7 +5495,7 @@ intro.
   tauto.
   tauto.
  fold p in |- *.
-    omega.
+    lia.
 assert (succ m Md.kd zj').
  unfold zj' in |- *.
    apply succ_zi.
@@ -5503,7 +5503,7 @@ assert (succ m Md.kd zj').
   tauto.
   tauto.
  fold p in |- *.
-    omega.
+    lia.
 assert (cA m Md.kd zj' = A m Md.kd zj').
  rewrite cA_eq in |- *.
   elim (succ_dec m Md.kd zj').
@@ -5549,7 +5549,7 @@ intro.
  unfold zi in |- *.
    unfold zj' in |- *.
    apply H11.
-    omega.
+    lia.
 assert (succ m0 Md.kd zj').
  unfold m0 in |- *.
    unfold succ in |- *.
@@ -5575,7 +5575,7 @@ rewrite H22 in |- *.
   rewrite bottom_A in |- *.
  unfold zj' in |- *.
    apply IHj.
-    omega.
+    lia.
 apply inv_hmap_B.
    tauto.
 fold m0 in |- *.
@@ -5638,7 +5638,7 @@ elim (succ_dec m Md.kd zi).
      tauto.
    tauto.
  assert (j < i).
-   omega.
+   lia.
  simpl in |- *.
    rename zj into zj1.
    set (zj := Iter (MfcA.f m) j z) in |- *.
@@ -5659,12 +5659,12 @@ elim (succ_dec m Md.kd zi).
        assert (i = j).
       apply (MfcA.unicity_mod_p m z i j H H0).
         tauto.
-       omega.
+       lia.
       fold zi in |- *.
         fold zj in |- *.
          tauto.
       absurd (i = j).
-       omega.
+       lia.
       tauto.
     intro.
       elim (eq_dart_dec (top m Md.kd zi) zj).
@@ -5736,8 +5736,8 @@ elim (succ_dec m Md.kd zi).
          tauto.
      assert (0 = S j).
       apply (MfcA.unicity_mod_p m z 0 (S j) H H0).
-        omega.
-       omega.
+        lia.
+       lia.
       simpl in |- *.
         unfold zj1 in H9.
         simpl in H9.
@@ -5750,7 +5750,7 @@ elim (succ_dec m Md.kd zi).
     rewrite bottom_cA in |- *.
    unfold zj in |- *.
      apply IHj.
-      omega.
+      lia.
   unfold m0 in |- *.
     apply inv_hmap_B.
      tauto.
@@ -5831,7 +5831,7 @@ elim (succ_dec m Md.kd v).
        tauto.
        tauto.
        tauto.
-       omega.
+       lia.
       assert (A m0 Md.kd t' = A m Md.kd t').
        unfold m0 in |- *.
          rewrite A_B_bis.
@@ -5873,7 +5873,7 @@ elim (succ_dec m Md.kd v).
               rewrite bottom_A.
              unfold t' in |- *.
                apply IHj.
-               omega.
+               lia.
              tauto.
              tauto.
             tauto.
@@ -5925,7 +5925,7 @@ elim (MfcA.expo_dec m z0 x).
     rewrite <- H5 in H4.
      tauto.
  intro.
-    omega.
+    lia.
  tauto.
  tauto.
 Qed.
@@ -5990,7 +5990,7 @@ intros.
    tauto.
   tauto.
   tauto.
-  omega.
+  lia.
 unfold t in |- *.
   assert (t = cA (L m k x y) Md.kd zi).
  simpl in |- *.
@@ -6039,7 +6039,7 @@ unfold t in |- *.
          tauto.
       tauto.
       tauto.
-      omega.
+      lia.
      rewrite H7 in |- *.
        simpl in |- *.
         tauto.
@@ -6121,9 +6121,9 @@ unfold t in |- *.
         unfold prec_L in H.
          tauto.
       rewrite <- H6 in |- *.
-         omega.
+         lia.
       rewrite <- H6 in |- *.
-         omega.
+         lia.
       simpl in |- *.
          tauto.
      inversion H10.
@@ -6476,7 +6476,7 @@ split.
    tauto.
   tauto.
   tauto.
-  omega.
+  lia.
 intros.
   assert (exd m x0).
  unfold x0 in |- *.
@@ -6577,7 +6577,7 @@ unfold MfcA.expo1 in H6.
      tauto.
    tauto.
    tauto.
-  omega.
+  lia.
 intro.
   decompose [and] Hj.
   clear Hj.
@@ -6692,10 +6692,10 @@ split.
     tauto.
    tauto.
    tauto.
-   omega.
+   lia.
   tauto.
   tauto.
- omega.
+ lia.
 Qed.
 
 (* OK: *)

@@ -5580,7 +5580,7 @@ Proof.
 intros.
 induction n.
  assert (ndN m - 0 = ndN m).
-   omega.
+   lia.
  rewrite H4 in |- *.
    rewrite MA1Tr.MfM.degree_aux_equation in |- *.
    rewrite 
@@ -5612,7 +5612,7 @@ rewrite MA1Tr.MfM.degree_aux_equation in |- *.
   in |- *.
   rewrite ndN_Merge in |- *.
   assert (ndN m - S n + 1 = ndN m - n).
-  omega.
+  lia.
 rewrite H4 in |- *.
   rewrite <- Iter_cA1_MAMerge1Tr_f in |- *.
   rewrite Iter_cA1_Merge0_ter in |- *.
@@ -5623,7 +5623,7 @@ rewrite H4 in |- *.
   rewrite <- Iter_cA1_MAMerge1Tr_f in |- *.
     rewrite IHn in |- *.
     tauto.
-   omega.
+   lia.
   tauto.
  tauto.
  tauto.
@@ -5644,7 +5644,7 @@ assert (0 < ndN m).
  apply MA0.MfcA.ndN_pos with z.
     tauto.
 assert (1 = ndN m - (ndN m - 1)).
-  omega.
+  lia.
 rewrite H4 in |- *.
   apply 
  (degreev_Merge0_summary_aux m x y z (ndN m - 1)).
@@ -5652,7 +5652,7 @@ rewrite H4 in |- *.
  tauto.
 tauto.
  tauto.
-omega.
+lia.
 Qed.
 
 (* OK: *)
@@ -5868,7 +5868,7 @@ Proof.
 intros.
 induction n.
  assert (ndN m - 0 = ndN m).
-   omega.
+   lia.
  rewrite H4 in |- *.
    rewrite MA0Tr.MfM.degree_aux_equation in |- *.
    rewrite 
@@ -5900,7 +5900,7 @@ rewrite MA0Tr.MfM.degree_aux_equation in |- *.
   in |- *.
   rewrite ndN_Merge in |- *.
   assert (ndN m - S n + 1 = ndN m - n).
-  omega.
+  lia.
 rewrite H4 in |- *.
   rewrite <- Iter_cA0_MAMerge0Tr_f in |- *.
   rewrite Iter_cA0_Merge1_ter in |- *.
@@ -5911,7 +5911,7 @@ rewrite H4 in |- *.
   rewrite <- Iter_cA0_MAMerge0Tr_f in |- *.
     rewrite IHn in |- *.
     tauto.
-   omega.
+   lia.
   tauto.
  tauto.
  tauto.
@@ -5932,7 +5932,7 @@ assert (0 < ndN m).
  apply MA1.MfcA.ndN_pos with z.
     tauto.
 assert (1 = ndN m - (ndN m - 1)).
-  omega.
+  lia.
 rewrite H4 in |- *.
   apply 
  (degreee_Merge1_summary_aux m x y z (ndN m - 1)).
@@ -5940,7 +5940,7 @@ rewrite H4 in |- *.
  tauto.
 tauto.
  tauto.
-omega.
+lia.
 Qed.
 
 (* OK: *)
@@ -7881,10 +7881,10 @@ Proof.
      elim (eqc_dec m0 (top m k x) (bottom m k x)). 
          elim (eqc_dec (Shift m k x) x y). 
               elim (eqc_dec m x y). intros. 
-                 clear H3 H4 H2 a0 a1 a2 a3. omega.
+                 clear H3 H4 H2 a0 a1 a2 a3. lia.
                  tauto. 
              elim (eqc_dec m x y). tauto. intros. 
-                clear H3 H4 H2 a1 a0. omega.
+                clear H3 H4 H2 a1 a0. lia.
             intros. 
             elim b. apply eqc_trans with x. 
                 apply eqc_trans with (A m k x).
@@ -7900,14 +7900,14 @@ Proof.
         intros. 
             elim (eqc_dec (Shift m k x) x y). 
               elim (eqc_dec m x y). intros. 
-                    clear H3 H4 H2 a0 a1. omega. 
+                    clear H3 H4 H2 a0 a1. lia. 
                         tauto. 
               elim (eqc_dec m x y). tauto. intros. 
-                        clear H3 H4 H2. omega. 
+                        clear H3 H4 H2. lia. 
                      tauto. tauto. 
    simpl. intro. 
-          elim (eqc_dec m x y). intro. clear a. omega. 
-                 intro. omega.
+          elim (eqc_dec m x y). intro. clear a. lia. 
+                 intro. lia.
 Qed.
 
 Lemma nc_Merge:  forall(m : fmap)(k:dim) (x y : dart),
@@ -7929,7 +7929,7 @@ Proof.
        generalize (eqc_Shift m k (cA_1 m k y) x y H H2). intro. 
           elim (eqc_dec (Shift m k (cA_1 m k y)) x y). 
                 elim (eqc_dec m x y). intros. 
-                     clear H3 a0 a1. omega. tauto. 
+                     clear H3 a0 a1. lia. tauto. 
                 elim (eqc_dec m x y). tauto. intros. tauto. 
                    tauto. tauto. apply inv_hmap_Shift. tauto. tauto. 
                  generalize (exd_Shift m k (cA_1 m k y) x). tauto. 
@@ -7945,11 +7945,11 @@ Theorem genus_variation_Merge0:
  forall(m:fmap)(x y:dart),
   inv_hmap m -> exd m x -> exd m y -> 
     ~expe m x y ->
-      genus (Merge m zero x y) = genus m +
+      (genus (Merge m zero x y) = genus m +
         if eqc_dec m x y 
       then if expf_dec m (cA_1 m one x) y then 0
                 else 1
-        else 0.
+        else 0)%Z.
 Proof.
   intros. 
       unfold genus. 
@@ -7960,13 +7960,13 @@ Proof.
     elim (eqc_dec m x y). 
         elim (expf_dec m (cA_1 m one x) y). intros. 
         assert (nv m + (ne m - 1) + (nf m + 1) - nd m =
-              nv m + ne m + nf m - nd m). 
-              clear a a0. omega. rewrite H3. omega. 
+              nv m + ne m + nf m - nd m)%Z. 
+              clear a a0. lia. rewrite H3. lia. 
           intros. 
         assert (nv m + (ne m - 1) + (nf m + -1) - nd m =
-           nv m + ne m + nf m - nd m + (-1)*2). omega. 
+           nv m + ne m + nf m - nd m + (-1)*2)%Z. lia. 
           rewrite H3. 
-     rewrite Z_div_plus. omega. omega. 
+     rewrite Z_div_plus. lia. lia. 
            elim (expf_dec m (cA_1 m one x) y). intros. 
           elim b. apply eqc_trans with (cA_1 m one x).
                 apply eqc_cA_1_r. tauto. tauto. 
@@ -7974,9 +7974,9 @@ Proof.
                  unfold expf in a. tauto. 
              intros. 
            assert (nv m + (ne m - 1) + (nf m + -1) - nd m =
-                nv m + ne m + nf m - nd m + (-1)*2). omega. 
+                nv m + ne m + nf m - nd m + (-1)*2)%Z. lia. 
                 rewrite H3. 
-               rewrite Z_div_plus. omega. omega. 
+               rewrite Z_div_plus. lia. lia. 
                   tauto. tauto. tauto. tauto. tauto. tauto. 
                        tauto. tauto. tauto. tauto. tauto. tauto. 
 Qed.
@@ -7985,12 +7985,12 @@ Theorem genus_variation_Merge1:
  forall(m:fmap)(x y:dart),
   inv_hmap m -> exd m x -> exd m y -> 
     ~expv m x y ->
-      genus (Merge m one x y) = genus m +
+      (genus (Merge m one x y) = genus m +
         if eqc_dec m x y 
         then if expf_dec m x (cA m zero y)
                then 0
               else 1
-        else 0.
+        else 0)%Z.
 Proof.
   intros. unfold genus. 
         unfold ec. 
@@ -8000,21 +8000,21 @@ Proof.
     elim (eqc_dec m x y). 
         elim (expf_dec m x (cA m zero y)). intros. 
         assert (nv m -1  + ne m + (nf m + 1) - nd m =
-              nv m + ne m + nf m - nd m). 
-              clear a a0. omega. rewrite H3. omega. 
+              nv m + ne m + nf m - nd m)%Z. 
+              clear a a0. lia. rewrite H3. lia. 
           intros. 
         assert (nv m - 1 + ne m + (nf m + -1) - nd m =
-           nv m + ne m + nf m - nd m + (-1)*2). omega. 
+           nv m + ne m + nf m - nd m + (-1)*2)%Z. lia. 
           rewrite H3. 
-     rewrite Z_div_plus. omega. omega. 
+     rewrite Z_div_plus. lia. lia. 
            elim (expf_dec m x (cA m zero y)). intros. 
           elim b. apply eqc_trans with (cA m zero y). 
                 apply expf_eqc. tauto. unfold expf in  a. tauto. 
                 apply eqc_symm. apply eqc_cA_r. tauto. tauto.
            assert (nv m - 1 + ne m + (nf m + -1) - nd m =
-                nv m + ne m + nf m - nd m + (-1)*2). omega. 
+                nv m + ne m + nf m - nd m + (-1)*2)%Z. lia. 
                 rewrite H3. 
-               rewrite Z_div_plus. intros. omega. omega. 
+               rewrite Z_div_plus. intros. lia. lia. 
                   tauto. tauto. tauto. tauto. tauto. tauto. 
                        tauto. tauto. tauto. tauto. tauto. tauto. 
 Qed.

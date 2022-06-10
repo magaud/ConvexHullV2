@@ -1349,7 +1349,7 @@ induction m.
    simpl in H.
      tauto.
    tauto.
-  omega.
+  lia.
  simpl in |- *.
    unfold succ in H0.
    simpl in H0.
@@ -1388,7 +1388,7 @@ induction m.
   apply IHm.
    tauto.
    tauto.
-  omega.
+  lia.
  simpl in |- *.
    unfold succ in |- *.
    unfold succ in IHm.
@@ -1429,7 +1429,7 @@ induction m.
    tauto.
    unfold succ in |- *.
      tauto.
-  omega.
+  lia.
  simpl in H.
    unfold succ in H0.
    simpl in H0.
@@ -1441,7 +1441,7 @@ induction m.
    elim (eq_dart_dec d0 x).
     intros.
       induction d.
-     omega.
+     lia.
      inversion a0.
     simpl in |- *.
       intros.
@@ -1457,7 +1457,7 @@ induction m.
         clear H1.
         elim (eq_dim_dec zero zero).
        intros.
-         omega.
+         lia.
        tauto.
      inversion a.
    simpl in |- *.
@@ -1483,7 +1483,7 @@ induction m.
      intros.
        inversion a0.
      intros.
-       omega.
+       lia.
     simpl in |- *.
       intros.
       elim d.
@@ -1498,7 +1498,7 @@ induction m.
        intro.
          inversion a0.
        intros.
-         omega.
+         lia.
      assert (ne (B m one x) = 
   ne m + (if eq_dim_dec one zero then 1 else 0)).
       apply IHm.
@@ -1524,7 +1524,7 @@ induction m.
       intro.
         inversion a.
       intros.
-        omega.
+        lia.
     assert (ne (B m one x) = 
   ne m + (if eq_dim_dec one zero then 1 else 0)).
      apply IHm.
@@ -1536,7 +1536,7 @@ induction m.
       intro.
         inversion a.
       intros.
-        omega.
+        lia.
 Qed.
 
 Lemma ne_L_B:forall (m:fmap)(k:dim)(x:dart),
@@ -1550,13 +1550,13 @@ generalize (ne_B m k x H H0).
 induction k.
  elim (eq_dim_dec zero zero).
   intros.
-    omega.
+    lia.
   tauto.
  elim (eq_dim_dec one zero).
   intro.
     inversion a.
   intros.
-    omega.
+    lia.
 Qed.
 
 Lemma nv_B:forall (m:fmap)(k:dim)(x:dart),
@@ -1579,7 +1579,7 @@ induction m.
    tauto.
    unfold succ in |- *.
      tauto.
-  omega.
+  lia.
  simpl in H.
    unfold succ in H0.
    simpl in H0.
@@ -1596,10 +1596,10 @@ induction m.
      intro.
        inversion a1.
      intro.
-       omega.
+       lia.
     elim (eq_dim_dec one one).
      intro.
-       omega.
+       lia.
      tauto.
    simpl in |- *.
      intros H1 H2.
@@ -1616,7 +1616,7 @@ induction m.
       induction k.
      tauto.
      intros.
-       omega.
+       lia.
   simpl in |- *.
     intros H1 H2.
     elim d.
@@ -1630,7 +1630,7 @@ induction m.
      tauto.
      unfold succ in |- *.
        tauto.
-    omega.
+    lia.
 Qed.
 
 Lemma nv_L_B:forall (m:fmap)(k:dim)(x:dart),
@@ -1648,11 +1648,11 @@ induction k.
   unfold m1 in |- *.
     simpl in |- *.
     intros.
-    omega.
+    lia.
  unfold m1 in |- *.
    simpl in |- *.
    intros.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -1696,14 +1696,14 @@ rename t into u.
      intro.
      elim (eqc_dec (B m k x) x (A m k x)).
     intros.
-      omega.
+      lia.
     tauto.
   simpl in |- *.
     intro.
     elim (eqc_dec (B m k x) x (A m k x)).
    tauto.
    intros.
-     omega.
+     lia.
  simpl in |- *.
    unfold succ in |- *.
    unfold prec_L in |- *.
@@ -1717,7 +1717,7 @@ rename t into u.
     elim (eq_dart_dec d0 x).
    intros.
      rewrite <- a0.
-     omega.
+     lia.
    simpl in |- *.
      intros.
      unfold succ in IHm.
@@ -1732,7 +1732,7 @@ rename t into u.
       elim (eqc_dec (B m k x) x (A m k x)).
      intros.
        assert (nc (B m k x) = nc m).
-      omega.
+      lia.
       clear H5.
         rewrite H7.
         assert (eqc (B m k x) d0 d1 <-> eqc m d0 d1).
@@ -1749,7 +1749,7 @@ rename t into u.
        elim (eqc_dec (B m k x) d0 d1).
         elim (eqc_dec m d0 d1).
          intros. clear a0 a1 H5 a2 a3.
-           omega.
+           lia.
          intros.
            generalize (eqc_dec (B m k x) d0 d1).
            generalize (eqc_dec m d0 d1).
@@ -1761,7 +1761,7 @@ rename t into u.
            generalize (eqc_dec m d0 d1).
            tauto.
          intro. clear a0 a1 H5.
-           omega.
+           lia.
      intros.
        elim a0.
       tauto.
@@ -1781,7 +1781,7 @@ rename t into u.
         intro.
           elim (eqc_dec m d0 d1).
          intro.
-           omega.
+           lia.
          intro.
            generalize (eqc_B_CS m k x d0 d1).
            unfold succ in |- *.
@@ -1801,7 +1801,7 @@ rename t into u.
           tauto.
         elim (eqc_dec m d0 d1).
          intros.
-           omega.
+           lia.
          intros.
            generalize (eqc_B_CS m k x d0 d1).
            unfold succ in |- *.
@@ -1817,7 +1817,7 @@ rename t into u.
       intro.
         elim (eqc_dec m d0 d1).
        intro.
-         omega.
+         lia.
        intro.
          generalize (eqc_B_eqc m k x d0 d1).
          unfold succ in |- *.
@@ -1832,7 +1832,7 @@ rename t into u.
          generalize (eqc_symm (B m k x) (A m k x) d1).
          tauto.
        intro.
-         omega.
+         lia.
   simpl in |- *.
     intros.
     unfold succ in IHm.
@@ -1846,7 +1846,7 @@ rename t into u.
      elim (eqc_dec (B m k x) x (A m k x)).
     intros.
       assert (nc (B m k x) = nc m).
-     omega.
+     lia.
      clear H5.
        rewrite H7.
        assert (eqc (B m k x) d0 d1 <-> eqc m d0 d1).
@@ -1863,7 +1863,7 @@ rename t into u.
       elim (eqc_dec (B m k x) d0 d1).
        elim (eqc_dec m d0 d1).
         intros. clear a a0 H5 a1 a2.
-          omega.
+          lia.
         intros.
           generalize (eqc_dec (B m k x) d0 d1).
           generalize (eqc_dec m d0 d1).
@@ -1875,7 +1875,7 @@ rename t into u.
           generalize (eqc_dec m d0 d1).
           tauto.
         intro. clear a a0 H5.
-          omega.
+          lia.
     intros.
       elim a.
      tauto.
@@ -1895,7 +1895,7 @@ rename t into u.
        intro.
          elim (eqc_dec m d0 d1).
         intro. clear a H7.
-          omega. 
+          lia. 
         intro.
           generalize (eqc_B_CS m k x d0 d1).
           unfold succ in |- *.
@@ -1915,7 +1915,7 @@ rename t into u.
          tauto.
        elim (eqc_dec m d0 d1).
         intros. clear a.
-          omega.
+          lia.
         intros.
           generalize (eqc_B_CS m k x d0 d1).
           unfold succ in |- *.
@@ -1931,7 +1931,7 @@ rename t into u.
      intro.
        elim (eqc_dec m d0 d1).
       intro. clear a a0. 
-        omega.
+        lia.
       intro.
         generalize (eqc_B_eqc m k x d0 d1).
         unfold succ in |- *.
@@ -1946,7 +1946,7 @@ rename t into u.
         generalize (eqc_symm (B m k x) (A m k x) d1).
         tauto.
       intro.
-        omega.
+        lia.
 Qed.
 
 (* OK: *)
@@ -1966,7 +1966,7 @@ assert
  (nc (B m k x) = nc m + 
     (if eqc_dec (B m k x) x (A m k x) then 0 else 1)).
  tauto.
- omega.
+ lia.
 Qed.
 
 (* LEMMA, USEFUL: *)
@@ -2531,21 +2531,21 @@ rename H1 into Ex_1.
       tauto.
      fold x_1 in |- *.
         tauto.
-      omega.
+      lia.
     rewrite H6 in H3.
       assert (i = p - 1).
      apply (MF.unicity_mod_p m x_1).
        tauto.
       tauto.
      fold p in |- *.
-        omega.
+        lia.
      fold p in |- *.
-        omega.
+        lia.
       tauto.
     fold p in Hj.
       decompose [and] Hj.
       assert (i = j).
-      omega.
+      lia.
     rewrite H12 in H9.
       rewrite H9 in H11.
        tauto.
@@ -2637,15 +2637,15 @@ rename H1 into Ex_1.
         generalize (exd_top m zero x).
          tauto.
      fold p in |- *.
-        omega.
+        lia.
      fold p in |- *.
-        omega.
+        lia.
      rewrite H2 in |- *.
        rewrite <- H9 in |- *.
        rewrite H5 in |- *.
         tauto.
      absurd (i = S j).
-      omega.
+      lia.
      tauto.
     tauto.
    unfold xh0_1 in |- *.
@@ -2981,15 +2981,15 @@ generalize (expf_B1_CNS m x x tx1 H H0 H1).
          tauto.
         tauto.
         tauto.
-        omega.
+        lia.
       assert (i = S j).
        apply (MF.unicity_mod_p m tx1 i (S j)).
          tauto.
         tauto.
        fold p in |- *.
-          omega.
+          lia.
        fold p in |- *.
-          omega.
+          lia.
        simpl in |- *.
          rewrite H5 in |- *; rewrite H8 in |- *.
          unfold x_1 in |- *.
@@ -2998,7 +2998,7 @@ generalize (expf_B1_CNS m x x tx1 H H0 H1).
         tauto.
         tauto.
       elim H9.
-         omega.
+         lia.
       tauto.
       tauto.
      tauto.
@@ -3054,15 +3054,15 @@ generalize (expf_B1_CNS m x x tx1 H H0 H1).
         tauto.
        tauto.
        tauto.
-       omega.
+       lia.
      assert (i = S j).
       apply (MF.unicity_mod_p m x i (S j)).
         tauto.
        tauto.
       fold p in |- *.
-         omega.
+         lia.
       fold p in |- *.
-         omega.
+         lia.
       simpl in |- *.
         rewrite H5 in |- *; rewrite H8 in |- *.
         unfold tx1_1 in |- *.
@@ -3071,7 +3071,7 @@ generalize (expf_B1_CNS m x x tx1 H H0 H1).
        tauto.
        tauto.
      elim H9.
-        omega.
+        lia.
      tauto.
      tauto.
    clear H5.

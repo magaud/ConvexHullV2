@@ -113,12 +113,12 @@ simpl in |- *.
      fold dy in |- *.
        rewrite MfM.upb_eq_degree in |- *.
       fold dy in |- *.
-         omega.
+         lia.
       tauto.
       tauto.
     rewrite MfM.upb_eq_degree in |- *.
      fold dy in |- *.
-        omega.
+        lia.
      tauto.
      tauto.
     rewrite <- MfM.Iter_f_f_1 in |- *.
@@ -130,9 +130,9 @@ simpl in |- *.
         tauto.
      tauto.
      tauto.
-     omega.
+     lia.
     absurd (i = dy - 1).
-     omega.
+     lia.
     tauto.
    tauto.
   tauto.
@@ -141,7 +141,7 @@ simpl in |- *.
   tauto.
  generalize (MfM.exd_Iter_f m i y).
     tauto.
- omega.
+ lia.
 Qed.
 
 (* i-SUCCS OF y by (f m1), 0 < i < DEG y, <> FROM y: *)
@@ -173,8 +173,8 @@ rewrite H5 in |- *.
    clear H4 H5.
    fold dy in H9.
    apply H9.
-    omega.
- omega.
+    lia.
+ lia.
 Qed.
 
 (* THE dy_SUCC OF y BY (f m1) IS x1: OK: *)
@@ -202,7 +202,7 @@ assert (MfM.Iter_upb m y = dy).
    tauto.
   tauto.
 assert (dy = S (dy - 1)).
-  omega.
+  lia.
 rewrite H5 in |- *.
   simpl in |- *.
   unfold m1 in |- *.
@@ -249,7 +249,7 @@ rewrite H5 in |- *.
  tauto.
  tauto.
 fold dy in |- *.
-   omega.
+   lia.
 Qed.
 
 (* IT IS DIFFERENT FROM y: OK *)
@@ -342,7 +342,7 @@ rewrite f_Tr_y in |- *.
      fold dx1 in H5.
        apply H9.
        rewrite H5 in |- *.
-        omega.
+        lia.
      tauto.
    elim (eq_dart_dec (Mod.M.f_1 m y) x1j).
     intros.
@@ -379,7 +379,7 @@ rewrite f_Tr_y in |- *.
     rewrite H8 in |- *.
       rewrite <- MfM.Iter_comp in |- *.
       assert (j + 2 = S j + 1).
-      omega.
+      lia.
     rewrite H9 in |- *.
        tauto.
     tauto.
@@ -392,7 +392,7 @@ rewrite f_Tr_y in |- *.
     unfold x1 in |- *.
     generalize (MfM.exd_f m x).
      tauto.
-  omega.
+  lia.
  tauto.
  tauto.
  tauto.
@@ -512,7 +512,7 @@ assert (dx = MfM.degree m x1).
    fold x1 in |- *.
     tauto.
 assert (dy + dx = S (dy + (dx - 1))).
-  omega.
+  lia.
 rewrite H6 in |- *.
   simpl in |- *.
   unfold m1 in |- *; unfold dy in |- *.
@@ -546,7 +546,7 @@ rewrite H6 in |- *.
  tauto.
  tauto.
 fold dx in |- *.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -593,7 +593,7 @@ generalize (MfM.degree_sum_bound m x y H H0 H1 H2).
   rewrite plus_comm in |- *.
   fold MAX in |- *.
   intros.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -611,7 +611,7 @@ induction n.
  intro Pr.
    intros.
    assert (MAX - 0 = MAX).
-   omega.
+   lia.
  rewrite H4 in |- *.
    unfold MAX in |- *.
    unfold m1 in |- *.
@@ -657,7 +657,7 @@ intro Pr.
      tauto.
      tauto.
     fold dy in |- *.
-       omega.
+       lia.
    symmetry  in |- *.
       tauto.
   intro.
@@ -668,14 +668,14 @@ intro Pr.
       set (j := i - dy) in |- *.
       assert (i = dy + j).
      unfold j in |- *.
-        omega.
+        lia.
     rewrite H5 in |- *.
       apply (diff_x1_x m x y j Pr H H0 H1 H2).
       fold dx in |- *.
       unfold MAX in a.
       unfold MAX in i.
       unfold i in H5.
-       omega.
+       lia.
    symmetry  in |- *.
       tauto.
   intro.
@@ -685,7 +685,7 @@ intro Pr.
     unfold MAX in |- *.
     unfold MAX in b0.
     unfold MAX in b.
-     omega.
+     lia.
  intros.
    elim (eq_nat_dec (MAX - S n) (ndN m)).
   intro.
@@ -695,10 +695,10 @@ intro Pr.
     unfold MAX in a0.
     intro.
     unfold MAX in H3.
-     omega.
+     lia.
  intros.
    assert (MAX - S n + 1 = MAX - n).
-   omega.
+   lia.
  rewrite H4 in |- *.
    unfold MAX in |- *.
    apply IHn.
@@ -715,14 +715,14 @@ intro Pr.
  unfold MAX in b0.
    unfold MAX in H4.
    unfold MAX in a.
-    omega.
+    lia.
 intro.
   generalize (MfM.degree_sum_bound m x y H H0 H1 H2).
   intro.
   unfold MAX in b.
   unfold MAX in H3.
   unfold MAX in |- *.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -752,12 +752,12 @@ fold dy in |- *.
 intro.
 assert (0 < MAX).
  unfold MAX in |- *.
-    omega.
+    lia.
 assert (MAX - (MAX - 1) = 1).
-  omega.
+  lia.
 rewrite H6 in H3.
   apply H3.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -864,7 +864,7 @@ elim H7.
  tauto.
  tauto.
 rewrite <- H5 in |- *.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -969,7 +969,7 @@ assert (MfM.degree m x = MfM.degree m x1).
   tauto.
 rewrite H14 in |- *.
   rewrite <- H13 in |- *.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -1162,7 +1162,7 @@ split with j.
   unfold m1 in |- *.
   assert (i = dy + j).
  unfold j in |- *.
-    omega.
+    lia.
 rewrite H13 in |- *.
   unfold dy in |- *.
   unfold x1 in |- *.
@@ -1175,7 +1175,7 @@ rewrite H13 in |- *.
 fold dx in |- *.
   unfold j in |- *.
   rewrite H6 in H9.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -1505,7 +1505,7 @@ unfold MfM.expo1 in H9.
    set (j := i - dy) in |- *.
    assert (i = dy + j).
   unfold j in |- *.
-     omega.
+     lia.
  set (x1 := MfM.f m x) in |- *.
    elim H6.
    apply MfM.expo_trans with x1.
@@ -1533,7 +1533,7 @@ unfold MfM.expo1 in H9.
   tauto.
   tauto.
  fold dx in |- *.
-    omega.
+    lia.
 fold m1 in |- *.
    tauto.
 generalize (Mod.exd_Tr m x y y).
@@ -1724,7 +1724,7 @@ induction n.
  intros.
    rename H8 into dzp.
    assert (dz - 0 = dz).
-   omega.
+   lia.
  rewrite H8 in |- *.
    rewrite MfM.degree_aux_equation in |- *.
    unfold m1 in |- *.
@@ -1797,8 +1797,8 @@ intros.
     intro.
       rewrite H8 in b.
       simpl in b.
-       omega.
-    omega.
+       lia.
+    lia.
   rewrite H8 in |- *.
     apply IHn.
     tauto.
@@ -1812,7 +1812,7 @@ intros.
    tauto.
    tauto.
   fold dz in |- *.
-     omega.
+     lia.
   tauto.
   tauto.
   tauto.
@@ -1850,7 +1850,7 @@ assert (0 < dz).
    simpl in H.
     tauto.
 assert (1 = dz - (dz - 1)).
-  omega.
+  lia.
 rewrite H10 in |- *.
   unfold dz in |- *.
   apply degree_Tr_merge_x_others_aux.
@@ -1866,7 +1866,7 @@ fold m1 in |- *.
  tauto.
  tauto.
 fold dz in |- *.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -1940,7 +1940,7 @@ split with (dy + j).
 fold dx in |- *.
   rewrite <- MfM.upb_eq_degree in |- *.
  fold dx in |- *.
-    omega.
+    lia.
  tauto.
  tauto.
 Qed.
@@ -1988,7 +1988,7 @@ split with i.
  tauto.
 rewrite <- MfM.upb_eq_degree in |- *.
  fold dy in |- *.
-    omega.
+    lia.
  tauto.
  tauto.
 Qed.
@@ -2165,7 +2165,7 @@ unfold m1 in |- *.
 elim (eq_nat_dec j dy).
  intro.
    assert (i = 0).
-   omega.
+   lia.
  rewrite H4 in |- *.
    simpl in |- *.
     tauto.
@@ -2189,13 +2189,13 @@ simpl in |- *.
       tauto.
      tauto.
     fold dy in |- *.
-       omega.
+       lia.
     fold dy in |- *.
-       omega.
+       lia.
     simpl in |- *.
        tauto.
     absurd (0 = j + i).
-     omega.
+     lia.
     tauto.
   elim (eq_dart_dec (Mod.M.f_1 m y) yi).
    intros.
@@ -2213,9 +2213,9 @@ simpl in |- *.
       tauto.
      tauto.
     fold dy in |- *.
-       omega.
+       lia.
     fold dy in |- *.
-       omega.
+       lia.
     simpl in |- *.
       simpl in H4.
        tauto.
@@ -2227,7 +2227,7 @@ simpl in |- *.
   tauto.
  generalize (MfM.exd_Iter_f m i y).
     tauto.
- omega.
+ lia.
 Qed.
 
 Lemma diff_f_Tr_y_x:forall(m:fmap)(x y:dart)(i j:nat),
@@ -2249,7 +2249,7 @@ rewrite (f_Tr_y_x m x y i j Pr H H0 H1 H2) in |- *.
    decompose [and] H4.
    clear H4.
    apply H8.
-    omega.
+    lia.
 fold dy in |- *.
    tauto.
 Qed.
@@ -2283,7 +2283,7 @@ rewrite (f_Tr_y_x m x y (dy - j) j Pr H H0 H1 H2) in |- *.
   rewrite H2 in |- *.
     rewrite <- MfM.Iter_comp in |- *.
     assert (dy - j + j = dy).
-    omega.
+    lia.
   rewrite H5 in |- *.
     rewrite H4 in |- *.
     apply MfM.degree_per.
@@ -2300,7 +2300,7 @@ rewrite (f_Tr_y_x m x y (dy - j) j Pr H H0 H1 H2) in |- *.
   tauto.
  tauto.
 fold dy in |- *.
-   omega.
+   lia.
 Qed.
 
 (* OK: CASE (f m x = y) ELIMINATED FIRST *)
@@ -2377,13 +2377,13 @@ simpl in |- *.
       tauto.
      tauto.
     rewrite H5 in |- *.
-       omega.
+       lia.
     rewrite H5 in |- *.
-       omega.
+       lia.
     simpl in |- *.
        tauto.
     absurd (0 = i + 1).
-     omega.
+     lia.
     tauto.
   elim (eq_dart_dec (Mod.M.f_1 m y)
          (Iter (MfM.f m) i x1)).
@@ -2412,14 +2412,14 @@ simpl in |- *.
         tauto.
        tauto.
       rewrite H5 in |- *.
-         omega.
+         lia.
       rewrite H5 in |- *.
-         omega.
+         lia.
       rewrite H2 in |- *.
         simpl in |- *.
          tauto.
       absurd (S i + 1 = 0).
-       omega.
+       lia.
       tauto.
      tauto.
      tauto.
@@ -2429,12 +2429,12 @@ simpl in |- *.
       tauto.
      tauto.
     rewrite H5 in |- *.
-       omega.
+       lia.
     rewrite H5 in |- *.
-       omega.
+       lia.
      tauto.
     absurd (S i + 1 = j).
-     omega.
+     lia.
     tauto.
    tauto.
   tauto.
@@ -2445,7 +2445,7 @@ simpl in |- *.
    unfold x1 in |- *.
    generalize (MfM.exd_f m x).
     tauto.
- omega.
+ lia.
 Qed.
 
 (* OK: *)
@@ -2498,9 +2498,9 @@ rewrite (f_Tr_x1_y_1 m x y i j Pr H H0 H1 H2) in |- *.
    clear H7.
    apply H11.
    rewrite <- H5 in |- *.
-    omega.
+    lia.
 fold dy in |- *.
-   omega.
+   lia.
 Qed.
 
 Lemma f_Tr_x1_split:forall(m:fmap)(x y:dart)(j:nat),
@@ -2516,7 +2516,7 @@ Proof.
 intros m x y j Pr.
 intros.
 assert (j - 1 = S (j - 2)).
-  omega.
+  lia.
 rewrite H4 in |- *.
   simpl in |- *.
   unfold m1 in |- *.
@@ -2532,7 +2532,7 @@ rewrite H4 in |- *.
   rewrite H4 in |- *.
     rewrite <- MfM.Iter_comp in |- *.
     assert (j - 2 + 1 = j - 1).
-    omega.
+    lia.
   rewrite H5 in |- *.
     clear H5.
     rewrite <- MfM.Iter_f_f_1 in |- *.
@@ -2540,7 +2540,7 @@ rewrite H4 in |- *.
       tauto.
    tauto.
    tauto.
-   omega.
+   lia.
  rewrite H5 in |- *.
    rewrite Mod.f_Tr in |- *.
   elim (eq_dart_dec x (MfM.f_1 m y)).
@@ -2564,7 +2564,7 @@ rewrite H4 in |- *.
  tauto.
  tauto.
 fold dy in |- *.
-   omega.
+   lia.
 Qed.
 
 (* OK: *)
@@ -2614,7 +2614,7 @@ cut (Iter (MfM.f m1) i x1 = Iter (MfM.f m) i x1).
   rewrite H2 in |- *.
     rewrite <- MfM.Iter_comp in |- *.
     assert (dy - j + 1 + j = S dy).
-    omega.
+    lia.
   rewrite H8 in |- *.
     simpl in |- *.
     rewrite <- H5 in |- *.
@@ -2626,7 +2626,7 @@ cut (Iter (MfM.f m1) i x1 = Iter (MfM.f m) i x1).
  rewrite H8 in |- *.
    rewrite <- MfM.Iter_comp in |- *.
    assert (i + (dy - j + 1) = dy - j + 1 + i).
-   omega.
+   lia.
  rewrite H9 in |- *.
     tauto.
 unfold m1 in |- *.
@@ -2664,7 +2664,7 @@ generalize (MfM.degree_bound m y H H1).
   induction i.
  unfold m1 in |- *.
    assert (dy - j - 0 = dy - j).
-   omega.
+   lia.
  rewrite H7 in |- *.
    clear H7.
    rewrite MfM.degree_aux_equation in |- *.
@@ -2684,9 +2684,9 @@ generalize (MfM.degree_bound m y H H1).
     fold dy in |- *.
       split.
      clear a H6.
-        omega.
+        lia.
     clear a H6.
-       omega.
+       lia.
     tauto.
   elim (eq_nat_dec (dy - j) (ndN m)).
    intros.
@@ -2705,7 +2705,7 @@ generalize (MfM.degree_bound m y H H1).
      symmetry  in |- *.
      assert (dy - j + 1 = S (dy - j)).
     clear a b H6 a0.
-       omega.
+       lia.
    rewrite H7 in |- *.
      clear H7.
      unfold dy in |- *.
@@ -2718,12 +2718,12 @@ generalize (MfM.degree_bound m y H H1).
    tauto.
    fold dy in |- *.
      clear a b a0.
-      omega.
+      lia.
   intros.
     clear H3 H6.
-     omega.
+     lia.
  intro.
-    omega.
+    lia.
 unfold m1 in |- *.
   rewrite MfM.degree_aux_equation in |- *.
   rewrite Mod.ndN_Tr in |- *.
@@ -2744,29 +2744,29 @@ absurd
      split.
      tauto.
    split.
-     omega.
+     lia.
    clear H6 a a0.
-      omega.
+      lia.
    tauto.
  elim (eq_nat_dec (dy - j - S i) (ndN m)).
   intros.
      absurd (dy - j - S i = ndN m).
-    omega.
+    lia.
    tauto.
  intros.
    assert (dy - j - S i + 1 = dy - j - i).
   clear a b H6.
-     omega.
+     lia.
  rewrite H7 in |- *.
    apply IHi.
    clear H7.
    clear a b H6.
    split.
    tauto.
-  omega.
+  lia.
 intro.
    absurd (ndN m < dy - j - S i).
-  omega.
+  lia.
  tauto.
 Qed.
 
@@ -2827,7 +2827,7 @@ elim (eq_nat_dec j dy).
    simpl in |- *.
      intro.
      rewrite a in |- *.
-      omega.
+      lia.
   intro.
     elim b.
     simpl in |- *.
@@ -2843,13 +2843,13 @@ elim (eq_nat_dec j dy).
    tauto.
  intro.
    rewrite a in |- *.
-    omega.
+    lia.
 intro.
   unfold m1 in |- *.
   unfold MfM.degree in |- *.
   unfold dy in |- *.
   assert (1 = dy - j - (dy - j - 1)).
-  omega.
+  lia.
 assert
  (MfM.degree_aux (Mod.Tr m x y) y 1 =
    MfM.degree_aux (Mod.Tr m x y) y 
@@ -2868,7 +2868,7 @@ fold dy in |- *.
   clear H6.
   split.
   tauto.
- omega.
+ lia.
 Qed.
 
 (* OK, CASE j = 2 DIRECTLY CONSIDERED AFTERWARDS: *)
@@ -2902,7 +2902,7 @@ generalize (MfM.degree_bound m y H H1).
   induction i.
  unfold m1 in |- *.
    assert (j - 2 - 0 = j - 2).
-   omega.
+   lia.
  rewrite H7 in |- *.
    clear H7.
    simpl in H3.
@@ -2947,12 +2947,12 @@ generalize (MfM.degree_bound m y H H1).
      tauto.
     fold dy in |- *.
       split.
-      omega.
-     omega.
+      lia.
+     lia.
     tauto.
   elim (eq_nat_dec (j - 2) (ndN m)).
    intros.
-      omega.
+      lia.
   intros.
     rewrite MfM.degree_aux_equation in |- *.
     rewrite Mod.ndN_Tr in |- *.
@@ -2961,12 +2961,12 @@ generalize (MfM.degree_bound m y H H1).
      elim (eq_dart_dec x1 
       (Iter (MfM.f (Mod.Tr m x y)) (j - 2 + 1) x1)).
     intros.
-       omega.
+       lia.
    intros.
      elim b1.
      symmetry  in |- *.
      assert (j - 2 + 1 = j - 1).
-     omega.
+     lia.
    rewrite H11 in |- *.
      clear H11.
      unfold x1 in |- *.
@@ -2977,14 +2977,14 @@ generalize (MfM.degree_bound m y H H1).
     tauto.
     tauto.
    fold dy in |- *.
-      omega.
+      lia.
   intros.
      absurd (ndN m < j - 2 + 1).
-    omega.
+    lia.
    tauto.
  intros.
     absurd (ndN m < j - 2).
-   omega.
+   lia.
   tauto.
 unfold m1 in |- *.
   rewrite MfM.degree_aux_equation in |- *.
@@ -3006,31 +3006,31 @@ unfold m1 in |- *.
      split.
     split.
      clear a H6.
-        omega.
+        lia.
      tauto.
    clear a a0 H6.
-      omega.
+      lia.
    tauto.
  elim (eq_nat_dec (j - 2 - S i) (ndN m)).
   intros.
      absurd (j - 2 - S i = ndN m).
    clear b a0 a.
-      omega.
+      lia.
    tauto.
  intros.
    assert (j - 2 - S i + 1 = j - 2 - i).
   clear b0 b a H6.
-     omega.
+     lia.
  rewrite H7 in |- *.
    apply IHi.
    clear a b H7.
    split.
-   omega.
+   lia.
   tauto.
 intro.
    absurd (ndN m < j - 2 - S i).
  clear b.
-    omega.
+    lia.
  tauto.
 Qed.
 
@@ -3064,7 +3064,7 @@ elim (eq_nat_dec j 2).
    rename a into j2.
    rewrite j2 in |- *.
    assert (2 - 1 = 1).
-   omega.
+   lia.
  rewrite H6 in |- *.
    clear H6.
    rewrite j2 in H2.
@@ -3111,12 +3111,12 @@ elim (eq_nat_dec j 2).
     generalize (MfM.exd_f m x).
      tauto.
  intros.
-    omega.
+    lia.
 intro j2.
   unfold MfM.degree in |- *.
   unfold x1 in |- *.
   assert (1 = j - 2 - (j - 3)).
-  omega.
+  lia.
 assert (MfM.degree_aux m1 (MfM.f m x) 1 =
      MfM.degree_aux m1 (MfM.f m x) (j - 2 - (j - 3))).
  rewrite <- H6 in |- *.
@@ -3130,7 +3130,7 @@ rewrite H7 in |- *.
  tauto.
  tauto.
 fold dy in |- *.
-   omega.
+   lia.
 Qed.
 
 (* OK: CASE J = 1: *)
@@ -3160,7 +3160,7 @@ generalize (MfM.degree_bound m y H H1).
   intro.
   induction k.
  assert (dy - 0 = dy).
-   omega.
+   lia.
  rewrite H4 in |- *.
    clear H4.
    rewrite MfM.degree_aux_equation in |- *.
@@ -3199,7 +3199,7 @@ generalize (MfM.degree_bound m y H H1).
      tauto.
  intro.
    fold dy in H3.
-    omega.
+    lia.
 rewrite MfM.degree_aux_equation in |- *.
   unfold m1 in |- *.
   rewrite Mod.ndN_Tr in |- *.
@@ -3216,14 +3216,14 @@ rewrite MfM.degree_aux_equation in |- *.
      tauto.
      tauto.
     fold dy in |- *.
-       omega.
+       lia.
     fold dy in |- *.
        tauto.
     simpl in |- *.
       symmetry  in |- *.
        tauto.
     absurd (dy - S k = 0).
-     omega.
+     lia.
     tauto.
    tauto.
    tauto.
@@ -3236,19 +3236,19 @@ rewrite MfM.degree_aux_equation in |- *.
   intros.
      absurd (dy - S k = ndN m).
    fold dy in H3.
-      omega.
+      lia.
    tauto.
  intros.
    fold m1 in |- *.
    assert (dy - S k + 1 = dy - k).
-   omega.
+   lia.
  rewrite H4 in |- *.
    clear H4.
    apply IHk.
-    omega.
+    lia.
 intro.
   fold dy in H3.
-   omega.
+   lia.
 Qed.
 
 (* CASE j = 1: Tr m x y WITHOUT EFFECT: *)
@@ -3278,7 +3278,7 @@ assert (0 < dy).
    simpl.
   unfold MfM.degree in |- *.
   assert (dy - (dy - 1) = 1).
-  omega.
+  lia.
 rewrite <- H4 in |- *.
   unfold dy in |- *.
   unfold y in |- *.
@@ -3289,7 +3289,7 @@ fold y in |- *.
   tauto.
   fold y.
   fold dy in |- *.
-   omega.
+   lia.
 Qed.
 
 (* THE GREAT RESULT: *)
@@ -3312,13 +3312,13 @@ fold dy in |- *.
 rewrite (degree_Tr_split_x1 m x y j H3) in |- *.
  rewrite (degree_Tr_split_y m x y j H3) in |- *.
   fold dy in |- *.
-     omega.
+     lia.
   tauto.
   tauto.
   tauto.
   tauto.
  fold dy in |- *.
-    omega.
+    lia.
  tauto.
  tauto.
  tauto.
@@ -3549,7 +3549,7 @@ Proof.
 induction n.
  intros.
    assert (dz - 0 = dz).
-   omega.
+   lia.
  rewrite H8 in |- *.
    rewrite MfM.degree_aux_equation in |- *.
    unfold m1 in |- *.
@@ -3619,8 +3619,8 @@ intros.
     intro.
       rewrite H8 in b.
       simpl in b.
-       omega.
-    omega.
+       lia.
+    lia.
   rewrite H8 in |- *.
     apply IHn.
     tauto.
@@ -3633,7 +3633,7 @@ intros.
    tauto.
    tauto.
   fold dz in |- *.
-     omega.
+     lia.
   tauto.
   tauto.
   tauto.
@@ -3667,7 +3667,7 @@ simpl in |- *.
 intro.
 fold dz in H7.
 assert (1 = dz - (dz - 1)).
-  omega.
+  lia.
 rewrite H8 in |- *.
   unfold dz in |- *.
   rewrite degree_Tr_split_x_others_aux in |- *.
@@ -3686,7 +3686,7 @@ fold m1 in |- *.
  tauto.
  tauto.
 fold dz in |- *.
-   omega.
+   lia.
 Qed.
 
 (* FINALLY: *)
@@ -3875,15 +3875,15 @@ rename H5 into Equpb.
     tauto.
     tauto.
     tauto.
-    omega.
+    lia.
    simpl in |- *.
      rewrite H7 in |- *.
      symmetry  in |- *.
       tauto.
   assert (iz = 0).
-    omega.
+    lia.
   assert (it = 0).
-    omega.
+    lia.
   assert (z = t).
    rewrite H14 in H4.
      simpl in H4.
@@ -3913,7 +3913,7 @@ rename H5 into Equpb.
    tauto.
    tauto.
   split.
-    omega.
+    lia.
   assert (MfM.Iter_upb m y = MfM.degree m y).
    apply (MfM.upb_eq_degree m y H H1).
   assert (jx = MfM.degree m y - j).
@@ -3923,15 +3923,15 @@ rename H5 into Equpb.
      tauto.
     tauto.
     tauto.
-    omega.
-    omega.
+    lia.
+    lia.
    set (yj := Iter (MfM.f m) jx y) in |- *.
      set (dy := MfM.degree m y) in |- *.
      rewrite Exy in |- *.
      rewrite <- MfM.Iter_comp in |- *.
      assert (dy - j + j = dy).
     unfold dy in |- *.
-       omega.
+       lia.
    rewrite H14 in |- *.
      clear H14.
      unfold dy in |- *.
@@ -3942,7 +3942,7 @@ rename H5 into Equpb.
        tauto.
     tauto.
     tauto.
-   omega.
+   lia.
  unfold MfM.expo in |- *.
    split.
   generalize (Mod.exd_Tr m x y y).
@@ -3955,7 +3955,7 @@ rename H5 into Equpb.
   tauto.
   tauto.
  split.
-   omega.
+   lia.
  assert (MfM.Iter_upb m y = MfM.degree m y).
   apply (MfM.upb_eq_degree m y H H1).
  assert (jx = MfM.degree m y - j).
@@ -3964,15 +3964,15 @@ rename H5 into Equpb.
     tauto.
    tauto.
    tauto.
-   omega.
-   omega.
+   lia.
+   lia.
   rewrite H7 in |- *.
     set (dy := MfM.degree m y) in |- *.
     rewrite Exy in |- *.
     rewrite <- MfM.Iter_comp in |- *.
     assert (dy - j + j = dy).
    unfold dy in |- *.
-      omega.
+      lia.
   rewrite H14 in |- *.
     clear H14.
     unfold dy in |- *.
@@ -3982,7 +3982,7 @@ rename H5 into Equpb.
     tauto.
    tauto.
    tauto.
-  omega.
+  lia.
 clear H4.
   intro.
   assert (exd m x1).
@@ -4101,13 +4101,13 @@ elim H4.
       tauto.
      tauto.
      tauto.
-     omega.
+     lia.
     simpl in |- *.
        tauto.
    assert (iz = 0).
-     omega.
+     lia.
    assert (it = 0).
-     omega.
+     lia.
    rewrite H20 in H10.
      simpl in H10.
      rewrite H19 in H4.
@@ -4121,7 +4121,7 @@ elim H4.
     assert (1 <> MfM.Iter_upb m x1).
    intro.
      assert (j1 = 0).
-     omega.
+     lia.
    rewrite H19 in H11.
      simpl in H11.
       tauto.
@@ -4131,7 +4131,7 @@ elim H4.
      tauto.
     tauto.
     tauto.
-    omega.
+    lia.
    rewrite <- MfM.Iter_f_f_1 in |- *.
     rewrite MfM.Iter_upb_period in |- *.
      simpl in |- *.
@@ -4147,7 +4147,7 @@ elim H4.
      tauto.
     tauto.
     tauto.
-    omega.
+    lia.
   apply MfM.expo_trans with x1.
    apply MfM.expo_symm.
     fold m1 in |- *.
@@ -4170,7 +4170,7 @@ elim H4.
      tauto.
     tauto.
     tauto.
-    omega.
+    lia.
   unfold MfM.expo in |- *.
     split.
    generalize (Mod.exd_Tr m x y x1).
@@ -4189,14 +4189,14 @@ elim H4.
     tauto.
    tauto.
    tauto.
-   omega.
+   lia.
  intro.
    assert (j1 = j - 2).
   apply (MfM.unicity_mod_p m x1 j1 (j - 2)).
     tauto.
    tauto.
    tauto.
-   omega.
+   lia.
   rewrite H11 in |- *.
     assert (x1 = Iter (MfM.f m) 1 x).
    simpl in |- *.
@@ -4204,7 +4204,7 @@ elim H4.
   rewrite H17 in |- *.
     rewrite <- MfM.Iter_comp in |- *.
     assert (j - 2 + 1 = j - 1).
-    omega.
+    lia.
   rewrite H18 in |- *.
     rewrite <- MfM.Iter_f_f_1 in |- *.
    rewrite <- Exy in |- *.
@@ -4213,7 +4213,7 @@ elim H4.
       tauto.
    tauto.
    tauto.
-   omega.
+   lia.
  apply MfM.expo_trans with x1.
   apply MfM.expo_symm.
    fold m1 in |- *.
@@ -4231,7 +4231,7 @@ elim H4.
    tauto.
    tauto.
    tauto.
-   omega.
+   lia.
 
  unfold MfM.expo in |- *.
    split.
@@ -4246,7 +4246,7 @@ elim H4.
   tauto.
   tauto.
   tauto.
-  omega.
+  lia.
 intro.
    tauto.
 Qed.
@@ -4485,7 +4485,7 @@ assert (MfM.degree m1 y = MfM.degree m y - j + 1).
    apply (degree_Tr_split_y m x y j Pr H H0 H1).
   symmetry  in |- *.
      tauto.
-  omega.
+  lia.
 assert (Iter (MfM.f m1) k y = Iter (MfM.f m) k y).
  unfold m1 in |- *.
    rewrite (f_Tr_y_x m x y k j Pr) in |- *.
@@ -4496,8 +4496,8 @@ assert (Iter (MfM.f m1) k y = Iter (MfM.f m) k y).
  symmetry  in |- *.
     tauto.
  split.
-   omega.
-  omega.
+   lia.
+  lia.
 assert (Iter (MfM.f m) (k - 1) y = x).
  rewrite <- MfM.Iter_f_f_1 in |- *.
   simpl in |- *.
@@ -4510,7 +4510,7 @@ assert (Iter (MfM.f m) (k - 1) y = x).
    tauto.
   tauto.
   tauto.
-  omega.
+  lia.
 assert (Iter (MfM.f m1) (k - 1) y = x).
  unfold m1 in |- *.
    rewrite (f_Tr_y_x m x y (k - 1) j Pr) in |- *.
@@ -4521,11 +4521,11 @@ assert (Iter (MfM.f m1) (k - 1) y = x).
  symmetry  in |- *.
     tauto.
  split.
-   omega.
-  omega.
+   lia.
+  lia.
 assert (Iter (MfM.f m1) k y = y).
  assert (k = S (k - 1)).
-   omega.
+   lia.
  rewrite H22 in |- *.
    simpl in |- *.
    rewrite H21 in |- *.
@@ -4593,7 +4593,7 @@ elim (le_lt_dec 1 (ndN m)).
   tauto.
  tauto.
 intro.
-   omega.
+   lia.
 Qed.
 
 (* OK: j = 1: *)
@@ -4794,7 +4794,7 @@ assert (Iter (MfM.f m) (iz - 1) x1 = z).
  rewrite <- H11 in |- *.
    rewrite <- MfM.Iter_comp in |- *.
    assert (iz - 1 + 1 = iz).
-   omega.
+   lia.
  rewrite H12 in |- *.
    clear H12.
     tauto.
@@ -4815,7 +4815,7 @@ assert (y = Iter (MfM.f m) (MfM.degree m y) x).
 rewrite H9 in H7.
   rewrite H4 in H7.
   assert (2 <= MfM.degree m y).
-  omega.
+  lia.
 assert (MfM.degree m1 y + MfM.degree m1 x1 =
     MfM.degree m y).
  unfold m1 in |- *.
@@ -4830,7 +4830,7 @@ assert (MfM.degree m1 y + MfM.degree m1 x1 =
   tauto.
   tauto.
   tauto.
-  omega.
+  lia.
 rewrite H4 in H12.
   assert (Iter (MfM.f m1) (iz - 1) x1 = z).
  unfold m1 in |- *.
@@ -4848,8 +4848,8 @@ rewrite H4 in H12.
   tauto.
   tauto.
  split.
-   omega.
-  omega.
+   lia.
+  lia.
 assert (MfM.expo m1 x1 z).
  unfold MfM.expo in |- *.
    split.
@@ -4909,7 +4909,7 @@ unfold MfM.expo1 in H19.
    tauto.
   tauto.
   tauto.
-  omega.
+  lia.
 right.
   left.
   assert (Iter (MfM.f m) it x1 = t).
@@ -4929,8 +4929,8 @@ right.
      tauto.
     tauto.
   rewrite H23 in H20.
-     omega.
-  omega.
+     lia.
+  lia.
 assert (Iter (MfM.f m) (MfM.degree m1 x1 - 1) x1 = y_1).
  rewrite <- H22 in |- *.
    unfold m1 in |- *.
@@ -4947,8 +4947,8 @@ assert (Iter (MfM.f m) (MfM.degree m1 x1 - 1) x1 = y_1).
  fold m1 in |- *.
    fold x1 in |- *.
    split.
-   omega.
-  omega.
+   lia.
+  lia.
 assert (MfM.expo m x x1).
  unfold MfM.expo in |- *.
    split.
@@ -4980,8 +4980,8 @@ split.
  split.
    tauto.
  split.
-   omega.
-  omega.
+   lia.
+  lia.
 unfold MfM.between in |- *.
   intros.
   split with it.
@@ -4999,8 +4999,8 @@ split.
     tauto.
    tauto.
  rewrite H30 in H20.
-    omega.
- omega.
+    lia.
+ lia.
 Qed.
 
 (* OK: 2 <= j *)
@@ -5054,7 +5054,7 @@ unfold MfM.expo1 in H11.
    apply (degree_Tr_split_y m x y j Pr H H0 H1).
    tauto.
  fold dy in |- *.
-    omega.
+    lia.
 assert (MfM.degree m1 x1 = j - 1).
  unfold m1 in |- *.
    apply (degree_Tr_split_x1 m x y j Pr H H0 H1).
@@ -5072,7 +5072,7 @@ assert (MfM.degree m1 y +MfM.degree m1 x1 =
   tauto.
   tauto.
  fold dy in |- *.
-    omega.
+    lia.
 assert (MfM.expo m x1 y).
  apply MfM.expo_trans with x.
   apply MfM.expo_symm.
@@ -5116,7 +5116,7 @@ elim (le_lt_dec iz (j - 2)).
    tauto.
    tauto.
   fold dy in |- *.
-     omega.
+     lia.
  assert (MfM.expo m1 x1 z).
   unfold MfM.expo in |- *.
     split.
@@ -5154,7 +5154,7 @@ elim (le_lt_dec iz (j - 2)).
   rewrite <- H28 in |- *.
     rewrite <- MfM.Iter_comp in |- *.
     assert (j - 2 + 1 = j - 1).
-    omega.
+    lia.
   rewrite H29 in |- *.
     rewrite <- MfM.Iter_f_f_1 in |- *.
    simpl in |- *.
@@ -5163,7 +5163,7 @@ elim (le_lt_dec iz (j - 2)).
       tauto.
    tauto.
    tauto.
-   omega.
+   lia.
  right.
    left.
    split.
@@ -5176,7 +5176,7 @@ elim (le_lt_dec iz (j - 2)).
     tauto.
   split.
     tauto.
-   omega.
+   lia.
  unfold MfM.between in |- *.
    intros.
    split with it.
@@ -5193,20 +5193,20 @@ elim (le_lt_dec iz (j - 2)).
   fold dy in |- *.
     rewrite H27 in H25.
     fold dy in H16.
-     omega.
+     lia.
  split.
    tauto.
  rewrite H18 in |- *.
    rewrite H19 in |- *.
    fold dy in |- *.
-    omega.
+    lia.
 intros.
   assert (Iter (MfM.f m) (iz - (j - 1)) y = z).
  rewrite <- H13 in |- *.
    rewrite H4 in |- *.
    rewrite <- MfM.Iter_comp in |- *.
    assert (iz - (j - 1) + j = iz + 1).
-   omega.
+   lia.
  rewrite H21 in |- *.
    clear H21.
    rewrite MfM.Iter_comp in |- *.
@@ -5223,10 +5223,10 @@ assert (Iter (MfM.f m1) (iz - (j - 1)) y = z).
   tauto.
   tauto.
  split.
-   omega.
+   lia.
  fold dy in |- *.
    fold dy in H12.
-    omega.
+    lia.
 assert (MfM.expo m1 y z).
  unfold MfM.expo in |- *.
    split.
@@ -5269,15 +5269,15 @@ rewrite H28 in H26.
   tauto.
   tauto.
  split.
-   omega.
+   lia.
  fold dy in |- *.
-    omega.
+    lia.
 left.
   assert (Iter (MfM.f m) (dy - j) y = x).
  rewrite H4 in |- *.
    rewrite <- MfM.Iter_comp in |- *.
    assert (dy - j + j = dy).
-   omega.
+   lia.
  rewrite H30 in |- *.
    assert (MfM.expo m x y).
   unfold MfM.expo in |- *.
@@ -5309,8 +5309,8 @@ split.
  rewrite MfM.upb_eq_degree in |- *.
   fold dy in |- *.
     split.
-    omega.
-   omega.
+    lia.
+   lia.
   tauto.
   tauto.
 unfold MfM.between in |- *.
@@ -5324,8 +5324,8 @@ split.
 rewrite MfM.upb_eq_degree in |- *.
  fold dy in |- *.
    split.
-   omega.
-  omega.
+   lia.
+  lia.
  tauto.
  tauto.
 Qed.
@@ -5401,7 +5401,7 @@ rewrite H9 in H7.
    unfold m1 in |- *.
    apply (expo_Tr_split_CN_j m x y z t
         j Pr H H0 H1 H2 H3 H8).
-   omega.
+   lia.
   tauto.
   tauto.
  fold m1 in |- *.
@@ -5623,7 +5623,7 @@ elim (MfM.expo_dec m x z).
   rewrite <- H18 in |- *.
     apply (degree_Tr_split_y m x y j H0 H H1 H2 H4).
     fold dy in |- *.
-     omega.
+     lia.
  split.
   intro.
     assert (MfM.expo m x1 z).

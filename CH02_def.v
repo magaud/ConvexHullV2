@@ -98,7 +98,7 @@ Function search_left (m:fmap)(d:dart)(p:point)(i:nat)
   let di := Iter (cF m) i d in
   if (left_dart_dec m di p) then di else search_left m d p (i+1).
 Proof.
-intros m d p i H1 H2 H3 H4; omega.
+intros m d p i H1 H2 H3 H4; lia.
 Qed.
 
 Function search_right (m:fmap)(d:dart)(p:point)(i:nat)
@@ -107,7 +107,7 @@ Function search_right (m:fmap)(d:dart)(p:point)(i:nat)
   let di := (Iter (cF m) i d) in let di0 := (cA m zero di) in
   if (right_dart_dec m di0 p) then di0 else search_right m d p (i+1).
 Proof.
-intros m d p i H1 H2 H3 H4; omega.
+intros m d p i H1 H2 H3 H4; lia.
 Qed.
 
 (* ================================ *)
@@ -179,7 +179,7 @@ Definition convexhull (m:fmap) : fmap :=
 (* ========== ########## ========== *)
 (* ================================ *)
 
-Extraction Language Ocaml.
+Extraction Language OCaml.
 Extract Inductive sumbool => "bool" [ "true" "false" ].
 Extract Constant R => "float". 
 Extract Constant R0 => "0.0".

@@ -7,4 +7,4 @@ This implementation follows the usual geometry approach to extend the convex hul
 
 Related publication : https://hal.inria.fr/hal-00916880
 
-It compiles with Coq 8.10.2.
+It compiles with Coq 8.15.2.

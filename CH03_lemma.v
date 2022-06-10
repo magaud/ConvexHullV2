@@ -383,7 +383,7 @@ Proof.
 intros m0 d0 t0 p0 x0 y0 h1 h2 h3 h4 h5.
 generalize (expv_I m0 d0 t0 p0 x0 y0 h1 h2 h5).
 intros h6; elimination h6.
-apply h3; intuition.
+apply h3; intuition;subst;intuition.
 apply h4; assumption.
 Qed.
 
@@ -496,7 +496,7 @@ Proof.
 intros m0 d0 t0 p0 x0 y0 h1 h2 h3 h4 h5.
 generalize (expe_I m0 d0 t0 p0 x0 y0 h1 h2 h5).
 intros h6; elimination h6.
-apply h3; intuition.
+apply h3; intuition;subst;intuition.
 apply h4; assumption.
 Qed.
 

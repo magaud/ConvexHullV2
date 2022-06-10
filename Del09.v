@@ -157,7 +157,7 @@ simpl in H8.
       assert (i <> p - 1).
        intro.
          assert (j = p - 1).
-         omega.
+         lia.
        rewrite H17 in H14.
          rewrite <- MF.Iter_f_f_1 in H14.
         unfold p in H14.
@@ -202,7 +202,7 @@ simpl in H8.
          generalize (exd_cF m y).
          unfold m1 in H; simpl in H; unfold prec_L in H.
           tauto.
-        omega.
+        lia.
       assert (i - 1 = j).
        apply (MF.unicity_mod_p m y_0_1 (i - 1) j).
         unfold m1 in H; simpl in H; unfold prec_L in H.
@@ -213,9 +213,9 @@ simpl in H8.
          unfold m1 in H; simpl in H; unfold prec_L in H.
           tauto.
        fold p in |- *.
-          omega.
+          lia.
        fold p in |- *.
-          omega.
+          lia.
        rewrite <- MF.Iter_f_f_1 in |- *.
         simpl in |- *.
           rewrite H14 in |- *.
@@ -236,8 +236,8 @@ simpl in H8.
          generalize (exd_cF m y).
          unfold m1 in H; simpl in H; unfold prec_L in H.
           tauto.
-        omega.
-       omega.
+        lia.
+       lia.
      unfold m1 in H; simpl in H; unfold prec_L in H.
         tauto.
      unfold y_0_1 in |- *; unfold y_0 in |- *.
@@ -358,13 +358,13 @@ simpl in H8.
      rewrite H18 in |- *.
        rewrite <- MF.Iter_comp in |- *.
        assert (j - i - 1 + 1 = j - i).
-       omega.
+       lia.
      rewrite H19 in |- *.
        clear H19.
        rewrite <- H3 in |- *.
        rewrite <- MF.Iter_comp in |- *.
        assert (j - i + i = j).
-       omega.
+       lia.
      rewrite H19 in |- *.
         tauto.
     split.
@@ -386,7 +386,7 @@ simpl in H8.
        rewrite <- MF.Iter_comp in |- *.
        fold p in H17.
        assert (p - 1 - i - 1 + 1 + i = p - 1).
-       omega.
+       lia.
      rewrite H19 in |- *.
        clear H19.
        rewrite <- MF.Iter_f_f_1 in |- *.
@@ -417,12 +417,12 @@ simpl in H8.
        unfold m1 in H; simpl in H; unfold prec_L in H.
         tauto.
      unfold m1 in H; simpl in H; unfold prec_L in H.
-        omega.
+        lia.
     split.
      fold p in H17.
-        omega.
+        lia.
     fold p in H17.
-       omega.
+       lia.
    unfold m1 in H; simpl in H; unfold prec_L in H.
       tauto.
    unfold x_1 in |- *.
@@ -787,9 +787,9 @@ unfold m1 in |- *.
       unfold m1 in H; simpl in H.
        tauto.
     fold p in |- *.
-       omega.
+       lia.
     fold p in |- *.
-       omega.
+       lia.
     rewrite H9 in |- *.
       rewrite <- MF.Iter_f_f_1 in |- *.
      simpl in |- *.
@@ -809,9 +809,9 @@ unfold m1 in |- *.
        tauto.
     unfold m1 in H; simpl in H.
        tauto.
-     omega.
+     lia.
    assert (j = p - 1).
-     omega.
+     lia.
    rewrite H16 in H9.
      rewrite H17 in H13.
      rewrite H9 in H13.
@@ -926,14 +926,14 @@ unfold m1 in |- *.
    rewrite <- H7 in |- *.
      rewrite <- MF.Iter_comp in |- *.
      assert (j - i + i = j). clear H0 H1 H2 H11.
-     omega.
+     lia.
    rewrite H18 in |- *.
       tauto.
   split.
    rewrite <- H7 in |- *.
      rewrite <- MF.Iter_comp in |- *.
      assert (p - i - 1 + i = p - 1). clear H0 H1 H2 H11.
-     omega.
+     lia.
    rewrite H18 in |- *.
      assert (x0 = Iter (MF.f_1 m) 1 x_1).
     simpl in |- *.
@@ -956,8 +956,8 @@ unfold m1 in |- *.
      tauto.
     tauto.
     tauto. clear H0 H1 H2 H11.
-    omega. clear H0 H1 H2 H11.
-   omega.
+    lia. clear H0 H1 H2 H11.
+   lia.
  assert (betweenf m x' x' (cA m zero y')).
   simpl in H9.
     generalize (MF.between_expo_refl_1 m x' (cA m zero y')).
@@ -1060,9 +1060,9 @@ elim (eq_dart_dec (cA_1 m zero y) y').
        tauto.
       tauto.
      fold p in |- *.
-        omega.
+        lia.
      fold p in |- *.
-        omega.
+        lia.
      rewrite H9 in |- *.
        unfold p in |- *.
        rewrite <- MF.Iter_f_f_1 in |- *.
@@ -1083,9 +1083,9 @@ elim (eq_dart_dec (cA_1 m zero y) y').
       tauto.
       tauto.
      fold p in |- *.
-        omega.
+        lia.
     assert (j = p - 1).
-      omega.
+      lia.
     rewrite H16 in H9.
       rewrite H17 in H13.
       rewrite H9 in H13; unfold x0 in H13.
@@ -1158,7 +1158,7 @@ elim (eq_dart_dec (cA_1 m zero y) y').
      elim (eq_nat_dec i (p - 1)).
     intro.
       assert (j = p - 1).
-      omega.
+      lia.
     rewrite H17 in H14.
       rewrite <- MF.Iter_f_f_1 in H14.
      unfold p in H14.
@@ -1186,7 +1186,7 @@ elim (eq_dart_dec (cA_1 m zero y) y').
       tauto.
      tauto.
      tauto.
-     omega.
+     lia.
    intro.
      assert (i <> 0).
     intro.
@@ -1217,9 +1217,9 @@ elim (eq_dart_dec (cA_1 m zero y) y').
       tauto.
      tauto.
     fold p in |- *. clear H0 H1 H2.
-       omega.
+       lia.
     fold p in |- *. clear H0 H1 H2.
-       omega.
+       lia.
     rewrite H14 in |- *.
       rewrite <- MF.Iter_f_f_1 in |- *.
      simpl in |- *.
@@ -1238,8 +1238,8 @@ elim (eq_dart_dec (cA_1 m zero y) y').
         tauto.
      tauto.
      tauto. clear H0 H1 H2.
-     omega. clear H0 H1 H2.
-    omega.
+     lia. clear H0 H1 H2.
+    lia.
    tauto.
    tauto.
  assert (x_1b = x_1).
@@ -1339,11 +1339,11 @@ elim (eq_dart_dec (cA_1 m zero y) y').
    rewrite <- H22 in |- *.
      split.
     assert (j - i + 1 = S (j - i)). clear H0 H1 H2 H14.
-       omega.
+       lia.
     rewrite <- H7 in |- *.
       rewrite <- MF.Iter_comp in |- *.
       assert (j - i + 1 + i = S j). clear H0 H1 H2 H14.
-      omega.
+      lia.
     rewrite H24 in |- *.
       clear H23 H24.
       simpl in |- *.
@@ -1362,7 +1362,7 @@ elim (eq_dart_dec (cA_1 m zero y) y').
     rewrite <- H7 in |- *.
       rewrite <- MF.Iter_comp in |- *.
       assert (p - 1 - i + i = p - 1). clear H0 H1 H2 H14.
-      omega.
+      lia.
     rewrite H23 in |- *.
       clear H23.
       rewrite <- MF.Iter_f_f_1 in |- *.
@@ -1384,7 +1384,7 @@ elim (eq_dart_dec (cA_1 m zero y) y').
       tauto.
      tauto.
      tauto. clear H0 H1 H2 H14.
-     omega.
+     lia.
    split.
     elim (eq_nat_dec j (p - 1)).
      intro.
@@ -1413,10 +1413,10 @@ elim (eq_dart_dec (cA_1 m zero y) y').
        tauto.
       tauto.
       tauto. clear H0 H1 H2 H14.
-      omega.
+      lia.
     intros. clear H0 H1 H2 H14.
-       omega. clear H0 H1 H2 H14.
-    omega.
+       lia. clear H0 H1 H2 H14.
+    lia.
   simpl in H10.
      tauto.
    tauto.
@@ -1570,7 +1570,7 @@ generalize (expf_L1_CNS m x' y' x' y H7 H8).
        rewrite a0 in |- *.
           tauto.
       rewrite a0 in |- *. clear H0 H1 H3 H11.
-         omega.
+         lia.
      intro.
        assert (y'0 = x0).
       unfold y'0 in |- *.
@@ -1613,7 +1613,7 @@ generalize (expf_L1_CNS m x' y' x' y H7 H8).
       unfold m2 in H4; simpl in H4; unfold prec_L in H4.
          tauto.
       fold p in |- *. clear H0 H1 H3 H11.
-         omega.
+         lia.
      assert (expf m x' x_1).
       apply expf_trans with y'0.
         tauto.
@@ -1664,14 +1664,14 @@ generalize (expf_L1_CNS m x' y' x' y H7 H8).
       rewrite H22 in |- *.
         rewrite <- MF.Iter_comp in |- *.
         assert (p - (j + 1) + 1 = p - j). clear H0 H1 H3 H11.
-        omega.
+        lia.
       rewrite H23 in |- *.
         rewrite <- H18 in |- *.
         rewrite <- H15 in |- *.
         rewrite <- MF.Iter_comp in |- *.
         clear H23.
         assert (p - j + j = p). clear H0 H1 H3 H11.
-        omega.
+        lia.
       rewrite H23 in |- *.
         unfold p in |- *.
         rewrite MF.Iter_upb_period in |- *.
@@ -1696,14 +1696,14 @@ generalize (expf_L1_CNS m x' y' x' y H7 H8).
       rewrite H22 in |- *.
         rewrite <- MF.Iter_comp in |- *.
         assert (p + i - (j + 1) + 1 = p + i - j). clear H0 H1 H3 H11.
-        omega.
+        lia.
       rewrite H23 in |- *.
         clear H23.
         rewrite <- H18 in |- *.
         rewrite <- H15 in |- *.
         rewrite <- MF.Iter_comp in |- *.
         assert (p + i - j + j = p + i). clear H0 H1 H3 H11.
-        omega.
+        lia.
       rewrite H23 in |- *.
         clear H23.
         rewrite MF.Iter_comp in |- *.
@@ -1750,7 +1750,7 @@ generalize (expf_L1_CNS m x' y' x' y H7 H8).
       simpl in H9.
         unfold prec_L in H9.
          tauto. clear H0 H1 H3 H11.
-      omega.
+      lia.
     assert (betweenf m x_1 y y).
      unfold betweenf in |- *.
        assert (MF.expo1 m x_1 y).
@@ -1888,9 +1888,9 @@ generalize (expf_L1_CNS m x' y' x' y H7 H8).
          tauto.
       tauto.
      fold p in |- *. clear H0 H1 H3 H11.
-        omega.
+        lia.
      fold p in |- *. clear H0 H1 H3 H11.
-        omega.
+        lia.
      simpl in |- *.
        rewrite H14 in |- *.
        rewrite H16 in |- *.
@@ -1914,7 +1914,7 @@ generalize (expf_L1_CNS m x' y' x' y H7 H8).
        unfold prec_L in H9.
         tauto.
      absurd (S j = i). clear H0 H1 H3 H11.
-      omega.
+      lia.
      tauto.
    unfold prec_L in H9.
      unfold prec_L in H9.
@@ -2122,10 +2122,10 @@ elim (eq_dart_dec (cA m one x') x).
        tauto.
       fold p in |- *.
         fold p in H22. clear H0 H1 H16.
-         omega.
+         lia.
       fold p in |- *.
         fold p in H22. clear H0 H1 H16. 
-         omega.
+         lia.
       rewrite H2 in |- *.
         simpl in |- *.
         rewrite H20 in |- *.
@@ -2133,7 +2133,7 @@ elim (eq_dart_dec (cA m one x') x).
         symmetry  in |- *.
          tauto.
       absurd (S j = i). clear H0 H1 H16. 
-       omega.
+       lia.
       tauto.
      tauto.
      tauto.
@@ -2183,9 +2183,9 @@ elim (eq_dart_dec (cA m one x') x).
        tauto;  tauto.
       tauto.
      fold p in |- *. clear H0 H1 H16. 
-        omega.
+        lia.
      fold p in |- *. clear H0 H1 H16. 
-        omega.
+        lia.
      rewrite H18 in |- *.
        rewrite <- MF.Iter_f_f_1 in |- *.
       simpl in |- *.
@@ -2203,9 +2203,9 @@ elim (eq_dart_dec (cA m one x') x).
        tauto.
       tauto.
       tauto. clear H0 H1 H16. 
-      omega.
+      lia.
     assert (i = j). clear H0 H1 H16. 
-      omega.
+      lia.
     rewrite H25 in H18.
       rewrite H24 in H18.
       unfold x0 in H18.
@@ -2450,7 +2450,7 @@ generalize (expf_L1_CNS m x' y' x_1 y H9 H15).
        rewrite <- H20 in |- *.
        rewrite <- MF.Iter_comp in |- *.
        assert (p - (j1 + 1) + 1 + j1 = p). clear H0 H1 H16. 
-       omega.
+       lia.
      rewrite H34 in |- *.
        unfold p in |- *.
        rewrite MF.Iter_upb_period in |- *.
@@ -2483,7 +2483,7 @@ generalize (expf_L1_CNS m x' y' x_1 y H9 H15).
        rewrite <- H20 in |- *.
        rewrite <- MF.Iter_comp in |- *.
        assert (p - (j1 + 1) + (i1 - 1) + 1 + j1 = p + (i1 - 1)). clear H0 H1 H16. 
-       omega.
+       lia.
      rewrite H34 in |- *.
        clear H34.
        assert (x0 = Iter (MF.f m) (i1 - 1) x').
@@ -2502,7 +2502,7 @@ generalize (expf_L1_CNS m x' y' x_1 y H9 H15).
         tauto.
        tauto.
        tauto. clear H0 H1 H16. 
-       omega.
+       lia.
      rewrite plus_comm in |- *.
        rewrite MF.Iter_comp in |- *.
        unfold p in |- *.
@@ -2511,7 +2511,7 @@ generalize (expf_L1_CNS m x' y' x_1 y H9 H15).
          tauto.
       tauto.
       tauto. clear H0 H1 H16. 
-     omega.
+     lia.
    assert (expf m y_0_1 x0).
     assert (expf m y y_0_1).
      unfold expf in |- *.
@@ -2638,7 +2638,7 @@ generalize (expf_L1_CNS m x' y' x_1 y H9 H15).
       rewrite <- MF.Iter_comp in |- *.
       assert (p - 1 + 1 = p).
      fold p in H28. clear H0 H1 H16. 
-        omega.
+        lia.
     rewrite H27 in |- *.
       rewrite <- H24 in |- *.
       rewrite <- MF.Iter_comp in |- *.
@@ -2657,13 +2657,13 @@ generalize (expf_L1_CNS m x' y' x_1 y H9 H15).
       tauto.
      tauto.
     fold p in |- *. clear H0 H1 H16. 
-       omega.
+       lia.
     fold p in |- *. clear H0 H1 H16. 
-       omega. 
+       lia. 
     rewrite H27 in |- *.
        tauto.
     absurd (i = p - 1). clear H0 H1 H16. 
-     omega. 
+     lia. 
     tauto.
   clear H2.
     intro.
@@ -2848,7 +2848,7 @@ fold x'1 in |- *.
         rewrite <- MF.Iter_comp in |- *.
         assert (p - 1 + 1 = p).
        fold p in H23. clear H0 H1 H2. 
-          omega.
+          lia.
       rewrite H25 in |- *.
         rewrite <- H21 in |- *.
         rewrite <- MF.Iter_comp in |- *.
@@ -2865,16 +2865,16 @@ fold x'1 in |- *.
          rewrite <- MF.Iter_comp in |- *.
          rewrite MF.Iter_f_f_1 in |- *.
         assert (j + i - i = j). clear H0 H1 H2. 
-          omega.
+          lia.
         rewrite H25 in |- *.
           clear H25.
            tauto.
         tauto.
         tauto. clear H0 H1 H2. 
-        omega.
+        lia.
        tauto.
        tauto. clear H0 H1 H2. 
-       omega.
+       lia.
      assert (p = MF.Iter_upb m y'_1).
       unfold p in |- *.
         rewrite <- H17 in |- *.
@@ -2889,13 +2889,13 @@ fold x'1 in |- *.
         generalize (exd_cA_1 m one y').
          tauto.
       rewrite <- H26 in |- *. clear H0 H1 H2. 
-         omega.
+         lia.
       rewrite <- H26 in |- *. clear H0 H1 H2. 
-         omega.
+         lia.
       rewrite H25 in |- *.
          tauto.
       absurd (p - 1 = j - i). clear H0 H1 H2. 
-       omega.
+       lia.
       tauto.
      tauto.
      tauto.
@@ -2970,7 +2970,7 @@ fold x'1 in |- *.
         tauto.
        tauto.
        tauto. clear H0 H1 H2. 
-       omega.
+       lia.
      assert (j <> p - 1).
       intro.
         rewrite H28 in H19.
@@ -3017,14 +3017,14 @@ fold x'1 in |- *.
        rewrite <- H30 in |- *.
          rewrite <- MF.Iter_comp in |- *.
          assert (p - 1 - (j + 1) + S j = p - 1). clear H0 H1 H2. 
-         omega.
+         lia.
        rewrite H33 in |- *.
           tauto.
       split.
        rewrite <- H30 in |- *.
          rewrite <- MF.Iter_comp in |- *.
          assert (p - (j + 1) + i + S j = p + i). clear H0 H1 H2. 
-         omega.
+         lia.
        rewrite H33 in |- *.
          rewrite plus_comm in |- *.
          rewrite MF.Iter_comp in |- *.
@@ -3033,7 +3033,7 @@ fold x'1 in |- *.
          tauto.
         tauto.
         tauto. clear H0 H1 H2. 
-       omega.
+       lia.
      assert (betweenf m x_1 x' y).
       rewrite H24 in |- *.
         unfold betweenf in |- *.

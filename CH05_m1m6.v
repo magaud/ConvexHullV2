@@ -734,10 +734,10 @@ unfold cFi in h4; rewrite cA_m_zero_l0 in h4.
 rewrite <- h2 in h4. assert (t0: n = i).
  apply MF.degree_unicity with m r1; try assumption.
  apply exd_cA. exact H1. apply exd_right.
- replace MF.degree with degreef; try tauto. omega.
-rewrite t0 in hle; omega. tauto. exact H1.
+ replace MF.degree with degreef; try tauto. lia.
+rewrite t0 in hle; lia. tauto. exact H1.
 apply cracke_m_l_l0. apply exd_Iter_cF. exact H1.
-apply exd_cA. exact H1. apply exd_right. omega.
+apply exd_cA. exact H1. apply exd_right. lia.
 Qed.
 
 Lemma eq_i_m_m1_cF_r1_l : forall (i:nat), (i < degreef m r1) ->
@@ -745,7 +745,7 @@ Lemma eq_i_m_m1_cF_r1_l : forall (i:nat), (i < degreef m r1) ->
 Proof.
 intros i h1 h2. rewrite <- h2.
 apply Iter_cF_m1_i_r1_Iter_cF_m_i_r1 with i.
-omega. exact h1. exact h2.
+lia. exact h1. exact h2.
 Qed.
 
 (* ===== *)
@@ -790,7 +790,7 @@ assert (t3: Iter (cF m) (S i) l1 <> l1).
  apply MF.degree_lub. exact H1.
  apply exd_cA. exact H1. apply exd_left.
  replace MF.degree with degreef; try tauto.
-omega. contradiction.
+lia. contradiction.
 elim eq_dart_dec; intro h4.
 assert False; [idtac|tauto].
 assert (t1: expf m l1 cFi).
@@ -806,7 +806,7 @@ assert (t2: ~ expf m l1 l).
 rewrite cA_m_zero_l0 in h4; rewrite <- h4 in t1.
 apply t2; exact t1. tauto. exact H1.
 apply cracke_m_l_l0. apply exd_Iter_cF. exact H1.
-apply exd_cA. exact H1. apply exd_left. omega.
+apply exd_cA. exact H1. apply exd_left. lia.
 Qed.
 
 Lemma eq_i_m_m1_cF_l1_r : forall (i:nat), (i < degreef m l1) ->
@@ -814,7 +814,7 @@ Lemma eq_i_m_m1_cF_l1_r : forall (i:nat), (i < degreef m l1) ->
 Proof.
 intros i h1 h2; rewrite <- h2.
 apply Iter_cF_m1_i_l1_Iter_cF_m_i_l1 with i.
-omega. exact h1. exact h2.
+lia. exact h1. exact h2.
 Qed.
 
 (* ===== *)
@@ -845,7 +845,7 @@ assert (t4: Iter (MF.f m1) (j+1+i) r1 = r).
 assert (t5: Iter (MF.f m1) (degreef m1 r1) r1 = r1).
  apply MF.degree_per. exact h1. apply exd_m1.
  apply exd_cA. exact H1. apply exd_right.
-repeat split; try assumption; try omega.
+repeat split; try assumption; try lia.
 elim (eq_dart_dec (j + 1 + i) (degreef m1 r1)).
 intro h. assert False; [idtac|tauto].
 rewrite h in t4; rewrite t4 in t5.
@@ -867,7 +867,7 @@ assert (t8: degreef m l0 = degreef m l1).
  apply expf_cA_cA; try assumption. apply exd_left.
 assert (t9: degreef m (cA_1 m one l0) = degreef m r1).
  apply MF.expo_degree. exact H1. tauto.
-rewrite t8; rewrite t9; intro t0. omega.
+rewrite t8; rewrite t9; intro t0. lia.
 assert False; [idtac|tauto].
 apply t7. apply expf_trans with l.
 rewrite <- eq_cA_cA_1; try assumption.
@@ -924,8 +924,8 @@ assert False; [idtac|tauto].
 unfold cFi in h3; fold l0 in h3.
 rewrite <- h2 in h3. assert (t0: n = i).
  apply MF.degree_unicity with m (cA m one r0); try assumption.
- replace MF.degree with degreef; try tauto. omega.
-rewrite t0 in hle; omega.
+ replace MF.degree with degreef; try tauto. lia.
+rewrite t0 in hle; lia.
 elim eq_dart_dec; intro h4.
 assert False; [idtac|tauto].
 rewrite cA_m_zero_l0 in h4.
@@ -938,7 +938,7 @@ unfold expf, MF.expo; repeat split; try assumption.
 exists i; unfold MF.f, McF.f; fold cFi; tauto.
 apply expfright; try assumption. apply exd_left.
 apply exd_left_dart_exd_right_dart; assumption.
-tauto. apply cracke_m_l_l0. apply exd_Iter_cF; assumption. omega.
+tauto. apply cracke_m_l_l0. apply exd_Iter_cF; assumption. lia.
 Qed.
 
 Lemma eq_i_m_m1_cF_cA_m_one_r0_l0 :
@@ -947,7 +947,7 @@ Lemma eq_i_m_m1_cF_cA_m_one_r0_l0 :
 Proof.
 intros i h1 h2. rewrite <- h2.
 apply Iter_cF_m1_i_cA_m_one_r0_Iter_cF_m_i_cA_m_one_r0 with i.
-omega. exact h1. exact h2.
+lia. exact h1. exact h2.
 Qed.
 
 (* ===== *)
@@ -1002,8 +1002,8 @@ assert (t4: Iter (cF m) (S i) (cA m one l0) = (cA m one l0)).
 assert (t5: Iter (cF m) (S i) (cA m one l0) <> (cA m one l0)).
  apply MF.degree_lub; try assumption.
  replace MF.degree with degreef; try tauto.
-omega. contradiction. tauto.
-apply cracke_m_l_l0. apply exd_Iter_cF; assumption. omega.
+lia. contradiction. tauto.
+apply cracke_m_l_l0. apply exd_Iter_cF; assumption. lia.
 Qed.
 
 Lemma eq_i_m_m1_cF_cA_m_one_l0_r0 :
@@ -1012,7 +1012,7 @@ Lemma eq_i_m_m1_cF_cA_m_one_l0_r0 :
 Proof.
 intros i h1 h2. rewrite <- h2.
 apply Iter_cF_m1_i_cA_m_one_l0_Iter_cF_m_i_cA_m_one_l0 with i.
-omega. exact h1. exact h2.
+lia. exact h1. exact h2.
 Qed.
 
 (* ===== *)
@@ -1043,7 +1043,7 @@ assert (t4: Iter (MF.f m1) (j+1+i) (cA m one r0) = r0).
 assert (t5: Iter (MF.f m1) (degreef m1 (cA m one r0)) (cA m one r0) = (cA m one r0)).
  apply MF.degree_per. exact h1. apply exd_m1.
  apply exd_cA. exact H1. apply exd_cA_1. exact H1. apply exd_right.
-repeat split; try assumption; try omega.
+repeat split; try assumption; try lia.
 elim (eq_dart_dec (j + 1 + i) (degreef m1 (cA m one r0))).
 intro h. assert False; [idtac|tauto].
 rewrite h in t4; rewrite t4 in t5.
@@ -1059,7 +1059,7 @@ assert (t8: degreef m (cA m one r0) = degreef m (cA m zero l)).
  apply expf_symm. split. exact H1. apply t6.
 assert (t9: degreef m (cA_1 m one l0) = degreef m (cA m one l0)).
  rewrite eq_cA_cA_1; try assumption. tauto.
-rewrite <- t8; rewrite t9; intro t0. omega.
+rewrite <- t8; rewrite t9; intro t0. lia.
 assert False; [idtac|tauto]. apply t6.
 apply expf_symm; try assumption. fold l0.
 unfold expf, MF.expo; repeat split; try assumption.
@@ -1103,7 +1103,7 @@ assert (t4: Iter (MF.f m1) (j+1+i) r1 = r).
 assert (t5: Iter (MF.f m1) (degreef m1 r1) r1 = r1).
  apply MF.degree_per. exact h1. apply exd_m1.
  apply exd_cA. exact H1. apply exd_right.
-repeat split; try assumption; try omega.
+repeat split; try assumption; try lia.
 elim (eq_dart_dec (j + 1 + i) (degreef m1 r1)).
 intro h. assert False; [idtac|tauto].
 rewrite h in t4; rewrite t4 in t5.
@@ -1125,7 +1125,7 @@ assert (t8: degreef m l0 = degreef m l1).
  apply expf_cA_cA; try assumption. apply exd_left.
 assert (t9: degreef m (cA_1 m one l0) = degreef m r1).
  apply MF.expo_degree. exact H1. tauto.
-rewrite t8; rewrite t9; intro td. omega.
+rewrite t8; rewrite t9; intro td. lia.
 assert False; [idtac|tauto].
 apply t7. apply expf_trans with l.
 rewrite <- eq_cA_cA_1; try assumption.
@@ -1796,7 +1796,7 @@ assert (t6: degreef m1 (cF m1 r0) = (S i)).
  assert (t6: Iter (cF m1) (S i) r0 = r0).
   rewrite MF.Iter_f_Si; try assumption.
   apply exd_m1; apply exd_cA_1. exact H1. apply exd_right.
- assert (t7: 0 < S i < degreef m1 (cF m1 r0)). omega.
+ assert (t7: 0 < S i < degreef m1 (cF m1 r0)). lia.
  assert (t8: exd m1 r0).
   apply exd_m1; apply exd_cA_1. exact H1. apply exd_right.
  assert (t9: MF.degree m1 r0 = degreef m1 (cF m1 r0)).
@@ -1805,7 +1805,7 @@ assert (t6: degreef m1 (cF m1 r0) = (S i)).
   exists 1; simpl; trivial. rewrite <- t9 in t7.
  apply (MF.degree_diff m1 r0 t1 t8 (S i)); assumption.
 rewrite t6 in h4; apply neq_r_r0. rewrite <- h2, <- h3.
-assert (t7: i = j). omega. rewrite t7; trivial.
+assert (t7: i = j). lia. rewrite t7; trivial.
 elimination H; destruct H as [h1 h2].
 assert (t4: cF m1 r = cA_1 m1 one r0).
  replace r0 with (cA_1 m1 zero r); unfold cF; trivial.
@@ -1830,7 +1830,7 @@ assert (t6: degreef m1 (cF m1 r) = (S i)).
  assert (t6: Iter (cF m1) (S i) r = r).
   rewrite MF.Iter_f_Si; try assumption.
   apply exd_m1; apply exd_right.
- assert (t7: 0 < S i < degreef m1 (cF m1 r)). omega.
+ assert (t7: 0 < S i < degreef m1 (cF m1 r)). lia.
  assert (t8: exd m1 r).
   apply exd_m1; apply exd_right.
  assert (t9: MF.degree m1 r = degreef m1 (cF m1 r)).
@@ -1845,7 +1845,7 @@ assert (t0: r <> cA m1 zero r).
  left; assumption. apply not_eq_sym; assumption.
 rewrite t6 in h4; apply t0.
 rewrite <- h1 at 1; rewrite <- h3.
-assert (t7: i = j). omega. rewrite t7; trivial.
+assert (t7: i = j). lia. rewrite t7; trivial.
 apply h1; apply (expf_refl m1 r). assumption.
 apply exd_m1; apply exd_right.
 intro H; clear H. apply h; clear h.
@@ -4585,7 +4585,7 @@ assert (t4: degreef m5 (cF m5 x) = (S i)).
  assert (t5: Iter (cF m5) (S i) x = x).
   rewrite MF.Iter_f_Si; try assumption.
   apply exd_m5; apply exd_m4; simpl; right; left; tauto.
- assert (t6: 0 < S i < degreef m5 (cF m5 x)). omega.
+ assert (t6: 0 < S i < degreef m5 (cF m5 x)). lia.
  assert (t7: exd m5 x).
   apply exd_m5; apply exd_m4; simpl; right; left; tauto.
  assert (t8: MF.degree m5 x = degreef m5 (cF m5 x)).
@@ -4593,7 +4593,7 @@ assert (t4: degreef m5 (cF m5 x) = (S i)).
   unfold MF.expo; split. assumption.
   exists 1; simpl; tauto. rewrite <- t8 in t6.
  apply (MF.degree_diff m5 x t1 t7 (S i)); assumption.
-rewrite t4 in h4. assert (t5: i = j). omega.
+rewrite t4 in h4. assert (t5: i = j). lia.
 assert (t0: x = r). rewrite <- h1, <- h3, t5; tauto.
 apply H11; rewrite t0; apply exd_right.
 elimination h; destruct h as [h1 h2].
@@ -4615,7 +4615,7 @@ assert (t3: degreef m5 (cF m5 r) = (S i)).
   rewrite MF.Iter_f_Si; try assumption.
   apply exd_m5; apply exd_m4; apply exd_m3_2.
   apply exd_m2; apply exd_m1; apply exd_right.
- assert (t5: 0 < S i < degreef m5 (cF m5 r)). omega.
+ assert (t5: 0 < S i < degreef m5 (cF m5 r)). lia.
  assert (t6: exd m5 r).
   apply exd_m5; apply exd_m4; apply exd_m3_2.
   apply exd_m2; apply exd_m1; apply exd_right.
@@ -4624,7 +4624,7 @@ assert (t3: degreef m5 (cF m5 r) = (S i)).
   unfold MF.expo; split. assumption.
   exists 1; simpl; tauto. rewrite <- t7 in t5.
  apply (MF.degree_diff m5 r t1 t6 (S i)); assumption.
-rewrite t3 in h4. assert (t4: i = j). omega.
+rewrite t3 in h4. assert (t4: i = j). lia.
 assert (t0: x = r). rewrite <- h2, <- h3, t4; tauto.
 apply H11; rewrite t0; apply exd_right.
 apply h1; apply expf_symm. unfold expf; tauto.
@@ -4666,7 +4666,7 @@ assert (t4: degreef m5 (cF m5 x) = (S i)).
  assert (t5: Iter (cF m5) (S i) x = x).
   rewrite MF.Iter_f_Si; try assumption.
   apply exd_m5; apply exd_m4; simpl; right; left; tauto.
- assert (t6: 0 < S i < degreef m5 (cF m5 x)). omega.
+ assert (t6: 0 < S i < degreef m5 (cF m5 x)). lia.
  assert (t7: exd m5 x).
   apply exd_m5; apply exd_m4; simpl; right; left; tauto.
  assert (t8: MF.degree m5 x = degreef m5 (cF m5 x)).
@@ -4674,7 +4674,7 @@ assert (t4: degreef m5 (cF m5 x) = (S i)).
   unfold MF.expo; split. assumption.
   exists 1; simpl; tauto. rewrite <- t8 in t6.
  apply (MF.degree_diff m5 x t1 t7 (S i)); assumption.
-rewrite t4 in h4. assert (t5: i = j). omega.
+rewrite t4 in h4. assert (t5: i = j). lia.
 assert (t0: x = r). rewrite <- h2, <- h3, t5; tauto.
 apply H11; rewrite t0; apply exd_right.
 elimination h; destruct h as [h1 h2].
@@ -4695,7 +4695,7 @@ rewrite MF.upb_eq_degree in h4; try assumption.
 replace MF.degree with degreef in h4; try tauto.
 assert (t4: i = S j). rewrite <- h3 in h1.
  apply MF.degree_unicity with m5 (cF m5 r); try assumption.
- replace MF.degree with degreef; try tauto. omega.
+ replace MF.degree with degreef; try tauto. lia.
  elim (eq_nat_dec (S j) (MF.degree m5 (cF m5 r))).
  intro h; assert False; [idtac|tauto].
  generalize (MF.degree_per m5 (cF m5 r) t1 t3).
@@ -4703,8 +4703,8 @@ assert (t4: i = S j). rewrite <- h3 in h1.
  unfold MF.f, McF.f in t0. rewrite h3 in t0.
  rewrite t2 in t0. apply H12; rewrite t0.
  rewrite cF_m5_r. apply exd_cA. exact H1. apply exd_right.
- replace MF.degree with degreef; try tauto. intro h; omega.
- omega. contradiction.
+ replace MF.degree with degreef; try tauto. intro h; lia.
+ lia. contradiction.
 intro h; apply h0. apply expf_trans with l.
 apply expf_symm; apply expf_m5_l_r. apply expf_m5_l_max.
 apply exd_m5; apply exd_m4; simpl; right; left; tauto.
@@ -4744,7 +4744,7 @@ assert (t5: cF m5 l = x).
  apply inv_hmap_m5. apply inv_gmap_m5.
  apply inv_hmap_m5. apply inv_gmap_m5.
 exists i. exists (S i). repeat split.
-exact t4. simpl. rewrite t4. tauto. omega.
+exact t4. simpl. rewrite t4. tauto. lia.
 rewrite MF.upb_eq_degree in *; try assumption.
 elim (eq_dart_dec (S i) (MF.degree m5 (cF m5 r))).
 intro h. assert False; [idtac|tauto].
@@ -4756,7 +4756,7 @@ assert (t7: cF m5 l <> cF m5 r).
 assert (t8: Iter (MF.f m5) (S i) (cF m5 r) = cF m5 l).
  simpl. rewrite t4. tauto.
 apply t7. rewrite <- t6. rewrite <- t8.
-rewrite h. tauto. intro h; omega.
+rewrite h. tauto. intro h; lia.
 apply MF.between_expo_refl_2. exact t1.
 apply -> exd_cF. apply exd_m5; apply exd_m4; apply exd_m3_2.
 apply exd_m2; apply exd_m1; apply exd_right. exact t1.
@@ -4986,9 +4986,9 @@ assert (t2: max <> cF6).
  exists 1; simpl; apply cF_m6_x.
 assert (t3: l <> cF6).
  intro h; unfold cF6 in h; rewrite <- hn in h.
- cut (n = i). intro h0; rewrite h0 in hle; omega.
+ cut (n = i). intro h0; rewrite h0 in hle; lia.
  apply (MF.degree_unicity m6 r1 n i); try assumption.
- replace MF.degree with degreef; try tauto. omega.
+ replace MF.degree with degreef; try tauto. lia.
 assert (t4: x <> cF6).
  intro h; unfold cF6 in h.
  assert (t0: Iter (cF m6) (S n) r1 = x).
@@ -4997,7 +4997,7 @@ assert (t4: x <> cF6).
   apply exd_Merge; apply exd_m5; apply exd_m4.
   unfold m3; simpl; right; left; tauto.
  rewrite h in t0. cut ((S n) = i).
- intro h0; rewrite <- h0 in hle; omega.
+ intro h0; rewrite <- h0 in hle; lia.
  apply (MF.degree_unicity m6 r1 (S n) i); try assumption.
  elim (eq_nat_dec (S n) (degreef m6 r1)); intro h0.
  assert False; [idtac|tauto].
@@ -5006,8 +5006,8 @@ assert (t4: x <> cF6).
  replace MF.degree with degreef in h1; try tauto.
  rewrite h; rewrite <- t0; rewrite h0; rewrite h1.
  apply exd_cA. exact H1. apply exd_right.
- replace MF.degree with degreef; try tauto. omega.
- replace MF.degree with degreef; try tauto. omega.
+ replace MF.degree with degreef; try tauto. lia.
+ replace MF.degree with degreef; try tauto. lia.
 assert (t0: exd m6 cF6).
  apply exd_Iter_cF; assumption. apply exd_Merge in t0.
  apply exd_m5 in t0. apply exd_m4 in t0.
@@ -5169,7 +5169,7 @@ apply inv_hmap_m5.
 apply exd_m5; apply exd_m4; unfold m3; simpl; tauto.
 apply exd_m5; apply exd_m4; apply exd_m3_2.
 apply exd_m2; apply exd_m1; apply exd_right.
-omega.
+lia.
 Qed.
 
 (*
@@ -5181,9 +5181,9 @@ generalize (exists_i_Iter_cF_m_i_r1_l).
 intro h; elim h; clear h; intros i [h1 h2].
 exists i; split; try assumption.
 intros j hj. intro h. rewrite <- h2 in h.
-apply MF.degree_unicity in h. omega.
+apply MF.degree_unicity in h. lia.
 assumption. apply exd_r1.
-replace MF.degree with degreef; try tauto. omega.
+replace MF.degree with degreef; try tauto. lia.
 replace MF.degree with degreef; try tauto.
 Qed.
 
@@ -5204,8 +5204,8 @@ replace MF.degree with degreef in *; try tauto.
 unfold MF.f, McF.f in *.
 exists i; split; try assumption.
 intros j hj. intro h. rewrite <- h4 in h.
-apply MF.degree_unicity in h; try assumption. omega.
-replace MF.degree with degreef; try tauto. omega.
+apply MF.degree_unicity in h; try assumption. lia.
+replace MF.degree with degreef; try tauto. lia.
 Qed.
 
 Lemma testing : forall (i:nat),
@@ -5298,20 +5298,20 @@ rewrite MF.degree_per; try assumption.
 simpl; unfold MF.f_1, McF.f_1. apply cF_1_m6_r1.
 rewrite MF.upb_eq_degree in *; try assumption.
 replace MF.degree with degreef in *; try tauto.
-omega. right; unfold betweenf, MF.between.
+lia. right; unfold betweenf, MF.between.
 intros h6 h7. exists i. exists (degreef m6 r1 - 2).
 rewrite MF.upb_eq_degree in *; try assumption.
 replace MF.degree with degreef in *; try tauto.
 unfold MF.f, McF.f in *. repeat split; try lia.
-exact h4. rewrite <- MF.Iter_f_f_1; try assumption.
+(* exact H4. *)rewrite <- MF.Iter_f_f_1; try assumption.
 rewrite MF.degree_per; try assumption.
 simpl; unfold MF.f_1, McF.f_1.
 rewrite cF_1_m6_r1; apply cF_1_m6_x.
 elim (eq_dart_dec (degreef m6 r1) 0); intro t1.
-rewrite t1 in h3. assert False; [omega|tauto].
+rewrite t1 in h3. assert False; [lia|tauto].
 elim (eq_dart_dec (degreef m6 r1) 1); intro t2.
-rewrite t2 in h3, h5. assert False; [omega|tauto].
-omega.
+rewrite t2 in h3, h5. assert False; [lia|tauto].
+lia.
 Qed.
 
 Lemma betweenf_m6_m_r1_da_l : forall (da:dart),
@@ -5349,17 +5349,17 @@ elim t7; clear t7; intros z2 [t7 t8].
 rewrite MF.upb_eq_degree in *; try assumption.
 replace MF.degree with degreef in *; try tauto.
 unfold MF.f, McF.f in *.
-exists z1; exists z2; repeat split; try assumption; try omega.
+exists z1; exists z2; repeat split; try assumption; try lia.
 admit. (* <===== ADMIT in comment *)
-omega. omega. exact hj.
-omega. omega. exact hj.
+lia. lia. exact hj.
+lia. lia. exact hj.
 Qed.
 *)
-exists i. exists j. repeat split; try assumption; try omega.
+exists i. exists j. repeat split; try assumption; try lia.
 assert (t0: (degreef m6 r1 <= degreef m r1) \/ (degreef m6 r1 = (degreef m r1 + 1))).
 
 admit. (* <===== ADMIT *)
-elimination t0. omega. rewrite t0 in h0. clear t0.
+elimination t0. lia. rewrite t0 in h0. clear t0.
 elim (eq_nat_dec j (degreef m r1)); intro heq.
 assert False; [idtac|tauto]. rewrite heq in hj.
 rewrite MF.degree_per in hj; try assumption.
@@ -5376,9 +5376,9 @@ assert (t4: exd m l). apply exd_left.
 assert (t5: r <> nil). apply exd_left_dart_exd_right_dart; assumption.
 generalize (visibleright m l p 0 H1 t4 t5).
 intro h4; fold r in h4; unfold visible_pred in h4; fold r0 in h4.
-apply ccw_axiom_2 in h4. contradiction. omega.
-omega. omega. exact hj.
-omega. omega. exact hj.
+apply ccw_axiom_2 in h4. contradiction. lia.
+lia. lia. exact hj.
+lia. lia. exact hj.
 Admitted. (*Qed.*)
 
 Lemma expf_m6_x_da_expf_m_d_da : forall (da:dart),
@@ -5495,11 +5495,11 @@ unfold cF_1. fold r1. rewrite cA_1_cA; try assumption.
 intro c2; rewrite t4 in c2.
 apply ccw_axiom_2 in c2. apply c2; exact c1.
 rewrite MF.upb_eq_degree in h3; try assumption.
-unfold r1 in *; omega.
+unfold r1 in *; lia.
 rewrite MF.upb_eq_degree in h3; try assumption.
-unfold r1 in *; omega.
+unfold r1 in *; lia.
 unfold MF.f, McF.f in *. rewrite t4; exact t3.
-rewrite <- t5 in hk. omega.
+rewrite <- t5 in hk. lia.
 Qed.
 
 Lemma betweenf_m_r1_cF_1_m_l :
@@ -5514,13 +5514,13 @@ elim h0; clear h0; intros i h0.
 elim h0; clear h0; intros j h0.
 destruct h0 as [h3 [h4 h5]].
 exists i; exists (j-1); repeat split; try lia.
-exact h3. rewrite <- MF.Iter_f_f_1; try assumption.
+(*exact h3.*) rewrite <- MF.Iter_f_f_1; try assumption.
 rewrite h4; simpl Iter; unfold MF.f_1, McF.f_1; tauto.
-elim (eq_dart_dec 0 j); intro hj; try omega.
+elim (eq_dart_dec 0 j); intro hj; try lia.
 assert False; [idtac|tauto].
 rewrite <- hj in h4; simpl in h4.
 apply neq_l_r1; rewrite h4; tauto.
-elim (eq_dart_dec i j); intro hj; try omega.
+elim (eq_dart_dec i j); intro hj; try lia.
 assert False; [idtac|tauto].
 apply hl; rewrite <- h3; rewrite <- h4; rewrite hj; tauto.
 Qed.
@@ -6087,8 +6087,8 @@ assert (h6: 2 <= i <= degreef m1 r1). split.
  apply exd_cA. exact H1. apply exd_right.
  unfold r0, r1; rewrite <- eq_cA_cA_1; try assumption.
  apply expf_symm; apply expf_cA_cA; try assumption. apply exd_right.
- omega. rewrite <- hi; rewrite <- MF.degree_uniform; try assumption.
- replace MF.degree with degreef; try tauto. omega.
+ lia. rewrite <- hi; rewrite <- MF.degree_uniform; try assumption.
+ replace MF.degree with degreef; try tauto. lia.
  apply exd_m1; apply exd_right.
 generalize (degreef_Split0_split_summary m1 r0 r r1 i h1 h2 h3).
 rewrite h4; rewrite h5; apply eq_sym in hi.
@@ -6241,8 +6241,8 @@ assert (h8: 2 <= i <= degreef m5 max). split.
  subst i; assert False; [idtac|tauto].
  simpl in hi; rewrite cF_m5_r in hi.
  apply H12; rewrite <- hi; apply exd_cA. exact H1. apply exd_right.
- omega. rewrite <- hi; rewrite <- MF.degree_uniform; try assumption.
- replace MF.degree with degreef; try tauto. omega.
+ lia. rewrite <- hi; rewrite <- MF.degree_uniform; try assumption.
+ replace MF.degree with degreef; try tauto. lia.
 generalize (degreef_Merge0_split_summary m5 x r r1 i h1 h2 h3 h4 h5).
 rewrite h6; rewrite cF_m5_r; apply eq_sym in hi.
 intro h; generalize (h hi h8); clear h.

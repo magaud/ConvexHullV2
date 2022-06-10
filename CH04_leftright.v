@@ -220,7 +220,7 @@ set (P := fun (i:nat)(res:dart) => inv_hmap m -> exd m d -> res = nil ->
   (forall (j:nat), (i <= j < degreef m d) -> ~ (left_dart m (Iter (cF m) j d) p))).
 apply (search_left_ind m d p P).
 intros i h1 h2; unfold P.
-intros hmap hexd heq j hj; omega.
+intros hmap hexd heq j hj; lia.
 intros i h1 h2 di h3 h4; unfold P.
 intros hmap hexd heq; clear P h2 h4.
 assert False; [idtac|tauto].
@@ -230,7 +230,7 @@ intros i h1 h2 di h3 h4; unfold P.
 intros H hmap hexd heq j hj; clear P h2 h4.
 elim (eq_nat_dec i j).
 intro h; subst j; apply h3.
-intro h; apply H; try assumption. omega.
+intro h; apply H; try assumption. lia.
 Qed.
 
 Lemma exists_left_left_neq_nil : forall (m:fmap)(d:dart)(p:point)(i:nat),
@@ -369,7 +369,7 @@ set (P := fun (i:nat)(res:dart) => inv_hmap m -> exd m d -> res = nil ->
   (forall (j:nat), (i <= j < degreef m d) -> ~ (right_dart m (cA m zero (Iter (cF m) j d)) p))).
 apply (search_right_ind m d p P).
 intros i h1 h2; unfold P.
-intros hmap hexd heq j hj; omega.
+intros hmap hexd heq j hj; lia.
 intros i h1 h2 di di0 h3 h4; unfold P.
 intros hmap hexd heq; clear P h2 h4.
 assert False; [idtac|tauto].
@@ -380,7 +380,7 @@ intros i h1 h2 di di0 h3 h4; unfold P.
 intros H hmap hexd heq j hj; clear P h2 h4.
 elim (eq_nat_dec i j).
 intro h; subst j; apply h3.
-intro h; apply H; try assumption. omega.
+intro h; apply H; try assumption. lia.
 Qed.
 
 Lemma exists_right_r_neq_nil : forall (m:fmap)(d:dart)(p:point)(i:nat),
@@ -419,7 +419,7 @@ generalize (t1 (conj h2 t0)); clear t0 t1.
 intros [t1 t2]; elim t2; clear t1 t2.
 intros j [j1 j2]; rewrite <- j2; apply h4.
 rewrite <- MF.upb_eq_degree; try assumption.
-omega. rewrite <- hi; apply h4; omega.
+lia. rewrite <- hi; apply h4; lia.
 Qed.
 
 (* ================================ *)
@@ -732,9 +732,9 @@ induction i.
  simpl in *; assumption.
  (* Cas 2 = S i *)
  assert (h1: ~ left_dart m (Iter (cF m) (S i) x) p).
-  apply H; omega.
+  apply H; lia.
  assert (h2: invisible_succ m (Iter (cF m) i x) p).
-  apply IHi; intros j hj; apply H; omega.
+  apply IHi; intros j hj; apply H; lia.
  unfold left_dart in h1; simpl in *; clear H IHi.
  pose (xi := Iter (cF m) i x). fold xi; fold xi in h1, h2.
  elim (invisible_succ_dec m (cF m xi) p); try trivial.
@@ -765,9 +765,9 @@ induction i.
  simpl in *; assumption.
  (* Cas 2 = S i *)
  assert (h1: ~ left_dart m (Iter (cF_1 m) i x) p).
-  apply H; omega.
+  apply H; lia.
  assert (h2: visible_succ m (Iter (cF_1 m) i x) p).
-  apply IHi; intros j hj; apply H; omega.
+  apply IHi; intros j hj; apply H; lia.
  unfold left_dart in h1; simpl in *; clear H IHi.
  pose (xi := Iter (cF_1 m) i x). fold xi; fold xi in h1, h2.
  elim (visible_succ_dec m (cF_1 m xi) p); try trivial.
@@ -829,7 +829,7 @@ Lemma not_all_visible_in_face_bis :
 Proof. intro h.
 (**)
 elim (eq_dart_dec (degreef m d) 1); intro hd.
-assert (t0: 0 < degreef m d). omega.
+assert (t0: 0 < degreef m d). lia.
 generalize (h 0 t0); clear t0; simpl.
 unfold visible_succ; intro h1.
 generalize (MF.degree_per m d H1 Hd).
@@ -848,7 +848,7 @@ apply exd_cA; assumption.
 assert (h0: forall (da:dart)(i:nat), 0 < i -> expf m d da ->
  ccw (fpoint m da) p (fpoint m (Iter (cF m) i da))).
 intros da i hi hda; induction i.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim (eq_dart_dec i 0).
 intro heq. subst i; simpl; clear hi IHi.
 unfold expf in hda; destruct hda as [h1 h2].
@@ -867,7 +867,7 @@ replace (fpoint m (cA m zero da)) with
 tauto. apply cA_one_fpoint; try assumption.
 apply exd_cA; try assumption.
 rewrite <- h4; apply exd_Iter_cF; assumption.
-intro heq. assert (t0: 0 < i). omega. clear hi heq.
+intro heq. assert (t0: 0 < i). lia. clear hi heq.
 generalize (IHi t0); clear IHi t0; intro h0.
 simpl. set (di := (Iter (cF m) i da)). fold di in h0.
 assert (t1: exd m da). apply expf_symm in hda.
@@ -941,12 +941,12 @@ apply exd_cA; try assumption.
 (**)
 assert (t1: 0 < (degreef m d) - 1).
 generalize (MF.degree_pos m d Hd).
-replace MF.degree with degreef; try tauto. omega.
+replace MF.degree with degreef; try tauto. lia.
 assert (t2: expf m d d). apply expf_refl; assumption.
 generalize (h0 d ((degreef m d) - 1) t1 t2).
 replace (Iter (cF m) (degreef m d - 1) d) with (cF_1 m d).
 unfold cF_1; intro h1.
-assert (t3: 0 < 1). omega.
+assert (t3: 0 < 1). lia.
 assert (t4: expf m d (cF_1 m d)).
 generalize (expf_Iter_cF_1 m d 1 H1 Hd); simpl; tauto.
 generalize (h0 (cF_1 m d) 1 t3 t4).
@@ -957,7 +957,7 @@ apply ccw_axiom_2 in h2. contradiction.
 rewrite <- MF.Iter_f_f_1; try assumption.
 simpl; unfold MF.f_1, McF.f_1.
 rewrite MF.degree_per; try assumption.
-tauto. omega.
+tauto. lia.
 Qed.
 
 Lemma not_all_visible_in_face :
@@ -991,9 +991,9 @@ induction i.
  simpl in *; assumption.
  (* Cas 2 = S i *)
  assert (h1: ~ right_dart m (cA m zero (Iter (cF m) i x)) p).
-  apply H; omega.
+  apply H; lia.
  assert (h2: visible_succ m (Iter (cF m) i x) p).
-  apply IHi; intros j hj; apply H; omega.
+  apply IHi; intros j hj; apply H; lia.
  clear H IHi.
  unfold right_dart in h1; simpl in *.
  elim (visible_succ_dec m (cF m (Iter (cF m) i x)) p); try trivial.
@@ -1045,21 +1045,21 @@ Lemma exist_forall_i :
 Proof.
 intros m0 d0 p0 P k Hdec.
 induction k.
-right; intro i; left; omega.
+right; intro i; left; lia.
 elim IHk; clear IHk.
 intro IHk; left.
 elim IHk; clear IHk; intros x0 IHk.
-exists x0; split; [omega|tauto].
+exists x0; split; [lia|tauto].
 intro IHk.
 generalize (Hdec k); clear Hdec.
 intro H; elim H; clear H.
 intro H; left.
-exists k; split; [omega|tauto].
+exists k; split; [lia|tauto].
 intro H; right; intro i.
 elim (eq_nat_dec i k); intro Heq.
 rewrite Heq in *; tauto.
 generalize (IHk i); intro h0; elim h0.
-intro h; left; omega.
+intro h; left; lia.
 intro h; right; assumption.
 Qed.
 
@@ -1092,7 +1092,7 @@ assert (H01 : Iter (cF m) ((MF.Iter_upb m l) - 1) l = cF_1 m l).
  simpl in *; tauto.
  apply exdleft; assumption.
  apply exdleft; assumption.
- assert (0 < (MF.Iter_upb m l)); [idtac|omega].
+ assert (0 < (MF.Iter_upb m l)); [idtac|lia].
   apply MF.upb_pos; apply exdleft; assumption.
 rewrite H01 in h0; clear H01.
 cut (visible_succ m (cF_1 m l) p).
@@ -1101,7 +1101,7 @@ intro h. apply invisible_not_visible_succ in h.
 unfold l; contradiction.
 apply h0; intros j Hj; generalize (H j); clear H h0.
 intro H; elim H; clear H; intro H; try assumption.
-assert (0 < (MF.Iter_upb m l)); [idtac|omega].
+assert (0 < (MF.Iter_upb m l)); [idtac|lia].
  apply MF.upb_pos; apply exdleft; assumption.
 apply visibleleft; assumption.
 apply expfleft; assumption.
@@ -1116,7 +1116,7 @@ elim h; clear h; intros i [h1 h2].
 apply exists_right_r_neq_nil; try assumption.
 apply exdleft; try assumption.
 exists i; split; try assumption.
-split. omega.
+split. lia.
 rewrite <- MF.upb_eq_degree; try assumption.
 apply exdleft; assumption.
 Qed.

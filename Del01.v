@@ -15,7 +15,7 @@ CONTINUED MAY 2009
 Require Import Arith.
 Require Import EqNat.
 Require Export Reals.
-Require Export Omega.
+Require Export Lia.
 
 Open Scope R_scope.
 
@@ -30,7 +30,7 @@ Inductive dim:Set := zero : dim | one : dim.
 Lemma eq_dim_dec :
  forall i k : dim, {i=k}+{~i=k}.
 Proof.
-double induction i k.
+induction i; induction k.
  tauto.
  right. discriminate.
  right. discriminate.
@@ -1707,6 +1707,7 @@ simpl in |- *.
   intros k x y.
   elim (eq_dart_dec d x).
   intuition.
+  rewrite <- H4; rewrite <- H0; trivial.
   rewrite H4 in H5.
     generalize (not_exd_A_nil m k x H3 H5).
     rewrite H2 in |- *.
@@ -1718,8 +1719,11 @@ simpl in |- *.
    tauto.
  rewrite a in H5.
     tauto.
- intuition.
-  rewrite <- H0 in H2.
+    intuition.
+    rewrite <- a in H4.
+    tauto.
+   intuition.
+    rewrite <- H0 in H2.
    absurd (exd m d).
   tauto.
 rewrite <- H2 in |- *.
@@ -1796,6 +1800,8 @@ simpl in |- *.
   intros k x y.
   elim (eq_dart_dec d x).
   intuition.
+  subst;intuition. (* code added here *)
+  2:subst;intuition.
   rewrite <- H4 in H2.
     assert (A_1 m k d = nil).
    apply not_exd_A_1_nil.
@@ -1806,9 +1812,9 @@ simpl in |- *.
      absurd (exd m nil).
    apply not_exd_nil.
       tauto.
-   tauto.
- rewrite a in H5.
-    tauto.
+      tauto.
+   rewrite a in H5.
+ tauto.
  intuition.
   rewrite <- H0 in H2.
   elim H5.
@@ -1817,7 +1823,7 @@ simpl in |- *.
   tauto.
 unfold pred in |- *.
   rewrite H2 in |- *.
-   tauto.
+  tauto.
 intros k x y.
   simpl in |- *.
   unfold prec_L in |- *.

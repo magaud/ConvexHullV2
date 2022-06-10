@@ -1100,10 +1100,10 @@ assert (H0: prec_CHID (fst m2) (snd m2) d t p max).
  generalize (Hm25 x0 y H H0 H1); intros [t1 t2]; exact t1.
  generalize (Hm25 x0 y H H0 H1); intros [t1 t2]; exact t2.
  apply Hw1; tauto.
- assert (t0: max <= max). omega.
+ assert (t0: max <= max). lia.
  generalize (Hw2 max t0). tauto.
- apply Hw0; omega.
- assert (t0: d < max). apply Hw3; tauto. omega.
+ apply Hw0; lia.
+ assert (t0: d < max). apply Hw3; tauto. lia.
  intros da hda; apply not_eq_sym.
  generalize (Hp1 d da); eqdartdec.
  intro h; apply h; tauto.
@@ -1148,36 +1148,36 @@ assert (H0: prec_CHID (fst m2) (snd m2) d t p max).
  unfold m, x; rewrite cA_m6_zero_x; try assumption.
  apply not_expf_m6_x_r; try assumption.
  apply Hw1; left; tauto.
- assert (H: max <= max). omega.
+ assert (H: max <= max). lia.
  generalize (Hw2 max H). tauto.
- apply Hw0; omega.
+ apply Hw0; lia.
  assert (H: d = d \/ exd m1 d). left; tauto.
- generalize (Hw3 d H). omega.
+ generalize (Hw3 d H). lia.
  intros da db; simpl; intros hda hdb hp.
  generalize (Hp3 d da db); eqdartdec.
  intro h; apply h; tauto.
  apply Hw1; left; tauto.
- assert (H: max <= max). omega.
+ assert (H: max <= max). lia.
  generalize (Hw2 max H). tauto.
- apply Hw0; omega.
+ apply Hw0; lia.
  assert (H: d = d \/ exd m1 d). left; tauto.
- generalize (Hw3 d H). omega.
+ generalize (Hw3 d H). lia.
  (* Hw0 *)
- intros d0 Hd0; apply Hw0; omega.
+ intros d0 Hd0; apply Hw0; lia.
  (* Hw1 *)
  intros da Hda; apply not_exd_CHID.
   apply Hw1; right; assumption.
   intro h; subst da; contradiction.
   assert (t0: da < max).
-  apply Hw3; tauto. omega.
+  apply Hw3; tauto. lia.
  (* Hw2 *)
  intros da Hda; split.
-  assert (H : max <= da); [omega|idtac].
+  assert (H : max <= da); [lia|idtac].
   generalize (Hw2 da H); intuition.
-  apply not_exd_CHID; try omega.
-  assert (H : max <= da); [omega|idtac].
+  apply not_exd_CHID; try lia.
+  assert (H : max <= da); [lia|idtac].
   generalize (Hw2 da H); intuition.
-  assert (H : max <= da); [omega|idtac].
+  assert (H : max <= da); [lia|idtac].
   generalize (Hw2 da H); intuition.
  (* Hp1 *)
  intros da db Hda Hdb.
@@ -1189,7 +1189,7 @@ assert (H0: prec_CHID (fst m2) (snd m2) d t p max).
   assert (t1: db <> d).
    intro h; subst db; apply Hw1 with d; tauto.
   assert (t2: db <> max).
-   intro h; subst db; generalize (Hw5 max Hdb); omega.
+   intro h; subst db; generalize (Hw5 max Hdb); lia.
   rewrite <- inv_fpoint_CHID; try assumption.
   generalize (Hp1 da db). eqdartdec.
   intro h; apply h; try tauto; clear h.
@@ -1212,7 +1212,7 @@ assert (H0: prec_CHID (fst m2) (snd m2) d t p max).
   assert (t1: dc <> d).
    intro h; subst dc; apply Hw1 with d; tauto.
   assert (t2: dc <> max).
-   intro h; subst dc; generalize (Hw5 max Hdc2); omega.
+   intro h; subst dc; generalize (Hw5 max Hdc2); lia.
   rewrite <- inv_fpoint_CHID; try assumption.
   generalize (Hp2 da db dc). eqdartdec.
   intro h; apply h; try tauto; clear h.
@@ -1247,7 +1247,7 @@ assert (H0: prec_CHID (fst m2) (snd m2) d t p max).
   assert (ta: d2 <> d).
    intro h; subst d2; apply Hw1 with d; tauto.
   assert (tb: d2 <> max).
-   intro h; subst d2; generalize (Hw5 max Hd20); omega.
+   intro h; subst d2; generalize (Hw5 max Hd20); lia.
  assert (H1 : fpoint (fst m2) d2 = fpoint (fst (CHID m2 d t p max)) d2).
   apply inv_fpoint_CHID; try assumption.
  rewrite <- H1 in *.
@@ -1257,7 +1257,7 @@ assert (H0: prec_CHID (fst m2) (snd m2) d t p max).
   assert (tc: d3 <> d).
    intro h; subst d3; apply Hw1 with d; tauto.
   assert (td: d3 <> max).
-   intro h; subst d3; generalize (Hw5 max Hd30); omega.
+   intro h; subst d3; generalize (Hw5 max Hd30); lia.
  assert (H2 : fpoint (fst m2) d3 = fpoint (fst (CHID m2 d t p max)) d3).
   apply inv_fpoint_CHID; try assumption.
  rewrite <- H2 in *.
@@ -1291,7 +1291,7 @@ assert (H0: prec_CHID (fst m2) (snd m2) d t p max).
   assert (tc: d3 <> d).
    intro h; subst d3; apply Hw1 with d; tauto.
   assert (td: d3 <> max).
-   intro h; subst d3; generalize (Hw5 max Hd30); omega.
+   intro h; subst d3; generalize (Hw5 max Hd30); lia.
  assert (H2 : fpoint (fst m2) d3 = fpoint (fst (CHID m2 d t p max)) d3).
   apply inv_fpoint_CHID; try assumption.
  rewrite <- H2 in *.
@@ -1317,7 +1317,7 @@ assert (H0: prec_CHID (fst m2) (snd m2) d t p max).
   assert (tc: d3 <> d).
    intro h; subst d3; apply Hw1 with d; tauto.
   assert (td: d3 <> max).
-   intro h; subst d3; generalize (Hw5 max Hd30); omega.
+   intro h; subst d3; generalize (Hw5 max Hd30); lia.
  assert (H2 : fpoint (fst m2) d3 = fpoint (fst (CHID m2 d t p max)) d3).
   apply inv_fpoint_CHID; try assumption.
  rewrite <- H2 in *.

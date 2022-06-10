@@ -32,19 +32,19 @@ Lemma inv_hmap_CH2_m1 : inv_hmap m1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m1.
 unfold inv_hmap, prec_I; simpl; repeat split; tauto.
 Qed.
@@ -53,19 +53,19 @@ Lemma inv_hmap_CH2_m2 : inv_hmap m2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m2.
 apply inv_hmap_Merge1.
 apply inv_hmap_CH2_m1.
@@ -90,19 +90,19 @@ Lemma inv_hmap_CH2_m3 : inv_hmap m3.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m3.
 apply inv_hmap_Merge1.
 apply inv_hmap_CH2_m2.
@@ -178,19 +178,19 @@ Lemma inv_hmap_CH2_m4 : inv_hmap m4.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4.
 apply inv_hmap_Merge0.
 apply inv_hmap_CH2_m3.
@@ -222,19 +222,19 @@ Lemma inv_hmap_CH2_m5 : inv_hmap m5.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5.
 apply inv_hmap_Merge0.
 apply inv_hmap_CH2_m4.
@@ -347,19 +347,19 @@ Lemma cA_m1_k_da :
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intros k da h; case k; unfold m1 in *; simpl in *.
 elimination h. subst da; eqdartdec; trivial.
 elimination h. subst da; eqdartdec; trivial.
@@ -380,19 +380,19 @@ Lemma cA_m2_zero_da :
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intros da h; unfold m2 in *; simpl in *.
 elimination h. subst da; eqdartdec; trivial.
 elimination h. subst da; eqdartdec; trivial.
@@ -405,19 +405,19 @@ Lemma cA_m2_one_x1 : cA m2 one x1 = max+1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m2; simpl; eqdartdec; trivial.
 Qed.
 
@@ -425,19 +425,19 @@ Lemma cA_m2_one_x2 : cA m2 one x2 = x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m2; simpl; eqdartdec; trivial.
 Qed.
 
@@ -445,19 +445,19 @@ Lemma cA_m2_one_max1 : cA m2 one (max+1) = x1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m2; simpl; eqdartdec; trivial.
 Qed.
 
@@ -465,19 +465,19 @@ Lemma cA_m2_one_max2 : cA m2 one (max+2) = max+2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m2; simpl; eqdartdec; trivial.
 Qed.
 
@@ -488,19 +488,19 @@ Lemma cA_m3_zero_da :
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intros da h; do 2 apply exd_Merge in h.
 simpl in h; unfold m3. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
@@ -519,19 +519,19 @@ Lemma cA_m3_one_x1 : cA m3 one x1 = max+1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m3. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -551,19 +551,19 @@ Lemma cA_m3_one_x2 : cA m3 one x2 = max+2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m3. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -581,19 +581,19 @@ Lemma cA_m3_one_max1 : cA m3 one (max+1) = x1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m3. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -612,19 +612,19 @@ Lemma cA_m3_one_max2 : cA m3 one (max+2) = x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m3. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. trivial.
@@ -637,19 +637,19 @@ Lemma cA_m4_zero_x1 : cA m4 zero x1 = max+2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. trivial.
@@ -660,19 +660,19 @@ Lemma cA_m4_zero_x2 : cA m4 zero x2 = x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -692,19 +692,19 @@ Lemma cA_m4_zero_max1 : cA m4 zero (max+1) = max+1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -724,19 +724,19 @@ Lemma cA_m4_zero_max2 : cA m4 zero (max+2) = x1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -756,19 +756,19 @@ Lemma cA_m4_one_x1 : cA m4 one x1 = max+1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
 rewrite cA_m3_one_x1; trivial.
@@ -779,19 +779,19 @@ Lemma cA_m4_one_x2 : cA m4 one x2 = max+2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
 rewrite cA_m3_one_x2; trivial.
@@ -802,19 +802,19 @@ Lemma cA_m4_one_max1 : cA m4 one (max+1) = x1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
 rewrite cA_m3_one_max1; trivial.
@@ -825,19 +825,19 @@ Lemma cA_m4_one_max2 : cA m4 one (max+2) = x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
 rewrite cA_m3_one_max2; trivial.
@@ -850,19 +850,19 @@ Lemma cA_m5_zero_x1 : cA m5 zero x1 = max+2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -889,19 +889,19 @@ Lemma cA_m5_zero_x2 : cA m5 zero x2 = max+1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. trivial.
@@ -912,19 +912,19 @@ Lemma cA_m5_zero_max1 : cA m5 zero (max+1) = x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -948,19 +948,19 @@ Lemma cA_m5_zero_max2 : cA m5 zero (max+2) = x1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try tauto.
 eqdartdec. elim eq_dart_dec.
@@ -986,19 +986,19 @@ Lemma cA_m5_one_x1 : cA m5 one x1 = max+1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
 rewrite cA_m4_one_x1; trivial.
@@ -1009,19 +1009,19 @@ Lemma cA_m5_one_x2 : cA m5 one x2 = max+2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
 rewrite cA_m4_one_x2; trivial.
@@ -1032,19 +1032,19 @@ Lemma cA_m5_one_max1 : cA m5 one (max+1) = x1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
 rewrite cA_m4_one_max1; trivial.
@@ -1055,19 +1055,19 @@ Lemma cA_m5_one_max2 : cA m5 one (max+2) = x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. rewrite cA_Merge.
 elim eq_dim_dec; intro h0; try inversion h0.
 rewrite cA_m4_one_max2; trivial.
@@ -1080,19 +1080,19 @@ Lemma inv_gmap_CH2_m1 : inv_gmap m1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold inv_gmap. intros k x hx.
 do 2 rewrite cA_m1_k_da; try assumption. trivial.
 Qed.
@@ -1101,19 +1101,19 @@ Lemma inv_gmap_CH2_m2 : inv_gmap m2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold inv_gmap. intros k x hx. case k.
 (* k = zero *)
 do 2 rewrite cA_m2_zero_da; try assumption. trivial.
@@ -1134,19 +1134,19 @@ Lemma inv_gmap_CH2_m3 : inv_gmap m3.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold inv_gmap. intros k x hx. case k.
 (* k = zero *)
 do 2 rewrite cA_m3_zero_da; try assumption. trivial.
@@ -1167,19 +1167,19 @@ Lemma inv_gmap_CH2_m4 : inv_gmap m4.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold inv_gmap. intros k x hx.
 do 3 apply exd_Merge in hx. simpl in hx. case k.
 (* k = zero *)
@@ -1208,19 +1208,19 @@ Lemma inv_gmap_CH2_m5 : inv_gmap m5.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold inv_gmap. intros k x hx.
 do 4 apply exd_Merge in hx. simpl in hx. case k.
 (* k = zero *)
@@ -1251,19 +1251,19 @@ Lemma inv_poly_m5 : inv_poly m5 x1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold inv_poly. intros k x.
 fold m1. fold m2. fold m3. fold m4. fold m5. intro h.
 assert (H: x = x1 \/ x = x2 \/ x = max+1 \/ x = max+2).
@@ -1711,16 +1711,16 @@ rewrite cA_m5_zero_x1; assumption.
 elimination H. subst x.
 rewrite cA_m5_zero_x2; assumption.
 elimination H; subst x.
-rewrite cA_m5_zero_max1; omega.
-rewrite cA_m5_zero_max2; omega.
+rewrite cA_m5_zero_max1; lia.
+rewrite cA_m5_zero_max2; lia.
 (* k = one *)
 elimination H. subst x.
 rewrite cA_m5_one_x1; assumption.
 elimination H. subst x.
 rewrite cA_m5_one_x2; assumption.
 elimination H; subst x.
-rewrite cA_m5_one_max1; omega.
-rewrite cA_m5_one_max2; omega.
+rewrite cA_m5_one_max1; lia.
+rewrite cA_m5_one_max2; lia.
 Qed.
 
 (* ================================ *)
@@ -1729,19 +1729,19 @@ Lemma planar_CH2_m1 : planar m1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m1.
 apply planar_I.
 unfold inv_hmap, prec_I; simpl; repeat split; tauto.
@@ -1762,19 +1762,19 @@ Lemma planar_CH2_m2 : planar m2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m2. apply <- planarity_crit_Merge1. split.
 apply planar_CH2_m1. left. simpl; intro h.
 elimination h. destruct h as [h1 h2]. contradiction.
@@ -1809,19 +1809,19 @@ Lemma planar_CH2_m3 : planar m3.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m3. apply <- planarity_crit_Merge1. split.
 apply planar_CH2_m2. left.
 intro h. apply eqc_Merge in h.
@@ -1902,19 +1902,19 @@ Lemma planar_CH2_m4 : planar m4.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m4. apply <- planarity_crit_Merge0. split.
 apply planar_CH2_m3. left.
 intro h. apply eqc_Merge in h.
@@ -1988,19 +1988,19 @@ Lemma expf_m4_max2_max1 : expf m4 (max + 2) (max + 1).
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold expf; split. apply inv_hmap_CH2_m4. unfold m4.
 assert (h0: inv_hmap m3). apply inv_hmap_CH2_m3.
 rewrite (expof_Merge0_CNS m3 x1 (max+2) (max+2) (max+1) h0).
@@ -2171,19 +2171,19 @@ Lemma not_expe_m4_x2_max1 : ~ expe m4 x2 (max + 1).
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. apply expe_Merge0_CNS in h.
 elimination h. do 2 apply expe_Merge1 in h.
 apply expe_I in h.
@@ -2316,19 +2316,19 @@ Lemma planar_CH2_m5 : planar m5.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold m5. apply <- planarity_crit_Merge0. split.
 apply planar_CH2_m4. right.
 rewrite <- eq_cA_cA_1. rewrite cA_m4_one_x2.
@@ -2368,19 +2368,19 @@ Lemma not_expv_m5_x1_x2 : ~ expv m5 x1 x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. unfold expv in h.
 unfold MA1.MfcA.expo in h.
 destruct h as [h1 h2].
@@ -2395,19 +2395,19 @@ Lemma not_expv_m5_x1_max2 : ~ expv m5 x1 (max+2).
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. unfold expv in h.
 unfold MA1.MfcA.expo in h.
 destruct h as [h1 h2].
@@ -2422,19 +2422,19 @@ Lemma not_expv_m5_max1_x2 : ~ expv m5 (max+1) x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. unfold expv in h.
 unfold MA1.MfcA.expo in h.
 destruct h as [h1 h2].
@@ -2449,19 +2449,19 @@ Lemma not_expv_m5_max1_max2 : ~ expv m5 (max+1) (max+2).
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. unfold expv in h.
 unfold MA1.MfcA.expo in h.
 destruct h as [h1 h2].
@@ -2500,19 +2500,19 @@ Lemma not_expe_m5_x1_x2 : ~ expe m5 x1 x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. unfold expe in h.
 unfold MA0.MfcA.expo in h.
 destruct h as [h1 h2].
@@ -2527,19 +2527,19 @@ Lemma not_expe_m5_x1_max1 : ~ expe m5 x1 (max+1).
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. unfold expe in h.
 unfold MA0.MfcA.expo in h.
 destruct h as [h1 h2].
@@ -2554,19 +2554,19 @@ Lemma not_expe_m5_max2_x2 : ~ expe m5 (max+2) x2.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. unfold expe in h.
 unfold MA0.MfcA.expo in h.
 destruct h as [h1 h2].
@@ -2581,19 +2581,19 @@ Lemma not_expe_m5_max2_max1 : ~ expe m5 (max+2) (max+1).
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h. unfold expe in h.
 unfold MA0.MfcA.expo in h.
 destruct h as [h1 h2].
@@ -2610,19 +2610,19 @@ Lemma is_well_emb_m5 : is_well_emb m5.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold is_well_emb.
 fold m1. fold m2. fold m3. fold m4. fold m5.
 intros x y h1 h2 h3.
@@ -2784,19 +2784,19 @@ Lemma is_neq_point_m5 : is_neq_point m5.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold is_neq_point.
 fold m1. fold m2. fold m3. fold m4. fold m5.
 intros x y h1 h2 h3.
@@ -2911,19 +2911,19 @@ Lemma is_noalign_m5 : is_noalign m5.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold is_noalign.
 fold m1. fold m2. fold m3. fold m4. fold m5.
 intros x y z h1 h2 h3 h4 h5 h6 h7; clear h7.
@@ -3104,19 +3104,19 @@ Lemma is_convex_m5 : is_convex m5 x1.
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 unfold is_convex. intros x y h1 h2 h3 h4.
 assert False; [idtac|tauto].
 apply expf_m5_x1_x1_x2 in h1.
@@ -3161,19 +3161,19 @@ Lemma not_expf_m5_x1_cA_m5_zero_x1 : ~ expf m5 x1 (cA m5 zero x1).
 Proof.
 assert (H6 : max+1 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
 assert (H7 : max+2 <> nil).
  apply sym_not_eq; apply lt_O_neq.
- apply lt_trans with max; [idtac|omega].
+ apply lt_trans with max; [idtac|lia].
  apply lt_le_trans with x1; [idtac|assumption].
  apply neq_O_lt; apply sym_not_eq; assumption.
-assert (H8 : x1 <> max+1); [omega|idtac].
-assert (H9 : x2 <> max+1); [omega|idtac].
-assert (H10 : x1 <> max+2); [omega|idtac].
-assert (H11 : x2 <> max+2); [omega|idtac].
-assert (H12 : max+1 <> max+2); [omega|idtac].
+assert (H8 : x1 <> max+1); [lia|idtac].
+assert (H9 : x2 <> max+1); [lia|idtac].
+assert (H10 : x1 <> max+2); [lia|idtac].
+assert (H11 : x2 <> max+2); [lia|idtac].
+assert (H12 : max+1 <> max+2); [lia|idtac].
 intro h; rewrite cA_m5_zero_x1 in h.
 apply expf_m5_x1_x1_x2 in h. elimination h.
 apply H10; rewrite h; tauto.
@@ -3281,12 +3281,12 @@ intros m d; induction m.
 simpl; tauto. simpl.
 elim le_lt_dec; intros h1 h2.
 intro h; elimination h.
-subst d0; omega.
+subst d0; lia.
 apply IHm; assumption.
 intro h; elimination h.
-subst d0; omega.
+subst d0; lia.
 apply IHm; try assumption.
-omega. simpl; assumption.
+lia. simpl; assumption.
 Qed.
 
 Lemma exd_fst_snd_CH2 :
@@ -3444,17 +3444,17 @@ apply not_expf_m5_da_cA_m5_zero_da; assumption.
 intros da Hda.
 apply not_eq_sym.
 apply lt_0_neq.
-omega.
+lia.
 (* Hw1 *)
 intros da Hda; simpl fst.
 do 4 rewrite <- exd_Merge.
 simpl. intro h.
 elimination h.
 apply max_dart_not_exd with m da.
-omega. assumption.
+lia. assumption.
 elimination h.
 apply max_dart_not_exd with m da.
-omega. assumption.
+lia. assumption.
 elimination h.
 subst da; apply H4; assumption.
 elimination h.
@@ -3463,17 +3463,17 @@ assumption.
 (* Hw5 *)
 intros da Hda; split; simpl fst.
 apply max_dart_not_exd.
-omega.
+lia.
 do 4 rewrite <- exd_Merge.
 simpl. intro h.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 assumption.
 (* Hp1 *)
 intros da db Hda; simpl fst.
@@ -3486,7 +3486,7 @@ apply not_eq_sym; apply Hp2; assumption.
 elimination Hdb.
 subst db. eqdartdec.
 elim eq_dart_dec; intro h0.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 apply not_eq_sym; apply Hp3; assumption.
 elimination Hdb.
 subst db. eqdartdec.
@@ -3535,7 +3535,7 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3550,9 +3550,9 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3567,9 +3567,9 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3602,7 +3602,7 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3615,9 +3615,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -3625,9 +3625,9 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3646,7 +3646,7 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3659,7 +3659,7 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -3668,11 +3668,11 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3685,11 +3685,11 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 tauto.
 elimination Hdb.
@@ -3698,9 +3698,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -3709,11 +3709,11 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3726,9 +3726,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -3736,13 +3736,13 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h4.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3761,9 +3761,9 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3776,11 +3776,11 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -3789,13 +3789,13 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h4.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3808,9 +3808,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 tauto.
 tauto.
@@ -3818,30 +3818,30 @@ tauto.
   intros Hmax1 Hmax2.
   apply inv_hmap_inv_gmap_inv_poly_planar_well_emb_convex_CHI; try assumption.
 apply exd_fst_snd_CH2.
-apply inv_hmap_CH2; try assumption; try omega.
-apply inv_gmap_CH2; try assumption; try omega.
-apply inv_poly_CH2; try assumption; try omega.
-apply planar_CH2; try assumption; try omega.
-apply is_well_emb_CH2; try assumption; try omega.
-apply is_neq_point_CH2; try assumption; try omega.
-apply is_noalign_CH2; try assumption; try omega.
-apply is_convex_CH2; try assumption; try omega.
-apply not_expf_m5_da_cA_m5_zero_da; try assumption; try omega.
+apply inv_hmap_CH2; try assumption; try lia.
+apply inv_gmap_CH2; try assumption; try lia.
+apply inv_poly_CH2; try assumption; try lia.
+apply planar_CH2; try assumption; try lia.
+apply is_well_emb_CH2; try assumption; try lia.
+apply is_neq_point_CH2; try assumption; try lia.
+apply is_noalign_CH2; try assumption; try lia.
+apply is_convex_CH2; try assumption; try lia.
+apply not_expf_m5_da_cA_m5_zero_da; try assumption; try lia.
 (* Hw0 *)
 intros da Hda.
 apply not_eq_sym.
 apply lt_0_neq.
-omega.
+lia.
 (* Hw1 *)
 intros da Hda; simpl fst.
 do 4 rewrite <- exd_Merge.
 simpl. intro h.
 elimination h.
 apply max_dart_not_exd with m da.
-omega. assumption.
+lia. assumption.
 elimination h.
 apply max_dart_not_exd with m da.
-omega. assumption.
+lia. assumption.
 elimination h.
 subst da; apply H4; assumption.
 elimination h.
@@ -3850,17 +3850,17 @@ assumption.
 (* Hw5 *)
 intros da Hda; split; simpl fst.
 apply max_dart_not_exd.
-omega.
+lia.
 do 4 rewrite <- exd_Merge.
 simpl. intro h.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 assumption.
 (* Hp1 *)
 intros da db Hda; simpl fst.
@@ -3873,7 +3873,7 @@ apply not_eq_sym; apply Hp2; assumption.
 elimination Hdb.
 subst db. eqdartdec.
 elim eq_dart_dec; intro h0.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 apply not_eq_sym; apply Hp3; assumption.
 elimination Hdb.
 subst db. eqdartdec.
@@ -3922,7 +3922,7 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3937,9 +3937,9 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3954,9 +3954,9 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -3989,7 +3989,7 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4002,9 +4002,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4012,9 +4012,9 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4033,7 +4033,7 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4046,7 +4046,7 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4055,11 +4055,11 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4072,11 +4072,11 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 tauto.
 elimination Hdb.
@@ -4085,9 +4085,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4096,11 +4096,11 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4113,9 +4113,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4123,13 +4123,13 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h4.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4148,9 +4148,9 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4163,11 +4163,11 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4176,13 +4176,13 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h4.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4195,9 +4195,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 tauto.
 tauto.
@@ -4207,30 +4207,30 @@ elim (le_lt_dec d d0).
   intros Hmax1 Hmax2.
   apply inv_hmap_inv_gmap_inv_poly_planar_well_emb_convex_CHI; try assumption.
 apply exd_fst_snd_CH2.
-apply inv_hmap_CH2; try assumption; try omega.
-apply inv_gmap_CH2; try assumption; try omega.
-apply inv_poly_CH2; try assumption; try omega.
-apply planar_CH2; try assumption; try omega.
-apply is_well_emb_CH2; try assumption; try omega.
-apply is_neq_point_CH2; try assumption; try omega.
-apply is_noalign_CH2; try assumption; try omega.
-apply is_convex_CH2; try assumption; try omega.
-apply not_expf_m5_da_cA_m5_zero_da; try assumption; try omega.
+apply inv_hmap_CH2; try assumption; try lia.
+apply inv_gmap_CH2; try assumption; try lia.
+apply inv_poly_CH2; try assumption; try lia.
+apply planar_CH2; try assumption; try lia.
+apply is_well_emb_CH2; try assumption; try lia.
+apply is_neq_point_CH2; try assumption; try lia.
+apply is_noalign_CH2; try assumption; try lia.
+apply is_convex_CH2; try assumption; try lia.
+apply not_expf_m5_da_cA_m5_zero_da; try assumption; try lia.
 (* Hw0 *)
 intros da Hda.
 apply not_eq_sym.
 apply lt_0_neq.
-omega.
+lia.
 (* Hw1 *)
 intros da Hda; simpl fst.
 do 4 rewrite <- exd_Merge.
 simpl. intro h.
 elimination h.
 apply max_dart_not_exd with m da.
-omega. assumption.
+lia. assumption.
 elimination h.
 apply max_dart_not_exd with m da.
-omega. assumption.
+lia. assumption.
 elimination h.
 subst da; apply H4; assumption.
 elimination h.
@@ -4239,17 +4239,17 @@ assumption.
 (* Hw5 *)
 intros da Hda; split; simpl fst.
 apply max_dart_not_exd.
-omega.
+lia.
 do 4 rewrite <- exd_Merge.
 simpl. intro h.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 assumption.
 (* Hp1 *)
 intros da db Hda; simpl fst.
@@ -4262,7 +4262,7 @@ apply not_eq_sym; apply Hp2; assumption.
 elimination Hdb.
 subst db. eqdartdec.
 elim eq_dart_dec; intro h0.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 apply not_eq_sym; apply Hp3; assumption.
 elimination Hdb.
 subst db. eqdartdec.
@@ -4311,7 +4311,7 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4326,9 +4326,9 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4343,9 +4343,9 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4378,7 +4378,7 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4391,9 +4391,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4401,9 +4401,9 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4422,7 +4422,7 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4435,7 +4435,7 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4444,11 +4444,11 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4461,11 +4461,11 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 tauto.
 elimination Hdb.
@@ -4474,9 +4474,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4485,11 +4485,11 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4502,9 +4502,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4512,13 +4512,13 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h4.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4537,9 +4537,9 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4552,11 +4552,11 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4565,13 +4565,13 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h4.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4584,9 +4584,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 tauto.
 tauto.
@@ -4594,30 +4594,30 @@ tauto.
   intros Hmax1 Hmax2.
   apply inv_hmap_inv_gmap_inv_poly_planar_well_emb_convex_CHI; try assumption.
 apply exd_fst_snd_CH2.
-apply inv_hmap_CH2; try assumption; try omega.
-apply inv_gmap_CH2; try assumption; try omega.
-apply inv_poly_CH2; try assumption; try omega.
-apply planar_CH2; try assumption; try omega.
-apply is_well_emb_CH2; try assumption; try omega.
-apply is_neq_point_CH2; try assumption; try omega.
-apply is_noalign_CH2; try assumption; try omega.
-apply is_convex_CH2; try assumption; try omega.
-apply not_expf_m5_da_cA_m5_zero_da; try assumption; try omega.
+apply inv_hmap_CH2; try assumption; try lia.
+apply inv_gmap_CH2; try assumption; try lia.
+apply inv_poly_CH2; try assumption; try lia.
+apply planar_CH2; try assumption; try lia.
+apply is_well_emb_CH2; try assumption; try lia.
+apply is_neq_point_CH2; try assumption; try lia.
+apply is_noalign_CH2; try assumption; try lia.
+apply is_convex_CH2; try assumption; try lia.
+apply not_expf_m5_da_cA_m5_zero_da; try assumption; try lia.
 (* Hw0 *)
 intros da Hda.
 apply not_eq_sym.
 apply lt_0_neq.
-omega.
+lia.
 (* Hw1 *)
 intros da Hda; simpl fst.
 do 4 rewrite <- exd_Merge.
 simpl. intro h.
 elimination h.
 apply max_dart_not_exd with m da.
-omega. assumption.
+lia. assumption.
 elimination h.
 apply max_dart_not_exd with m da.
-omega. assumption.
+lia. assumption.
 elimination h.
 subst da; apply H4; assumption.
 elimination h.
@@ -4626,17 +4626,17 @@ assumption.
 (* Hw5 *)
 intros da Hda; split; simpl fst.
 apply max_dart_not_exd.
-omega.
+lia.
 do 4 rewrite <- exd_Merge.
 simpl. intro h.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 elimination h.
-subst da; omega.
+subst da; lia.
 assumption.
 (* Hp1 *)
 intros da db Hda; simpl fst.
@@ -4649,7 +4649,7 @@ apply not_eq_sym; apply Hp2; assumption.
 elimination Hdb.
 subst db. eqdartdec.
 elim eq_dart_dec; intro h0.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 apply not_eq_sym; apply Hp3; assumption.
 elimination Hdb.
 subst db. eqdartdec.
@@ -4698,7 +4698,7 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4713,9 +4713,9 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4730,9 +4730,9 @@ simpl fst.
 do 4 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da db d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4765,7 +4765,7 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4778,9 +4778,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4788,9 +4788,9 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4809,7 +4809,7 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4822,7 +4822,7 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4831,11 +4831,11 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4848,11 +4848,11 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 tauto.
 elimination Hdb.
@@ -4861,9 +4861,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4872,11 +4872,11 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4889,9 +4889,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4899,13 +4899,13 @@ simpl fst.
 do 8 rewrite fpoint_Merge.
 simpl fpoint. eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h4.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d d0).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4924,9 +4924,9 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4939,11 +4939,11 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 elimination Hdc.
 subst dc.
@@ -4952,13 +4952,13 @@ do 8 rewrite fpoint_Merge.
 simpl fpoint.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h3.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h4.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 generalize (Halign da d0 d).
 simpl. eqdartdec.
 intro h; apply h.
@@ -4971,9 +4971,9 @@ elimination Hdc.
 subst dc.
 eqdartdec.
 elim eq_dart_dec; intro h1.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 elim eq_dart_dec; intro h2.
-assert False; [omega|tauto].
+assert False; [lia|tauto].
 tauto.
 tauto.
 tauto.
